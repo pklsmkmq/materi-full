@@ -1,0 +1,98 @@
+site_name: Modul Pak Nur
+
+nav:
+  - Home: index.md
+
+  - HTML CSS:
+      - Pengantar: html-css/index.md
+      - HTML: html-css/html/index.md
+      - CSS: html-css/css/index.md
+
+      - Tailwind CSS:
+          - Pertemuan 1 - Instalasi & Dasar: html-css/tailwind/01-instalasi-dasar.md
+          - Pertemuan 2 - Jarak & Custom CSS: html-css/tailwind/02-jarak-custom.md
+          - Pertemuan 3 - Flexbox: html-css/tailwind/03-flexbox.md
+          - Pertemuan 4 - Responsive: html-css/tailwind/04-responsive.md
+          - Pertemuan 5 - Studi Kasus Part 1: html-css/tailwind/05-studi-kasus-part-1.md
+          - Pertemuan 6 - Studi Kasus Part 2: html-css/tailwind/06-studi-kasus-part-2.md
+          - Pertemuan 7 - Studi Kasus Part 3 (Responsive): html-css/tailwind/07-studi-kasus-part-3.md
+          - Pertemuan 8 - Tugas Refactor: html-css/tailwind/08-tugas-refactor.md
+
+  - Front End:
+      - front-end/index.md
+
+  - Back End:
+      - back-end/index.md
+
+      - TypeScript Dasar:
+          - Pertemuan 1 - Pengenalan TypeScript: back-end/01.TypeScript/01-pengenalan-typescript.md
+          - Pertemuan 2 - Variable & Type: back-end/01.TypeScript/02-variable-dan-type.md
+          - Pertemuan 3 - Function: back-end/01.TypeScript/03-function.md
+          - Pertemuan 4 - Array Object: back-end/01.TypeScript/04-array-object.md
+          - Pertemuan 5 - Interface Type: back-end/01.TypeScript/05-interface-type.md
+          - Pertemuan 6 - Conditional & Loop: back-end/01.TypeScript/06-conditional-loop.md
+          - Pertemuan 7 - Class & OOP: back-end/01.TypeScript/07-class-oop.md
+          - Pertemuan 8 - Tugas: back-end/01.TypeScript/08-mini-project.md
+
+      - Nest JS:
+          - back-end/02.NestJS/index.md
+
+  - Mobile Flutter:
+      - mobile-flutter/index.md
+
+theme:
+  name: material
+  language: id
+
+  logo: assets/logo.png
+  favicon: assets/logo.png
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.collapse
+    - navigation.top
+    - search.highlight
+    - content.code.copy
+    - navigation.footer
+    - footer.social
+    - footer.copyright
+
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/weather-sunny
+        name: Mode terang
+
+    - scheme: slate
+      toggle:
+        icon: material/weather-night
+        name: Mode gelap
+
+plugins:
+  - search
+  - macros
+  - glightbox
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed
+  - pymdownx.tasklist
+
+extra_css:
+  - stylesheets/extra.css
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/pklsmkmq
+    - icon: fontawesome/brands/youtube
+      link: https://youtube.com/@n3projects208
+
+  copyright: © 2025 N3 Projects
+  generator:
+    name: "MkDocs"
+    link: "https://www.mkdocs.org/"
