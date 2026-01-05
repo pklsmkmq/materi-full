@@ -39,6 +39,14 @@ nav:
 
   - Mobile Flutter:
       - mobile-flutter/index.md
+      - Foundation Routing:
+          - Pertemuan 1 - Foundation: mobile-flutter/01.foundation-routing/01.Foundation.md
+          - Pertemuan 2 - Routing: mobile-flutter/01.foundation-routing/02.routing.md
+      - State Management Provider:
+          - Pertemuan 1 - Pengenalan Provider: mobile-flutter/02.state-management-provider/01.pengenalan-provider.md
+          - Pertemuan 2 - Provider Dasar: mobile-flutter/02.state-management-provider/02.provider-dasar.md
+          - Pertemuan 3 - List Data: mobile-flutter/02.state-management-provider/03.list-data.md
+          - Pertemuan 4 - CRUD: mobile-flutter/02.state-management-provider/04.provider-crud.md
 
 theme:
   name: material
