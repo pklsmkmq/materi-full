@@ -1897,11 +1897,12 @@
 <h1 id="membangun-pondasi-aplikasi-flutter-skala-industri">Membangun Pondasi Aplikasi Flutter Skala Industri</h1>
 <hr />
 <h2 id="tujuan-pembelajaran">Tujuan Pembelajaran</h2>
-<p>Setelah mengikuti pembelajaran ini, siswa mampu:<br />
-1. Memahami perbedaan aplikasi latihan dan aplikasi dunia kerja<br />
-2. Membuat project Flutter baru dengan struktur folder yang rapi<br />
-3. Membuat aplikasi multi-halaman (Home → Detail)<br />
-4. Menggunakan <strong>dummy data</strong> (model + list) sebagai pondasi sebelum masuk Provider, API, dan Firebase</p>
+<p>Setelah mengikuti pertemuan ini, siswa mampu:
+1. Membuat project Flutter dengan struktur folder yang rapi
+2. Menampilkan data produk dalam bentuk <strong>grid modern</strong>
+3. Menggunakan gambar, warna, dan layout yang lebih profesional
+4. Membuat aplikasi multi-halaman (Home, Detail, Profile)
+5. Menyiapkan project agar siap masuk ke Provider, API, dan Firebase</p>
 <hr />
 <h2 id="pertanyaan-pemantik">Pertanyaan Pemantik</h2>
 <blockquote>
@@ -1967,14 +1968,20 @@ Di semester 2 kita mulai membangun “rumah beton”:<br />
 <div class="highlight"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nc">Product</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="kd">final</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="n">id</span><span class="p">;</span>
 <span class="w">  </span><span class="kd">final</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
-<span class="w">  </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">price</span><span class="p">;</span>
+<span class="w">  </span><span class="kd">final</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="n">category</span><span class="p">;</span>
+<span class="w">  </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">price</span><span class="p">;</span><span class="w"> </span><span class="c1">// Rupiah</span>
+<span class="w">  </span><span class="kd">final</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="n">imageUrl</span><span class="p">;</span><span class="w"> </span><span class="c1">// Network image (sementara)</span>
 <span class="w">  </span><span class="kd">final</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="n">description</span><span class="p">;</span>
+<span class="w">  </span><span class="kd">final</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">rating</span><span class="p">;</span><span class="w"> </span><span class="c1">// 0.0 - 5.0</span>
 
 <span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">Product</span><span class="p">({</span>
 <span class="w">    </span><span class="kd">required</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="n">id</span><span class="p">,</span>
 <span class="w">    </span><span class="kd">required</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="n">name</span><span class="p">,</span>
+<span class="w">    </span><span class="kd">required</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="n">category</span><span class="p">,</span>
 <span class="w">    </span><span class="kd">required</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="n">price</span><span class="p">,</span>
+<span class="w">    </span><span class="kd">required</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="n">imageUrl</span><span class="p">,</span>
 <span class="w">    </span><span class="kd">required</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="n">description</span><span class="p">,</span>
+<span class="w">    </span><span class="kd">required</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="n">rating</span><span class="p">,</span>
 <span class="w">  </span><span class="p">});</span>
 <span class="p">}</span>
 </code></pre></div>
@@ -1986,6 +1993,10 @@ Di semester 2 kita mulai membangun “rumah beton”:<br />
 <p><strong>File:</strong> <code>lib/widgets/product_card.dart</code></p>
 <div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:flutter/material.dart&#39;</span><span class="p">;</span>
 <span class="k">import</span><span class="w"> </span><span class="s1">&#39;../models/product.dart&#39;</span><span class="p">;</span>
+
+<span class="c1">// Catatan untuk siswa:</span>
+<span class="c1">// Format harga akan dibuat reusable di tugas (price_text.dart).</span>
+<span class="c1">// Untuk pertemuan ini, tampilkan harga dengan format sederhana terlebih dahulu.</span>
 
 <span class="kd">class</span><span class="w"> </span><span class="nc">ProductCard</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">StatelessWidget</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="kd">final</span><span class="w"> </span><span class="n">Product</span><span class="w"> </span><span class="n">product</span><span class="p">;</span>
@@ -1999,12 +2010,130 @@ Di semester 2 kita mulai membangun “rumah beton”:<br />
 
 <span class="w">  </span><span class="nd">@override</span>
 <span class="w">  </span><span class="n">Widget</span><span class="w"> </span><span class="n">build</span><span class="p">(</span><span class="n">BuildContext</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Card</span><span class="p">(</span>
-<span class="w">      </span><span class="nl">child:</span><span class="w"> </span><span class="n">ListTile</span><span class="p">(</span>
-<span class="w">        </span><span class="nl">onTap:</span><span class="w"> </span><span class="n">onTap</span><span class="p">,</span>
-<span class="w">        </span><span class="nl">title:</span><span class="w"> </span><span class="n">Text</span><span class="p">(</span><span class="n">product</span><span class="p">.</span><span class="n">name</span><span class="p">),</span>
-<span class="w">        </span><span class="nl">subtitle:</span><span class="w"> </span><span class="n">Text</span><span class="p">(</span><span class="s2">&quot;Rp </span><span class="si">${</span><span class="n">product</span><span class="p">.</span><span class="n">price</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">),</span>
-<span class="w">        </span><span class="nl">trailing:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Icon</span><span class="p">(</span><span class="n">Icons</span><span class="p">.</span><span class="n">chevron_right</span><span class="p">),</span>
+<span class="w">    </span><span class="kd">final</span><span class="w"> </span><span class="n">theme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Theme</span><span class="p">.</span><span class="n">of</span><span class="p">(</span><span class="n">context</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">InkWell</span><span class="p">(</span>
+<span class="w">      </span><span class="nl">onTap:</span><span class="w"> </span><span class="n">onTap</span><span class="p">,</span>
+<span class="w">      </span><span class="nl">borderRadius:</span><span class="w"> </span><span class="n">BorderRadius</span><span class="p">.</span><span class="n">circular</span><span class="p">(</span><span class="m">20</span><span class="p">),</span>
+<span class="w">      </span><span class="nl">child:</span><span class="w"> </span><span class="n">Ink</span><span class="p">(</span>
+<span class="w">        </span><span class="nl">decoration:</span><span class="w"> </span><span class="n">BoxDecoration</span><span class="p">(</span>
+<span class="w">          </span><span class="nl">borderRadius:</span><span class="w"> </span><span class="n">BorderRadius</span><span class="p">.</span><span class="n">circular</span><span class="p">(</span><span class="m">20</span><span class="p">),</span>
+<span class="w">          </span><span class="nl">color:</span><span class="w"> </span><span class="n">theme</span><span class="p">.</span><span class="n">colorScheme</span><span class="p">.</span><span class="n">surface</span><span class="p">,</span>
+<span class="w">          </span><span class="nl">boxShadow:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="n">BoxShadow</span><span class="p">(</span>
+<span class="w">              </span><span class="nl">blurRadius:</span><span class="w"> </span><span class="m">14</span><span class="p">,</span>
+<span class="w">              </span><span class="nl">offset:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Offset</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">8</span><span class="p">),</span>
+<span class="w">              </span><span class="nl">color:</span><span class="w"> </span><span class="n">Colors</span><span class="p">.</span><span class="n">black</span><span class="p">.</span><span class="n">withValues</span><span class="p">(</span><span class="nl">alpha:</span><span class="w"> </span><span class="m">0.08</span><span class="p">),</span>
+<span class="w">            </span><span class="p">),</span>
+<span class="w">          </span><span class="p">],</span>
+<span class="w">        </span><span class="p">),</span>
+<span class="w">        </span><span class="nl">child:</span><span class="w"> </span><span class="n">Column</span><span class="p">(</span>
+<span class="w">          </span><span class="nl">crossAxisAlignment:</span><span class="w"> </span><span class="n">CrossAxisAlignment</span><span class="p">.</span><span class="n">start</span><span class="p">,</span>
+<span class="w">          </span><span class="nl">children:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="n">ClipRRect</span><span class="p">(</span>
+<span class="w">              </span><span class="nl">borderRadius:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">BorderRadius</span><span class="p">.</span><span class="n">vertical</span><span class="p">(</span><span class="nl">top:</span><span class="w"> </span><span class="n">Radius</span><span class="p">.</span><span class="n">circular</span><span class="p">(</span><span class="m">20</span><span class="p">)),</span>
+<span class="w">              </span><span class="nl">child:</span><span class="w"> </span><span class="n">AspectRatio</span><span class="p">(</span>
+<span class="w">                </span><span class="nl">aspectRatio:</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">3</span><span class="p">,</span>
+<span class="w">                </span><span class="nl">child:</span><span class="w"> </span><span class="n">Stack</span><span class="p">(</span>
+<span class="w">                  </span><span class="nl">fit:</span><span class="w"> </span><span class="n">StackFit</span><span class="p">.</span><span class="n">expand</span><span class="p">,</span>
+<span class="w">                  </span><span class="nl">children:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                    </span><span class="n">Hero</span><span class="p">(</span>
+<span class="w">                      </span><span class="nl">tag:</span><span class="w"> </span><span class="s2">&quot;product-image-</span><span class="si">${</span><span class="n">product</span><span class="p">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+<span class="w">                      </span><span class="nl">child:</span><span class="w"> </span><span class="n">Image</span><span class="p">.</span><span class="n">network</span><span class="p">(</span>
+<span class="w">                        </span><span class="n">product</span><span class="p">.</span><span class="n">imageUrl</span><span class="p">,</span>
+<span class="w">                        </span><span class="nl">fit:</span><span class="w"> </span><span class="n">BoxFit</span><span class="p">.</span><span class="n">cover</span><span class="p">,</span>
+<span class="w">                        </span><span class="nl">loadingBuilder:</span><span class="w"> </span><span class="p">(</span><span class="n">context</span><span class="p">,</span><span class="w"> </span><span class="n">child</span><span class="p">,</span><span class="w"> </span><span class="n">progress</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                          </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">progress</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">child</span><span class="p">;</span>
+<span class="w">                          </span><span class="k">return</span><span class="w"> </span><span class="n">Container</span><span class="p">(</span>
+<span class="w">                            </span><span class="nl">color:</span><span class="w"> </span><span class="n">theme</span><span class="p">.</span><span class="n">colorScheme</span><span class="p">.</span><span class="n">surfaceContainerHighest</span><span class="p">,</span>
+<span class="w">                            </span><span class="nl">child:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Center</span><span class="p">(</span><span class="nl">child:</span><span class="w"> </span><span class="n">CircularProgressIndicator</span><span class="p">()),</span>
+<span class="w">                          </span><span class="p">);</span>
+<span class="w">                        </span><span class="p">},</span>
+<span class="w">                        </span><span class="nl">errorBuilder:</span><span class="w"> </span><span class="p">(</span><span class="n">_</span><span class="p">,</span><span class="w"> </span><span class="n">__</span><span class="p">,</span><span class="w"> </span><span class="n">___</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                          </span><span class="k">return</span><span class="w"> </span><span class="n">Container</span><span class="p">(</span>
+<span class="w">                            </span><span class="nl">color:</span><span class="w"> </span><span class="n">theme</span><span class="p">.</span><span class="n">colorScheme</span><span class="p">.</span><span class="n">surfaceContainerHighest</span><span class="p">,</span>
+<span class="w">                            </span><span class="nl">child:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Center</span><span class="p">(</span>
+<span class="w">                              </span><span class="nl">child:</span><span class="w"> </span><span class="n">Icon</span><span class="p">(</span><span class="n">Icons</span><span class="p">.</span><span class="n">broken_image_outlined</span><span class="p">,</span><span class="w"> </span><span class="nl">size:</span><span class="w"> </span><span class="m">40</span><span class="p">),</span>
+<span class="w">                            </span><span class="p">),</span>
+<span class="w">                          </span><span class="p">);</span>
+<span class="w">                        </span><span class="p">},</span>
+<span class="w">                      </span><span class="p">),</span>
+<span class="w">                    </span><span class="p">),</span>
+<span class="w">                    </span><span class="n">Positioned</span><span class="p">(</span>
+<span class="w">                      </span><span class="nl">left:</span><span class="w"> </span><span class="m">10</span><span class="p">,</span>
+<span class="w">                      </span><span class="nl">top:</span><span class="w"> </span><span class="m">10</span><span class="p">,</span>
+<span class="w">                      </span><span class="nl">child:</span><span class="w"> </span><span class="n">Container</span><span class="p">(</span>
+<span class="w">                        </span><span class="nl">padding:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">EdgeInsets</span><span class="p">.</span><span class="n">symmetric</span><span class="p">(</span><span class="nl">horizontal:</span><span class="w"> </span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="nl">vertical:</span><span class="w"> </span><span class="m">6</span><span class="p">),</span>
+<span class="w">                        </span><span class="nl">decoration:</span><span class="w"> </span><span class="n">BoxDecoration</span><span class="p">(</span>
+<span class="w">                          </span><span class="nl">color:</span><span class="w"> </span><span class="n">Colors</span><span class="p">.</span><span class="n">black</span><span class="p">.</span><span class="n">withValues</span><span class="p">(</span><span class="nl">alpha:</span><span class="w"> </span><span class="m">0.55</span><span class="p">),</span>
+<span class="w">                          </span><span class="nl">borderRadius:</span><span class="w"> </span><span class="n">BorderRadius</span><span class="p">.</span><span class="n">circular</span><span class="p">(</span><span class="m">999</span><span class="p">),</span>
+<span class="w">                        </span><span class="p">),</span>
+<span class="w">                        </span><span class="nl">child:</span><span class="w"> </span><span class="n">Text</span><span class="p">(</span>
+<span class="w">                          </span><span class="n">product</span><span class="p">.</span><span class="n">category</span><span class="p">,</span>
+<span class="w">                          </span><span class="nl">style:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">TextStyle</span><span class="p">(</span>
+<span class="w">                            </span><span class="nl">color:</span><span class="w"> </span><span class="n">Colors</span><span class="p">.</span><span class="n">white</span><span class="p">,</span>
+<span class="w">                            </span><span class="nl">fontWeight:</span><span class="w"> </span><span class="n">FontWeight</span><span class="p">.</span><span class="n">w600</span><span class="p">,</span>
+<span class="w">                            </span><span class="nl">fontSize:</span><span class="w"> </span><span class="m">12</span><span class="p">,</span>
+<span class="w">                          </span><span class="p">),</span>
+<span class="w">                        </span><span class="p">),</span>
+<span class="w">                      </span><span class="p">),</span>
+<span class="w">                    </span><span class="p">),</span>
+<span class="w">                  </span><span class="p">],</span>
+<span class="w">                </span><span class="p">),</span>
+<span class="w">              </span><span class="p">),</span>
+<span class="w">            </span><span class="p">),</span>
+<span class="w">            </span><span class="n">Expanded</span><span class="p">(</span>
+<span class="w">              </span><span class="nl">child:</span><span class="w"> </span><span class="n">Padding</span><span class="p">(</span>
+<span class="w">                </span><span class="nl">padding:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">EdgeInsets</span><span class="p">.</span><span class="n">fromLTRB</span><span class="p">(</span><span class="m">12</span><span class="p">,</span><span class="w"> </span><span class="m">12</span><span class="p">,</span><span class="w"> </span><span class="m">12</span><span class="p">,</span><span class="w"> </span><span class="m">10</span><span class="p">),</span>
+<span class="w">                </span><span class="nl">child:</span><span class="w"> </span><span class="n">Column</span><span class="p">(</span>
+<span class="w">                  </span><span class="nl">crossAxisAlignment:</span><span class="w"> </span><span class="n">CrossAxisAlignment</span><span class="p">.</span><span class="n">start</span><span class="p">,</span>
+<span class="w">                  </span><span class="nl">children:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                    </span><span class="n">Text</span><span class="p">(</span>
+<span class="w">                      </span><span class="n">product</span><span class="p">.</span><span class="n">name</span><span class="p">,</span>
+<span class="w">                      </span><span class="nl">maxLines:</span><span class="w"> </span><span class="m">1</span><span class="p">,</span>
+<span class="w">                      </span><span class="nl">overflow:</span><span class="w"> </span><span class="n">TextOverflow</span><span class="p">.</span><span class="n">ellipsis</span><span class="p">,</span>
+<span class="w">                      </span><span class="nl">style:</span><span class="w"> </span><span class="n">theme</span><span class="p">.</span><span class="n">textTheme</span><span class="p">.</span><span class="n">titleMedium</span><span class="o">?</span><span class="p">.</span><span class="n">copyWith</span><span class="p">(</span>
+<span class="w">                        </span><span class="nl">fontWeight:</span><span class="w"> </span><span class="n">FontWeight</span><span class="p">.</span><span class="n">w800</span><span class="p">,</span>
+<span class="w">                      </span><span class="p">),</span>
+<span class="w">                    </span><span class="p">),</span>
+<span class="w">                    </span><span class="k">const</span><span class="w"> </span><span class="n">SizedBox</span><span class="p">(</span><span class="nl">height:</span><span class="w"> </span><span class="m">6</span><span class="p">),</span>
+<span class="w">                    </span><span class="n">Text</span><span class="p">(</span>
+<span class="w">                      </span><span class="n">product</span><span class="p">.</span><span class="n">description</span><span class="p">,</span>
+<span class="w">                      </span><span class="nl">maxLines:</span><span class="w"> </span><span class="m">2</span><span class="p">,</span>
+<span class="w">                      </span><span class="nl">overflow:</span><span class="w"> </span><span class="n">TextOverflow</span><span class="p">.</span><span class="n">ellipsis</span><span class="p">,</span>
+<span class="w">                      </span><span class="nl">style:</span><span class="w"> </span><span class="n">theme</span><span class="p">.</span><span class="n">textTheme</span><span class="p">.</span><span class="n">bodySmall</span><span class="o">?</span><span class="p">.</span><span class="n">copyWith</span><span class="p">(</span>
+<span class="w">                        </span><span class="nl">color:</span><span class="w"> </span><span class="n">theme</span><span class="p">.</span><span class="n">colorScheme</span><span class="p">.</span><span class="n">onSurfaceVariant</span><span class="p">,</span>
+<span class="w">                        </span><span class="nl">height:</span><span class="w"> </span><span class="m">1.2</span><span class="p">,</span>
+<span class="w">                      </span><span class="p">),</span>
+<span class="w">                    </span><span class="p">),</span>
+<span class="w">                    </span><span class="k">const</span><span class="w"> </span><span class="n">Spacer</span><span class="p">(),</span>
+<span class="w">                    </span><span class="n">Row</span><span class="p">(</span>
+<span class="w">                      </span><span class="nl">children:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                        </span><span class="n">Expanded</span><span class="p">(</span>
+<span class="w">                          </span><span class="nl">child:</span><span class="w"> </span><span class="n">Text</span><span class="p">(</span>
+<span class="w">                            </span><span class="s2">&quot;Rp </span><span class="si">${</span><span class="n">product</span><span class="p">.</span><span class="n">price</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+<span class="w">                            </span><span class="nl">style:</span><span class="w"> </span><span class="n">theme</span><span class="p">.</span><span class="n">textTheme</span><span class="p">.</span><span class="n">titleSmall</span><span class="o">?</span><span class="p">.</span><span class="n">copyWith</span><span class="p">(</span>
+<span class="w">                              </span><span class="nl">fontWeight:</span><span class="w"> </span><span class="n">FontWeight</span><span class="p">.</span><span class="n">w900</span><span class="p">,</span>
+<span class="w">                              </span><span class="nl">color:</span><span class="w"> </span><span class="n">theme</span><span class="p">.</span><span class="n">colorScheme</span><span class="p">.</span><span class="n">primary</span><span class="p">,</span>
+<span class="w">                            </span><span class="p">),</span>
+<span class="w">                          </span><span class="p">),</span>
+<span class="w">                        </span><span class="p">),</span>
+<span class="w">                        </span><span class="k">const</span><span class="w"> </span><span class="n">Icon</span><span class="p">(</span><span class="n">Icons</span><span class="p">.</span><span class="n">star_rounded</span><span class="p">,</span><span class="w"> </span><span class="nl">size:</span><span class="w"> </span><span class="m">18</span><span class="p">,</span><span class="w"> </span><span class="nl">color:</span><span class="w"> </span><span class="n">Colors</span><span class="p">.</span><span class="n">amber</span><span class="p">),</span>
+<span class="w">                        </span><span class="k">const</span><span class="w"> </span><span class="n">SizedBox</span><span class="p">(</span><span class="nl">width:</span><span class="w"> </span><span class="m">4</span><span class="p">),</span>
+<span class="w">                        </span><span class="n">Text</span><span class="p">(</span>
+<span class="w">                          </span><span class="n">product</span><span class="p">.</span><span class="n">rating</span><span class="p">.</span><span class="n">toStringAsFixed</span><span class="p">(</span><span class="m">1</span><span class="p">),</span>
+<span class="w">                          </span><span class="nl">style:</span><span class="w"> </span><span class="n">theme</span><span class="p">.</span><span class="n">textTheme</span><span class="p">.</span><span class="n">bodySmall</span><span class="o">?</span><span class="p">.</span><span class="n">copyWith</span><span class="p">(</span>
+<span class="w">                            </span><span class="nl">fontWeight:</span><span class="w"> </span><span class="n">FontWeight</span><span class="p">.</span><span class="n">w700</span><span class="p">,</span>
+<span class="w">                          </span><span class="p">),</span>
+<span class="w">                        </span><span class="p">),</span>
+<span class="w">                      </span><span class="p">],</span>
+<span class="w">                    </span><span class="p">),</span>
+<span class="w">                  </span><span class="p">],</span>
+<span class="w">                </span><span class="p">),</span>
+<span class="w">              </span><span class="p">),</span>
+<span class="w">            </span><span class="p">),</span>
+<span class="w">          </span><span class="p">],</span>
+<span class="w">        </span><span class="p">),</span>
 <span class="w">      </span><span class="p">),</span>
 <span class="w">    </span><span class="p">);</span>
 <span class="w">  </span><span class="p">}</span>
@@ -2018,69 +2147,200 @@ Di semester 2 kita mulai membangun “rumah beton”:<br />
 <span class="k">import</span><span class="w"> </span><span class="s1">&#39;../widgets/product_card.dart&#39;</span><span class="p">;</span>
 <span class="k">import</span><span class="w"> </span><span class="s1">&#39;detail_page.dart&#39;</span><span class="p">;</span>
 
-<span class="kd">class</span><span class="w"> </span><span class="nc">HomePage</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">StatelessWidget</span><span class="w"> </span><span class="p">{</span>
+<span class="kd">class</span><span class="w"> </span><span class="nc">HomePage</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">StatefulWidget</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">HomePage</span><span class="p">({</span><span class="k">super</span><span class="p">.</span><span class="n">key</span><span class="p">});</span>
 
-<span class="w">  </span><span class="c1">// Dummy data (sementara)</span>
+<span class="w">  </span><span class="nd">@override</span>
+<span class="w">  </span><span class="n">State</span><span class="o">&lt;</span><span class="n">HomePage</span><span class="o">&gt;</span><span class="w"> </span><span class="n">createState</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">_HomePageState</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kd">class</span><span class="w"> </span><span class="nc">_HomePageState</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">State</span><span class="o">&lt;</span><span class="n">HomePage</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">final</span><span class="w"> </span><span class="n">TextEditingController</span><span class="w"> </span><span class="n">_searchC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TextEditingController</span><span class="p">();</span>
+<span class="w">  </span><span class="kt">String</span><span class="w"> </span><span class="n">_query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">;</span>
+
 <span class="w">  </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Product</span><span class="o">&gt;</span><span class="w"> </span><span class="n">_dummyProducts</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Catatan:</span>
+<span class="w">    </span><span class="c1">// Gambar masih dummy (picsum). Pada tugas, siswa wajib mengganti gambar</span>
+<span class="w">    </span><span class="c1">// agar sesuai dengan masing-masing produk.</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">[</span>
 <span class="w">      </span><span class="n">Product</span><span class="p">(</span>
 <span class="w">        </span><span class="nl">id:</span><span class="w"> </span><span class="s2">&quot;p1&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nl">name:</span><span class="w"> </span><span class="s2">&quot;Keyboard&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nl">price:</span><span class="w"> </span><span class="m">250000</span><span class="p">,</span>
-<span class="w">        </span><span class="nl">description:</span><span class="w"> </span><span class="s2">&quot;Keyboard mechanical untuk mengetik nyaman.&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nl">name:</span><span class="w"> </span><span class="s2">&quot;Keyboard Mechanical Aurora&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nl">category:</span><span class="w"> </span><span class="s2">&quot;Aksesoris&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nl">price:</span><span class="w"> </span><span class="m">349000</span><span class="p">,</span>
+<span class="w">        </span><span class="nl">imageUrl:</span><span class="w"> </span><span class="s2">&quot;https://picsum.photos/seed/keyboard/800/600&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nl">rating:</span><span class="w"> </span><span class="m">4.6</span><span class="p">,</span>
+<span class="w">        </span><span class="nl">description:</span>
+<span class="w">            </span><span class="s2">&quot;Keyboard mechanical dengan switch empuk, backlight RGB, dan build quality kokoh. Cocok untuk coding dan gaming, nyaman dipakai lama.&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="p">),</span>
 <span class="w">      </span><span class="n">Product</span><span class="p">(</span>
 <span class="w">        </span><span class="nl">id:</span><span class="w"> </span><span class="s2">&quot;p2&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nl">name:</span><span class="w"> </span><span class="s2">&quot;Mouse&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nl">price:</span><span class="w"> </span><span class="m">120000</span><span class="p">,</span>
-<span class="w">        </span><span class="nl">description:</span><span class="w"> </span><span class="s2">&quot;Mouse wireless, baterai awet.&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nl">name:</span><span class="w"> </span><span class="s2">&quot;Mouse Wireless Pro&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nl">category:</span><span class="w"> </span><span class="s2">&quot;Aksesoris&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nl">price:</span><span class="w"> </span><span class="m">179000</span><span class="p">,</span>
+<span class="w">        </span><span class="nl">imageUrl:</span><span class="w"> </span><span class="s2">&quot;https://picsum.photos/seed/mouse/800/600&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nl">rating:</span><span class="w"> </span><span class="m">4.4</span><span class="p">,</span>
+<span class="w">        </span><span class="nl">description:</span>
+<span class="w">            </span><span class="s2">&quot;Mouse wireless responsif dengan baterai awet, nyaman digenggam, dan sensor stabil. Pas untuk tugas sekolah dan editing ringan.&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="p">),</span>
 <span class="w">      </span><span class="n">Product</span><span class="p">(</span>
 <span class="w">        </span><span class="nl">id:</span><span class="w"> </span><span class="s2">&quot;p3&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nl">name:</span><span class="w"> </span><span class="s2">&quot;Headset&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nl">price:</span><span class="w"> </span><span class="m">300000</span><span class="p">,</span>
-<span class="w">        </span><span class="nl">description:</span><span class="w"> </span><span class="s2">&quot;Headset dengan mic, cocok untuk meeting.&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nl">name:</span><span class="w"> </span><span class="s2">&quot;Headset Studio Mic&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nl">category:</span><span class="w"> </span><span class="s2">&quot;Audio&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nl">price:</span><span class="w"> </span><span class="m">399000</span><span class="p">,</span>
+<span class="w">        </span><span class="nl">imageUrl:</span><span class="w"> </span><span class="s2">&quot;https://picsum.photos/seed/headset/800/600&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nl">rating:</span><span class="w"> </span><span class="m">4.5</span><span class="p">,</span>
+<span class="w">        </span><span class="nl">description:</span>
+<span class="w">            </span><span class="s2">&quot;Headset dengan mikrofon jernih untuk meeting dan presentasi. Suara detail, bantalan nyaman untuk pemakaian panjang.&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="p">),</span>
 <span class="w">      </span><span class="n">Product</span><span class="p">(</span>
 <span class="w">        </span><span class="nl">id:</span><span class="w"> </span><span class="s2">&quot;p4&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nl">name:</span><span class="w"> </span><span class="s2">&quot;Flashdisk&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nl">price:</span><span class="w"> </span><span class="m">80000</span><span class="p">,</span>
-<span class="w">        </span><span class="nl">description:</span><span class="w"> </span><span class="s2">&quot;Flashdisk 32GB, cepat dan ringan.&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nl">name:</span><span class="w"> </span><span class="s2">&quot;Flashdisk 64GB Speed&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nl">category:</span><span class="w"> </span><span class="s2">&quot;Storage&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nl">price:</span><span class="w"> </span><span class="m">99000</span><span class="p">,</span>
+<span class="w">        </span><span class="nl">imageUrl:</span><span class="w"> </span><span class="s2">&quot;https://picsum.photos/seed/flashdisk/800/600&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nl">rating:</span><span class="w"> </span><span class="m">4.2</span><span class="p">,</span>
+<span class="w">        </span><span class="nl">description:</span>
+<span class="w">            </span><span class="s2">&quot;Flashdisk 64GB dengan transfer cepat untuk tugas sekolah, file project, dan backup. Ringkas dan mudah dibawa.&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="p">),</span>
 <span class="w">      </span><span class="n">Product</span><span class="p">(</span>
 <span class="w">        </span><span class="nl">id:</span><span class="w"> </span><span class="s2">&quot;p5&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nl">name:</span><span class="w"> </span><span class="s2">&quot;Monitor&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nl">price:</span><span class="w"> </span><span class="m">1500000</span><span class="p">,</span>
-<span class="w">        </span><span class="nl">description:</span><span class="w"> </span><span class="s2">&quot;Monitor 24 inch, nyaman untuk coding.&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nl">name:</span><span class="w"> </span><span class="s2">&quot;Monitor 24</span><span class="se">\&quot;</span><span class="s2"> IPS Coding&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nl">category:</span><span class="w"> </span><span class="s2">&quot;Komputer&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nl">price:</span><span class="w"> </span><span class="m">1599000</span><span class="p">,</span>
+<span class="w">        </span><span class="nl">imageUrl:</span><span class="w"> </span><span class="s2">&quot;https://picsum.photos/seed/monitor/800/600&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nl">rating:</span><span class="w"> </span><span class="m">4.7</span><span class="p">,</span>
+<span class="w">        </span><span class="nl">description:</span>
+<span class="w">            </span><span class="s2">&quot;Monitor IPS 24 inci dengan warna akurat dan sudut pandang luas. Nyaman untuk coding dan belajar berjam-jam.&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="p">),</span>
+<span class="w">      </span><span class="n">Product</span><span class="p">(</span>
+<span class="w">        </span><span class="nl">id:</span><span class="w"> </span><span class="s2">&quot;p6&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nl">name:</span><span class="w"> </span><span class="s2">&quot;Laptop Stand Aluminum&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nl">category:</span><span class="w"> </span><span class="s2">&quot;Komputer&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nl">price:</span><span class="w"> </span><span class="m">129000</span><span class="p">,</span>
+<span class="w">        </span><span class="nl">imageUrl:</span><span class="w"> </span><span class="s2">&quot;https://picsum.photos/seed/stand/800/600&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nl">rating:</span><span class="w"> </span><span class="m">4.3</span><span class="p">,</span>
+<span class="w">        </span><span class="nl">description:</span>
+<span class="w">            </span><span class="s2">&quot;Stand laptop berbahan aluminum yang kuat dan stabil. Membantu posisi layar sejajar mata, membuat duduk lebih nyaman.&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="p">),</span>
 <span class="w">    </span><span class="p">];</span>
 <span class="w">  </span><span class="p">}</span>
 
 <span class="w">  </span><span class="nd">@override</span>
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="n">dispose</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">_searchC</span><span class="p">.</span><span class="n">dispose</span><span class="p">();</span>
+<span class="w">    </span><span class="k">super</span><span class="p">.</span><span class="n">dispose</span><span class="p">();</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="nd">@override</span>
 <span class="w">  </span><span class="n">Widget</span><span class="w"> </span><span class="n">build</span><span class="p">(</span><span class="n">BuildContext</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">final</span><span class="w"> </span><span class="n">theme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Theme</span><span class="p">.</span><span class="n">of</span><span class="p">(</span><span class="n">context</span><span class="p">);</span>
+
 <span class="w">    </span><span class="kd">final</span><span class="w"> </span><span class="n">products</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_dummyProducts</span><span class="p">();</span>
+<span class="w">    </span><span class="kd">final</span><span class="w"> </span><span class="n">filtered</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">products</span><span class="p">.</span><span class="n">where</span><span class="p">((</span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="kd">final</span><span class="w"> </span><span class="n">q</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_query</span><span class="p">.</span><span class="n">trim</span><span class="p">().</span><span class="n">toLowerCase</span><span class="p">();</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">q</span><span class="p">.</span><span class="n">isEmpty</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">name</span><span class="p">.</span><span class="n">toLowerCase</span><span class="p">().</span><span class="n">contains</span><span class="p">(</span><span class="n">q</span><span class="p">)</span><span class="w"> </span><span class="o">||</span>
+<span class="w">          </span><span class="n">p</span><span class="p">.</span><span class="n">category</span><span class="p">.</span><span class="n">toLowerCase</span><span class="p">().</span><span class="n">contains</span><span class="p">(</span><span class="n">q</span><span class="p">)</span><span class="w"> </span><span class="o">||</span>
+<span class="w">          </span><span class="n">p</span><span class="p">.</span><span class="n">description</span><span class="p">.</span><span class="n">toLowerCase</span><span class="p">().</span><span class="n">contains</span><span class="p">(</span><span class="n">q</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}).</span><span class="n">toList</span><span class="p">();</span>
 
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Scaffold</span><span class="p">(</span>
-<span class="w">      </span><span class="nl">appBar:</span><span class="w"> </span><span class="n">AppBar</span><span class="p">(</span>
-<span class="w">        </span><span class="nl">title:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Text</span><span class="p">(</span><span class="s2">&quot;SMK Product App&quot;</span><span class="p">),</span>
-<span class="w">      </span><span class="p">),</span>
-<span class="w">      </span><span class="nl">body:</span><span class="w"> </span><span class="n">ListView</span><span class="p">.</span><span class="n">builder</span><span class="p">(</span>
-<span class="w">        </span><span class="nl">itemCount:</span><span class="w"> </span><span class="n">products</span><span class="p">.</span><span class="n">length</span><span class="p">,</span>
-<span class="w">        </span><span class="nl">itemBuilder:</span><span class="w"> </span><span class="p">(</span><span class="n">context</span><span class="p">,</span><span class="w"> </span><span class="n">index</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">          </span><span class="kd">final</span><span class="w"> </span><span class="n">item</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">products</span><span class="p">[</span><span class="n">index</span><span class="p">];</span>
-<span class="w">          </span><span class="k">return</span><span class="w"> </span><span class="n">ProductCard</span><span class="p">(</span>
-<span class="w">            </span><span class="nl">product:</span><span class="w"> </span><span class="n">item</span><span class="p">,</span>
-<span class="w">            </span><span class="nl">onTap:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">              </span><span class="n">Navigator</span><span class="p">.</span><span class="n">push</span><span class="p">(</span>
-<span class="w">                </span><span class="n">context</span><span class="p">,</span>
-<span class="w">                </span><span class="n">MaterialPageRoute</span><span class="p">(</span>
-<span class="w">                  </span><span class="nl">builder:</span><span class="w"> </span><span class="p">(</span><span class="n">_</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">DetailPage</span><span class="p">(</span><span class="nl">product:</span><span class="w"> </span><span class="n">item</span><span class="p">),</span>
+<span class="w">      </span><span class="nl">body:</span><span class="w"> </span><span class="n">CustomScrollView</span><span class="p">(</span>
+<span class="w">        </span><span class="nl">slivers:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">          </span><span class="n">SliverAppBar</span><span class="p">(</span>
+<span class="w">            </span><span class="nl">pinned:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">            </span><span class="nl">expandedHeight:</span><span class="w"> </span><span class="m">160</span><span class="p">,</span>
+<span class="w">            </span><span class="nl">backgroundColor:</span><span class="w"> </span><span class="n">theme</span><span class="p">.</span><span class="n">colorScheme</span><span class="p">.</span><span class="n">primary</span><span class="p">,</span>
+<span class="w">            </span><span class="nl">foregroundColor:</span><span class="w"> </span><span class="n">theme</span><span class="p">.</span><span class="n">colorScheme</span><span class="p">.</span><span class="n">onPrimary</span><span class="p">,</span>
+<span class="w">            </span><span class="nl">title:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Text</span><span class="p">(</span><span class="s2">&quot;SMK Product App&quot;</span><span class="p">),</span>
+<span class="w">            </span><span class="nl">flexibleSpace:</span><span class="w"> </span><span class="n">FlexibleSpaceBar</span><span class="p">(</span>
+<span class="w">              </span><span class="nl">background:</span><span class="w"> </span><span class="n">Container</span><span class="p">(</span>
+<span class="w">                </span><span class="nl">decoration:</span><span class="w"> </span><span class="n">BoxDecoration</span><span class="p">(</span>
+<span class="w">                  </span><span class="nl">gradient:</span><span class="w"> </span><span class="n">LinearGradient</span><span class="p">(</span>
+<span class="w">                    </span><span class="nl">colors:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                      </span><span class="n">theme</span><span class="p">.</span><span class="n">colorScheme</span><span class="p">.</span><span class="n">primary</span><span class="p">,</span>
+<span class="w">                      </span><span class="n">theme</span><span class="p">.</span><span class="n">colorScheme</span><span class="p">.</span><span class="n">tertiary</span><span class="p">,</span>
+<span class="w">                    </span><span class="p">],</span>
+<span class="w">                    </span><span class="nl">begin:</span><span class="w"> </span><span class="n">Alignment</span><span class="p">.</span><span class="n">topLeft</span><span class="p">,</span>
+<span class="w">                    </span><span class="nl">end:</span><span class="w"> </span><span class="n">Alignment</span><span class="p">.</span><span class="n">bottomRight</span><span class="p">,</span>
+<span class="w">                  </span><span class="p">),</span>
 <span class="w">                </span><span class="p">),</span>
-<span class="w">              </span><span class="p">);</span>
-<span class="w">            </span><span class="p">},</span>
-<span class="w">          </span><span class="p">);</span>
-<span class="w">        </span><span class="p">},</span>
+<span class="w">                </span><span class="nl">child:</span><span class="w"> </span><span class="n">SafeArea</span><span class="p">(</span>
+<span class="w">                  </span><span class="nl">child:</span><span class="w"> </span><span class="n">Padding</span><span class="p">(</span>
+<span class="w">                    </span><span class="nl">padding:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">EdgeInsets</span><span class="p">.</span><span class="n">fromLTRB</span><span class="p">(</span><span class="m">16</span><span class="p">,</span><span class="w"> </span><span class="m">56</span><span class="p">,</span><span class="w"> </span><span class="m">16</span><span class="p">,</span><span class="w"> </span><span class="m">12</span><span class="p">),</span>
+<span class="w">                    </span><span class="nl">child:</span><span class="w"> </span><span class="n">Column</span><span class="p">(</span>
+<span class="w">                      </span><span class="nl">crossAxisAlignment:</span><span class="w"> </span><span class="n">CrossAxisAlignment</span><span class="p">.</span><span class="n">start</span><span class="p">,</span>
+<span class="w">                      </span><span class="nl">children:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                        </span><span class="n">Text</span><span class="p">(</span>
+<span class="w">                          </span><span class="s2">&quot;Katalog Produk&quot;</span><span class="p">,</span>
+<span class="w">                          </span><span class="nl">style:</span><span class="w"> </span><span class="n">theme</span><span class="p">.</span><span class="n">textTheme</span><span class="p">.</span><span class="n">headlineSmall</span><span class="o">?</span><span class="p">.</span><span class="n">copyWith</span><span class="p">(</span>
+<span class="w">                            </span><span class="nl">color:</span><span class="w"> </span><span class="n">theme</span><span class="p">.</span><span class="n">colorScheme</span><span class="p">.</span><span class="n">onPrimary</span><span class="p">,</span>
+<span class="w">                            </span><span class="nl">fontWeight:</span><span class="w"> </span><span class="n">FontWeight</span><span class="p">.</span><span class="n">w900</span><span class="p">,</span>
+<span class="w">                          </span><span class="p">),</span>
+<span class="w">                        </span><span class="p">),</span>
+<span class="w">                        </span><span class="k">const</span><span class="w"> </span><span class="n">SizedBox</span><span class="p">(</span><span class="nl">height:</span><span class="w"> </span><span class="m">6</span><span class="p">),</span>
+<span class="w">                        </span><span class="n">Text</span><span class="p">(</span>
+<span class="w">                          </span><span class="s2">&quot;Cari produk dan lihat detailnya. Ini pondasi untuk Provider, API, dan Firebase.&quot;</span><span class="p">,</span>
+<span class="w">                          </span><span class="nl">style:</span><span class="w"> </span><span class="n">theme</span><span class="p">.</span><span class="n">textTheme</span><span class="p">.</span><span class="n">bodyMedium</span><span class="o">?</span><span class="p">.</span><span class="n">copyWith</span><span class="p">(</span>
+<span class="w">                            </span><span class="nl">color:</span><span class="w"> </span><span class="n">theme</span><span class="p">.</span><span class="n">colorScheme</span><span class="p">.</span><span class="n">onPrimary</span><span class="p">.</span><span class="n">withValues</span><span class="p">(</span><span class="nl">alpha:</span><span class="w"> </span><span class="m">0.9</span><span class="p">),</span>
+<span class="w">                          </span><span class="p">),</span>
+<span class="w">                        </span><span class="p">),</span>
+<span class="w">                      </span><span class="p">],</span>
+<span class="w">                    </span><span class="p">),</span>
+<span class="w">                  </span><span class="p">),</span>
+<span class="w">                </span><span class="p">),</span>
+<span class="w">              </span><span class="p">),</span>
+<span class="w">            </span><span class="p">),</span>
+<span class="w">          </span><span class="p">),</span>
+<span class="w">          </span><span class="n">SliverToBoxAdapter</span><span class="p">(</span>
+<span class="w">            </span><span class="nl">child:</span><span class="w"> </span><span class="n">Padding</span><span class="p">(</span>
+<span class="w">              </span><span class="nl">padding:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">EdgeInsets</span><span class="p">.</span><span class="n">fromLTRB</span><span class="p">(</span><span class="m">16</span><span class="p">,</span><span class="w"> </span><span class="m">14</span><span class="p">,</span><span class="w"> </span><span class="m">16</span><span class="p">,</span><span class="w"> </span><span class="m">10</span><span class="p">),</span>
+<span class="w">              </span><span class="nl">child:</span><span class="w"> </span><span class="n">TextField</span><span class="p">(</span>
+<span class="w">                </span><span class="nl">controller:</span><span class="w"> </span><span class="n">_searchC</span><span class="p">,</span>
+<span class="w">                </span><span class="nl">onChanged:</span><span class="w"> </span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">setState</span><span class="p">(()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">_query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v</span><span class="p">),</span>
+<span class="w">                </span><span class="nl">decoration:</span><span class="w"> </span><span class="n">InputDecoration</span><span class="p">(</span>
+<span class="w">                  </span><span class="nl">hintText:</span><span class="w"> </span><span class="s2">&quot;Cari nama, kategori, atau deskripsi&quot;</span><span class="p">,</span>
+<span class="w">                  </span><span class="nl">prefixIcon:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Icon</span><span class="p">(</span><span class="n">Icons</span><span class="p">.</span><span class="n">search</span><span class="p">),</span>
+<span class="w">                  </span><span class="nl">filled:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">                  </span><span class="nl">fillColor:</span><span class="w"> </span><span class="n">theme</span><span class="p">.</span><span class="n">colorScheme</span><span class="p">.</span><span class="n">surfaceContainerHighest</span><span class="p">,</span>
+<span class="w">                  </span><span class="nl">border:</span><span class="w"> </span><span class="n">OutlineInputBorder</span><span class="p">(</span>
+<span class="w">                    </span><span class="nl">borderRadius:</span><span class="w"> </span><span class="n">BorderRadius</span><span class="p">.</span><span class="n">circular</span><span class="p">(</span><span class="m">16</span><span class="p">),</span>
+<span class="w">                    </span><span class="nl">borderSide:</span><span class="w"> </span><span class="n">BorderSide</span><span class="p">.</span><span class="n">none</span><span class="p">,</span>
+<span class="w">                  </span><span class="p">),</span>
+<span class="w">                </span><span class="p">),</span>
+<span class="w">              </span><span class="p">),</span>
+<span class="w">            </span><span class="p">),</span>
+<span class="w">          </span><span class="p">),</span>
+<span class="w">          </span><span class="n">SliverPadding</span><span class="p">(</span>
+<span class="w">            </span><span class="nl">padding:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">EdgeInsets</span><span class="p">.</span><span class="n">fromLTRB</span><span class="p">(</span><span class="m">16</span><span class="p">,</span><span class="w"> </span><span class="m">6</span><span class="p">,</span><span class="w"> </span><span class="m">16</span><span class="p">,</span><span class="w"> </span><span class="m">16</span><span class="p">),</span>
+<span class="w">            </span><span class="nl">sliver:</span><span class="w"> </span><span class="n">SliverGrid</span><span class="p">(</span>
+<span class="w">              </span><span class="nl">delegate:</span><span class="w"> </span><span class="n">SliverChildBuilderDelegate</span><span class="p">(</span>
+<span class="w">                </span><span class="p">(</span><span class="n">context</span><span class="p">,</span><span class="w"> </span><span class="n">index</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                  </span><span class="kd">final</span><span class="w"> </span><span class="n">item</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">filtered</span><span class="p">[</span><span class="n">index</span><span class="p">];</span>
+<span class="w">                  </span><span class="k">return</span><span class="w"> </span><span class="n">ProductCard</span><span class="p">(</span>
+<span class="w">                    </span><span class="nl">product:</span><span class="w"> </span><span class="n">item</span><span class="p">,</span>
+<span class="w">                    </span><span class="nl">onTap:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                      </span><span class="n">Navigator</span><span class="p">.</span><span class="n">push</span><span class="p">(</span>
+<span class="w">                        </span><span class="n">context</span><span class="p">,</span>
+<span class="w">                        </span><span class="n">MaterialPageRoute</span><span class="p">(</span>
+<span class="w">                          </span><span class="nl">builder:</span><span class="w"> </span><span class="p">(</span><span class="n">_</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">DetailPage</span><span class="p">(</span><span class="nl">product:</span><span class="w"> </span><span class="n">item</span><span class="p">),</span>
+<span class="w">                        </span><span class="p">),</span>
+<span class="w">                      </span><span class="p">);</span>
+<span class="w">                    </span><span class="p">},</span>
+<span class="w">                  </span><span class="p">);</span>
+<span class="w">                </span><span class="p">},</span>
+<span class="w">                </span><span class="nl">childCount:</span><span class="w"> </span><span class="n">filtered</span><span class="p">.</span><span class="n">length</span><span class="p">,</span>
+<span class="w">              </span><span class="p">),</span>
+<span class="w">              </span><span class="nl">gridDelegate:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">SliverGridDelegateWithFixedCrossAxisCount</span><span class="p">(</span>
+<span class="w">                </span><span class="nl">crossAxisCount:</span><span class="w"> </span><span class="m">2</span><span class="p">,</span>
+<span class="w">                </span><span class="nl">mainAxisSpacing:</span><span class="w"> </span><span class="m">14</span><span class="p">,</span>
+<span class="w">                </span><span class="nl">crossAxisSpacing:</span><span class="w"> </span><span class="m">14</span><span class="p">,</span>
+<span class="w">                </span><span class="nl">childAspectRatio:</span><span class="w"> </span><span class="m">0.74</span><span class="p">,</span>
+<span class="w">              </span><span class="p">),</span>
+<span class="w">            </span><span class="p">),</span>
+<span class="w">          </span><span class="p">),</span>
+<span class="w">        </span><span class="p">],</span>
 <span class="w">      </span><span class="p">),</span>
 <span class="w">    </span><span class="p">);</span>
 <span class="w">  </span><span class="p">}</span>
@@ -2106,34 +2366,157 @@ Di <strong>Pertemuan 2</strong>, ini akan kita upgrade ke <strong>go_router</str
 
 <span class="w">  </span><span class="nd">@override</span>
 <span class="w">  </span><span class="n">Widget</span><span class="w"> </span><span class="n">build</span><span class="p">(</span><span class="n">BuildContext</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">final</span><span class="w"> </span><span class="n">theme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Theme</span><span class="p">.</span><span class="n">of</span><span class="p">(</span><span class="n">context</span><span class="p">);</span>
+
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Scaffold</span><span class="p">(</span>
-<span class="w">      </span><span class="nl">appBar:</span><span class="w"> </span><span class="n">AppBar</span><span class="p">(</span>
-<span class="w">        </span><span class="nl">title:</span><span class="w"> </span><span class="n">Text</span><span class="p">(</span><span class="n">product</span><span class="p">.</span><span class="n">name</span><span class="p">),</span>
-<span class="w">      </span><span class="p">),</span>
-<span class="w">      </span><span class="nl">body:</span><span class="w"> </span><span class="n">Padding</span><span class="p">(</span>
-<span class="w">        </span><span class="nl">padding:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">EdgeInsets</span><span class="p">.</span><span class="n">all</span><span class="p">(</span><span class="m">16</span><span class="p">),</span>
-<span class="w">        </span><span class="nl">child:</span><span class="w"> </span><span class="n">Column</span><span class="p">(</span>
-<span class="w">          </span><span class="nl">crossAxisAlignment:</span><span class="w"> </span><span class="n">CrossAxisAlignment</span><span class="p">.</span><span class="n">start</span><span class="p">,</span>
-<span class="w">          </span><span class="nl">children:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">            </span><span class="n">Text</span><span class="p">(</span>
-<span class="w">              </span><span class="n">product</span><span class="p">.</span><span class="n">name</span><span class="p">,</span>
-<span class="w">              </span><span class="nl">style:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">TextStyle</span><span class="p">(</span>
-<span class="w">                </span><span class="nl">fontSize:</span><span class="w"> </span><span class="m">22</span><span class="p">,</span>
-<span class="w">                </span><span class="nl">fontWeight:</span><span class="w"> </span><span class="n">FontWeight</span><span class="p">.</span><span class="n">bold</span><span class="p">,</span>
+<span class="w">      </span><span class="nl">body:</span><span class="w"> </span><span class="n">CustomScrollView</span><span class="p">(</span>
+<span class="w">        </span><span class="nl">slivers:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">          </span><span class="n">SliverAppBar</span><span class="p">(</span>
+<span class="w">            </span><span class="nl">pinned:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">            </span><span class="nl">expandedHeight:</span><span class="w"> </span><span class="m">280</span><span class="p">,</span>
+<span class="w">            </span><span class="nl">title:</span><span class="w"> </span><span class="n">Text</span><span class="p">(</span><span class="n">product</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="nl">maxLines:</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="nl">overflow:</span><span class="w"> </span><span class="n">TextOverflow</span><span class="p">.</span><span class="n">ellipsis</span><span class="p">),</span>
+<span class="w">            </span><span class="nl">flexibleSpace:</span><span class="w"> </span><span class="n">FlexibleSpaceBar</span><span class="p">(</span>
+<span class="w">              </span><span class="nl">background:</span><span class="w"> </span><span class="n">Stack</span><span class="p">(</span>
+<span class="w">                </span><span class="nl">fit:</span><span class="w"> </span><span class="n">StackFit</span><span class="p">.</span><span class="n">expand</span><span class="p">,</span>
+<span class="w">                </span><span class="nl">children:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                  </span><span class="n">Hero</span><span class="p">(</span>
+<span class="w">                    </span><span class="nl">tag:</span><span class="w"> </span><span class="s2">&quot;product-image-</span><span class="si">${</span><span class="n">product</span><span class="p">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nl">child:</span><span class="w"> </span><span class="n">Image</span><span class="p">.</span><span class="n">network</span><span class="p">(</span>
+<span class="w">                      </span><span class="n">product</span><span class="p">.</span><span class="n">imageUrl</span><span class="p">,</span>
+<span class="w">                      </span><span class="nl">fit:</span><span class="w"> </span><span class="n">BoxFit</span><span class="p">.</span><span class="n">cover</span><span class="p">,</span>
+<span class="w">                      </span><span class="nl">errorBuilder:</span><span class="w"> </span><span class="p">(</span><span class="n">_</span><span class="p">,</span><span class="w"> </span><span class="n">__</span><span class="p">,</span><span class="w"> </span><span class="n">___</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">Container</span><span class="p">(</span>
+<span class="w">                        </span><span class="nl">color:</span><span class="w"> </span><span class="n">theme</span><span class="p">.</span><span class="n">colorScheme</span><span class="p">.</span><span class="n">surfaceContainerHighest</span><span class="p">,</span>
+<span class="w">                        </span><span class="nl">child:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Center</span><span class="p">(</span>
+<span class="w">                          </span><span class="nl">child:</span><span class="w"> </span><span class="n">Icon</span><span class="p">(</span><span class="n">Icons</span><span class="p">.</span><span class="n">broken_image_outlined</span><span class="p">,</span><span class="w"> </span><span class="nl">size:</span><span class="w"> </span><span class="m">50</span><span class="p">),</span>
+<span class="w">                        </span><span class="p">),</span>
+<span class="w">                      </span><span class="p">),</span>
+<span class="w">                    </span><span class="p">),</span>
+<span class="w">                  </span><span class="p">),</span>
+<span class="w">                  </span><span class="n">Container</span><span class="p">(</span>
+<span class="w">                    </span><span class="nl">decoration:</span><span class="w"> </span><span class="n">BoxDecoration</span><span class="p">(</span>
+<span class="w">                      </span><span class="nl">gradient:</span><span class="w"> </span><span class="n">LinearGradient</span><span class="p">(</span>
+<span class="w">                        </span><span class="nl">colors:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                          </span><span class="n">Colors</span><span class="p">.</span><span class="n">black</span><span class="p">.</span><span class="n">withValues</span><span class="p">(</span><span class="nl">alpha:</span><span class="w"> </span><span class="m">0.55</span><span class="p">),</span>
+<span class="w">                          </span><span class="n">Colors</span><span class="p">.</span><span class="n">transparent</span><span class="p">,</span>
+<span class="w">                          </span><span class="n">Colors</span><span class="p">.</span><span class="n">black</span><span class="p">.</span><span class="n">withValues</span><span class="p">(</span><span class="nl">alpha:</span><span class="w"> </span><span class="m">0.65</span><span class="p">),</span>
+<span class="w">                        </span><span class="p">],</span>
+<span class="w">                        </span><span class="nl">begin:</span><span class="w"> </span><span class="n">Alignment</span><span class="p">.</span><span class="n">topCenter</span><span class="p">,</span>
+<span class="w">                        </span><span class="nl">end:</span><span class="w"> </span><span class="n">Alignment</span><span class="p">.</span><span class="n">bottomCenter</span><span class="p">,</span>
+<span class="w">                      </span><span class="p">),</span>
+<span class="w">                    </span><span class="p">),</span>
+<span class="w">                  </span><span class="p">),</span>
+<span class="w">                </span><span class="p">],</span>
 <span class="w">              </span><span class="p">),</span>
 <span class="w">            </span><span class="p">),</span>
-<span class="w">            </span><span class="k">const</span><span class="w"> </span><span class="n">SizedBox</span><span class="p">(</span><span class="nl">height:</span><span class="w"> </span><span class="m">8</span><span class="p">),</span>
-<span class="w">            </span><span class="n">Text</span><span class="p">(</span>
-<span class="w">              </span><span class="s2">&quot;Harga: Rp </span><span class="si">${</span><span class="n">product</span><span class="p">.</span><span class="n">price</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
-<span class="w">              </span><span class="nl">style:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">TextStyle</span><span class="p">(</span><span class="nl">fontSize:</span><span class="w"> </span><span class="m">16</span><span class="p">),</span>
+<span class="w">          </span><span class="p">),</span>
+<span class="w">          </span><span class="n">SliverToBoxAdapter</span><span class="p">(</span>
+<span class="w">            </span><span class="nl">child:</span><span class="w"> </span><span class="n">Padding</span><span class="p">(</span>
+<span class="w">              </span><span class="nl">padding:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">EdgeInsets</span><span class="p">.</span><span class="n">fromLTRB</span><span class="p">(</span><span class="m">16</span><span class="p">,</span><span class="w"> </span><span class="m">16</span><span class="p">,</span><span class="w"> </span><span class="m">16</span><span class="p">,</span><span class="w"> </span><span class="m">26</span><span class="p">),</span>
+<span class="w">              </span><span class="nl">child:</span><span class="w"> </span><span class="n">Column</span><span class="p">(</span>
+<span class="w">                </span><span class="nl">crossAxisAlignment:</span><span class="w"> </span><span class="n">CrossAxisAlignment</span><span class="p">.</span><span class="n">start</span><span class="p">,</span>
+<span class="w">                </span><span class="nl">children:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                  </span><span class="n">Row</span><span class="p">(</span>
+<span class="w">                    </span><span class="nl">crossAxisAlignment:</span><span class="w"> </span><span class="n">CrossAxisAlignment</span><span class="p">.</span><span class="n">start</span><span class="p">,</span>
+<span class="w">                    </span><span class="nl">children:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                      </span><span class="n">Expanded</span><span class="p">(</span>
+<span class="w">                        </span><span class="nl">child:</span><span class="w"> </span><span class="n">Text</span><span class="p">(</span>
+<span class="w">                          </span><span class="n">product</span><span class="p">.</span><span class="n">name</span><span class="p">,</span>
+<span class="w">                          </span><span class="nl">style:</span><span class="w"> </span><span class="n">theme</span><span class="p">.</span><span class="n">textTheme</span><span class="p">.</span><span class="n">headlineSmall</span><span class="o">?</span><span class="p">.</span><span class="n">copyWith</span><span class="p">(</span>
+<span class="w">                            </span><span class="nl">fontWeight:</span><span class="w"> </span><span class="n">FontWeight</span><span class="p">.</span><span class="n">w900</span><span class="p">,</span>
+<span class="w">                          </span><span class="p">),</span>
+<span class="w">                        </span><span class="p">),</span>
+<span class="w">                      </span><span class="p">),</span>
+<span class="w">                      </span><span class="k">const</span><span class="w"> </span><span class="n">SizedBox</span><span class="p">(</span><span class="nl">width:</span><span class="w"> </span><span class="m">10</span><span class="p">),</span>
+<span class="w">                      </span><span class="n">Container</span><span class="p">(</span>
+<span class="w">                        </span><span class="nl">padding:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">EdgeInsets</span><span class="p">.</span><span class="n">symmetric</span><span class="p">(</span><span class="nl">horizontal:</span><span class="w"> </span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="nl">vertical:</span><span class="w"> </span><span class="m">6</span><span class="p">),</span>
+<span class="w">                        </span><span class="nl">decoration:</span><span class="w"> </span><span class="n">BoxDecoration</span><span class="p">(</span>
+<span class="w">                          </span><span class="nl">color:</span><span class="w"> </span><span class="n">theme</span><span class="p">.</span><span class="n">colorScheme</span><span class="p">.</span><span class="n">secondaryContainer</span><span class="p">,</span>
+<span class="w">                          </span><span class="nl">borderRadius:</span><span class="w"> </span><span class="n">BorderRadius</span><span class="p">.</span><span class="n">circular</span><span class="p">(</span><span class="m">999</span><span class="p">),</span>
+<span class="w">                        </span><span class="p">),</span>
+<span class="w">                        </span><span class="nl">child:</span><span class="w"> </span><span class="n">Text</span><span class="p">(</span>
+<span class="w">                          </span><span class="n">product</span><span class="p">.</span><span class="n">category</span><span class="p">,</span>
+<span class="w">                          </span><span class="nl">style:</span><span class="w"> </span><span class="n">theme</span><span class="p">.</span><span class="n">textTheme</span><span class="p">.</span><span class="n">labelLarge</span><span class="o">?</span><span class="p">.</span><span class="n">copyWith</span><span class="p">(</span>
+<span class="w">                            </span><span class="nl">fontWeight:</span><span class="w"> </span><span class="n">FontWeight</span><span class="p">.</span><span class="n">w800</span><span class="p">,</span>
+<span class="w">                            </span><span class="nl">color:</span><span class="w"> </span><span class="n">theme</span><span class="p">.</span><span class="n">colorScheme</span><span class="p">.</span><span class="n">onSecondaryContainer</span><span class="p">,</span>
+<span class="w">                          </span><span class="p">),</span>
+<span class="w">                        </span><span class="p">),</span>
+<span class="w">                      </span><span class="p">),</span>
+<span class="w">                    </span><span class="p">],</span>
+<span class="w">                  </span><span class="p">),</span>
+<span class="w">                  </span><span class="k">const</span><span class="w"> </span><span class="n">SizedBox</span><span class="p">(</span><span class="nl">height:</span><span class="w"> </span><span class="m">10</span><span class="p">),</span>
+<span class="w">                  </span><span class="n">Row</span><span class="p">(</span>
+<span class="w">                    </span><span class="nl">children:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                      </span><span class="n">Text</span><span class="p">(</span>
+<span class="w">                        </span><span class="s2">&quot;Rp </span><span class="si">${</span><span class="n">product</span><span class="p">.</span><span class="n">price</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nl">style:</span><span class="w"> </span><span class="n">theme</span><span class="p">.</span><span class="n">textTheme</span><span class="p">.</span><span class="n">titleLarge</span><span class="o">?</span><span class="p">.</span><span class="n">copyWith</span><span class="p">(</span>
+<span class="w">                          </span><span class="nl">fontWeight:</span><span class="w"> </span><span class="n">FontWeight</span><span class="p">.</span><span class="n">w900</span><span class="p">,</span>
+<span class="w">                          </span><span class="nl">color:</span><span class="w"> </span><span class="n">theme</span><span class="p">.</span><span class="n">colorScheme</span><span class="p">.</span><span class="n">primary</span><span class="p">,</span>
+<span class="w">                        </span><span class="p">),</span>
+<span class="w">                      </span><span class="p">),</span>
+<span class="w">                      </span><span class="k">const</span><span class="w"> </span><span class="n">SizedBox</span><span class="p">(</span><span class="nl">width:</span><span class="w"> </span><span class="m">12</span><span class="p">),</span>
+<span class="w">                      </span><span class="k">const</span><span class="w"> </span><span class="n">Icon</span><span class="p">(</span><span class="n">Icons</span><span class="p">.</span><span class="n">star_rounded</span><span class="p">,</span><span class="w"> </span><span class="nl">color:</span><span class="w"> </span><span class="n">Colors</span><span class="p">.</span><span class="n">amber</span><span class="p">),</span>
+<span class="w">                      </span><span class="k">const</span><span class="w"> </span><span class="n">SizedBox</span><span class="p">(</span><span class="nl">width:</span><span class="w"> </span><span class="m">4</span><span class="p">),</span>
+<span class="w">                      </span><span class="n">Text</span><span class="p">(</span>
+<span class="w">                        </span><span class="s2">&quot;</span><span class="si">${</span><span class="n">product</span><span class="p">.</span><span class="n">rating</span><span class="p">.</span><span class="n">toStringAsFixed</span><span class="p">(</span><span class="m">1</span><span class="p">)</span><span class="si">}</span><span class="s2"> / 5.0&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nl">style:</span><span class="w"> </span><span class="n">theme</span><span class="p">.</span><span class="n">textTheme</span><span class="p">.</span><span class="n">bodyMedium</span><span class="o">?</span><span class="p">.</span><span class="n">copyWith</span><span class="p">(</span>
+<span class="w">                          </span><span class="nl">fontWeight:</span><span class="w"> </span><span class="n">FontWeight</span><span class="p">.</span><span class="n">w700</span><span class="p">,</span>
+<span class="w">                        </span><span class="p">),</span>
+<span class="w">                      </span><span class="p">),</span>
+<span class="w">                    </span><span class="p">],</span>
+<span class="w">                  </span><span class="p">),</span>
+<span class="w">                  </span><span class="k">const</span><span class="w"> </span><span class="n">SizedBox</span><span class="p">(</span><span class="nl">height:</span><span class="w"> </span><span class="m">16</span><span class="p">),</span>
+<span class="w">                  </span><span class="n">Container</span><span class="p">(</span>
+<span class="w">                    </span><span class="nl">width:</span><span class="w"> </span><span class="kt">double</span><span class="p">.</span><span class="n">infinity</span><span class="p">,</span>
+<span class="w">                    </span><span class="nl">padding:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">EdgeInsets</span><span class="p">.</span><span class="n">all</span><span class="p">(</span><span class="m">14</span><span class="p">),</span>
+<span class="w">                    </span><span class="nl">decoration:</span><span class="w"> </span><span class="n">BoxDecoration</span><span class="p">(</span>
+<span class="w">                      </span><span class="nl">color:</span><span class="w"> </span><span class="n">theme</span><span class="p">.</span><span class="n">colorScheme</span><span class="p">.</span><span class="n">surfaceContainerHighest</span><span class="p">,</span>
+<span class="w">                      </span><span class="nl">borderRadius:</span><span class="w"> </span><span class="n">BorderRadius</span><span class="p">.</span><span class="n">circular</span><span class="p">(</span><span class="m">16</span><span class="p">),</span>
+<span class="w">                    </span><span class="p">),</span>
+<span class="w">                    </span><span class="nl">child:</span><span class="w"> </span><span class="n">Row</span><span class="p">(</span>
+<span class="w">                      </span><span class="nl">children:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                        </span><span class="n">Icon</span><span class="p">(</span><span class="n">Icons</span><span class="p">.</span><span class="n">local_shipping_outlined</span><span class="p">,</span><span class="w"> </span><span class="nl">color:</span><span class="w"> </span><span class="n">theme</span><span class="p">.</span><span class="n">colorScheme</span><span class="p">.</span><span class="n">primary</span><span class="p">),</span>
+<span class="w">                        </span><span class="k">const</span><span class="w"> </span><span class="n">SizedBox</span><span class="p">(</span><span class="nl">width:</span><span class="w"> </span><span class="m">10</span><span class="p">),</span>
+<span class="w">                        </span><span class="n">Expanded</span><span class="p">(</span>
+<span class="w">                          </span><span class="nl">child:</span><span class="w"> </span><span class="n">Text</span><span class="p">(</span>
+<span class="w">                            </span><span class="s2">&quot;Gratis konsultasi spesifikasi untuk kebutuhan belajar, coding, dan project sekolah.&quot;</span><span class="p">,</span>
+<span class="w">                            </span><span class="nl">style:</span><span class="w"> </span><span class="n">theme</span><span class="p">.</span><span class="n">textTheme</span><span class="p">.</span><span class="n">bodyMedium</span><span class="o">?</span><span class="p">.</span><span class="n">copyWith</span><span class="p">(</span>
+<span class="w">                              </span><span class="nl">color:</span><span class="w"> </span><span class="n">theme</span><span class="p">.</span><span class="n">colorScheme</span><span class="p">.</span><span class="n">onSurfaceVariant</span><span class="p">,</span>
+<span class="w">                            </span><span class="p">),</span>
+<span class="w">                          </span><span class="p">),</span>
+<span class="w">                        </span><span class="p">),</span>
+<span class="w">                      </span><span class="p">],</span>
+<span class="w">                    </span><span class="p">),</span>
+<span class="w">                  </span><span class="p">),</span>
+<span class="w">                  </span><span class="k">const</span><span class="w"> </span><span class="n">SizedBox</span><span class="p">(</span><span class="nl">height:</span><span class="w"> </span><span class="m">18</span><span class="p">),</span>
+<span class="w">                  </span><span class="n">Text</span><span class="p">(</span>
+<span class="w">                    </span><span class="s2">&quot;Deskripsi&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nl">style:</span><span class="w"> </span><span class="n">theme</span><span class="p">.</span><span class="n">textTheme</span><span class="p">.</span><span class="n">titleMedium</span><span class="o">?</span><span class="p">.</span><span class="n">copyWith</span><span class="p">(</span>
+<span class="w">                      </span><span class="nl">fontWeight:</span><span class="w"> </span><span class="n">FontWeight</span><span class="p">.</span><span class="n">w900</span><span class="p">,</span>
+<span class="w">                    </span><span class="p">),</span>
+<span class="w">                  </span><span class="p">),</span>
+<span class="w">                  </span><span class="k">const</span><span class="w"> </span><span class="n">SizedBox</span><span class="p">(</span><span class="nl">height:</span><span class="w"> </span><span class="m">8</span><span class="p">),</span>
+<span class="w">                  </span><span class="n">Text</span><span class="p">(</span>
+<span class="w">                    </span><span class="n">product</span><span class="p">.</span><span class="n">description</span><span class="p">,</span>
+<span class="w">                    </span><span class="nl">style:</span><span class="w"> </span><span class="n">theme</span><span class="p">.</span><span class="n">textTheme</span><span class="p">.</span><span class="n">bodyMedium</span><span class="o">?</span><span class="p">.</span><span class="n">copyWith</span><span class="p">(</span><span class="nl">height:</span><span class="w"> </span><span class="m">1.4</span><span class="p">),</span>
+<span class="w">                  </span><span class="p">),</span>
+<span class="w">                  </span><span class="k">const</span><span class="w"> </span><span class="n">SizedBox</span><span class="p">(</span><span class="nl">height:</span><span class="w"> </span><span class="m">22</span><span class="p">),</span>
+<span class="w">                  </span><span class="n">SizedBox</span><span class="p">(</span>
+<span class="w">                    </span><span class="nl">width:</span><span class="w"> </span><span class="kt">double</span><span class="p">.</span><span class="n">infinity</span><span class="p">,</span>
+<span class="w">                    </span><span class="nl">child:</span><span class="w"> </span><span class="n">FilledButton</span><span class="p">.</span><span class="n">icon</span><span class="p">(</span>
+<span class="w">                      </span><span class="nl">onPressed:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                        </span><span class="n">ScaffoldMessenger</span><span class="p">.</span><span class="n">of</span><span class="p">(</span><span class="n">context</span><span class="p">).</span><span class="n">showSnackBar</span><span class="p">(</span>
+<span class="w">                          </span><span class="k">const</span><span class="w"> </span><span class="n">SnackBar</span><span class="p">(</span><span class="nl">content:</span><span class="w"> </span><span class="n">Text</span><span class="p">(</span><span class="s2">&quot;Simulasi: ditambahkan ke keranjang&quot;</span><span class="p">)),</span>
+<span class="w">                        </span><span class="p">);</span>
+<span class="w">                      </span><span class="p">},</span>
+<span class="w">                      </span><span class="nl">icon:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Icon</span><span class="p">(</span><span class="n">Icons</span><span class="p">.</span><span class="n">add_shopping_cart_outlined</span><span class="p">),</span>
+<span class="w">                      </span><span class="nl">label:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Text</span><span class="p">(</span><span class="s2">&quot;Tambah ke Keranjang&quot;</span><span class="p">),</span>
+<span class="w">                    </span><span class="p">),</span>
+<span class="w">                  </span><span class="p">),</span>
+<span class="w">                </span><span class="p">],</span>
+<span class="w">              </span><span class="p">),</span>
 <span class="w">            </span><span class="p">),</span>
-<span class="w">            </span><span class="k">const</span><span class="w"> </span><span class="n">SizedBox</span><span class="p">(</span><span class="nl">height:</span><span class="w"> </span><span class="m">16</span><span class="p">),</span>
-<span class="w">            </span><span class="n">Text</span><span class="p">(</span>
-<span class="w">              </span><span class="n">product</span><span class="p">.</span><span class="n">description</span><span class="p">,</span>
-<span class="w">              </span><span class="nl">style:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">TextStyle</span><span class="p">(</span><span class="nl">fontSize:</span><span class="w"> </span><span class="m">16</span><span class="p">),</span>
-<span class="w">            </span><span class="p">),</span>
-<span class="w">          </span><span class="p">],</span>
-<span class="w">        </span><span class="p">),</span>
+<span class="w">          </span><span class="p">),</span>
+<span class="w">        </span><span class="p">],</span>
 <span class="w">      </span><span class="p">),</span>
 <span class="w">    </span><span class="p">);</span>
 <span class="w">  </span><span class="p">}</span>
@@ -2154,11 +2537,26 @@ Di <strong>Pertemuan 2</strong>, ini akan kita upgrade ke <strong>go_router</str
 
 <span class="w">  </span><span class="nd">@override</span>
 <span class="w">  </span><span class="n">Widget</span><span class="w"> </span><span class="n">build</span><span class="p">(</span><span class="n">BuildContext</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">final</span><span class="w"> </span><span class="n">colorScheme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ColorScheme</span><span class="p">.</span><span class="n">fromSeed</span><span class="p">(</span>
+<span class="w">      </span><span class="nl">seedColor:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Color</span><span class="p">(</span><span class="mh">0xFF6D28D9</span><span class="p">),</span>
+<span class="w">      </span><span class="nl">brightness:</span><span class="w"> </span><span class="n">Brightness</span><span class="p">.</span><span class="n">light</span><span class="p">,</span>
+<span class="w">    </span><span class="p">);</span>
+
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">MaterialApp</span><span class="p">(</span>
 <span class="w">      </span><span class="nl">debugShowCheckedModeBanner:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
 <span class="w">      </span><span class="nl">title:</span><span class="w"> </span><span class="s1">&#39;SMK Product App&#39;</span><span class="p">,</span>
 <span class="w">      </span><span class="nl">theme:</span><span class="w"> </span><span class="n">ThemeData</span><span class="p">(</span>
 <span class="w">        </span><span class="nl">useMaterial3:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nl">colorScheme:</span><span class="w"> </span><span class="n">colorScheme</span><span class="p">,</span>
+<span class="w">        </span><span class="nl">appBarTheme:</span><span class="w"> </span><span class="n">AppBarTheme</span><span class="p">(</span>
+<span class="w">          </span><span class="nl">centerTitle:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">          </span><span class="nl">backgroundColor:</span><span class="w"> </span><span class="n">colorScheme</span><span class="p">.</span><span class="n">primary</span><span class="p">,</span>
+<span class="w">          </span><span class="nl">foregroundColor:</span><span class="w"> </span><span class="n">colorScheme</span><span class="p">.</span><span class="n">onPrimary</span><span class="p">,</span>
+<span class="w">        </span><span class="p">),</span>
+<span class="w">        </span><span class="nl">cardTheme:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">CardTheme</span><span class="p">(</span>
+<span class="w">          </span><span class="nl">elevation:</span><span class="w"> </span><span class="m">0</span><span class="p">,</span>
+<span class="w">          </span><span class="nl">margin:</span><span class="w"> </span><span class="n">EdgeInsets</span><span class="p">.</span><span class="n">zero</span><span class="p">,</span>
+<span class="w">        </span><span class="p">),</span>
 <span class="w">      </span><span class="p">),</span>
 <span class="w">      </span><span class="nl">home:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">HomePage</span><span class="p">(),</span>
 <span class="w">    </span><span class="p">);</span>
@@ -2168,11 +2566,11 @@ Di <strong>Pertemuan 2</strong>, ini akan kita upgrade ke <strong>go_router</str
 <hr />
 <h2 id="checklist-hasil-akhir-pertemuan-1">Checklist Hasil Akhir Pertemuan 1</h2>
 <p>Kalian dianggap berhasil jika:<br />
-- [ ] Project bernama <code>smk_product_app</code><br />
-- [ ] Folder <code>pages/widgets/models/services</code> sudah ada<br />
-- [ ] Home menampilkan 5 produk<br />
-- [ ] Klik produk masuk ke Detail<br />
-- [ ] Kode tidak semua menumpuk di <code>main.dart</code></p>
+- Project bernama <code>smk_product_app</code><br />
+- Folder <code>pages/widgets/models</code> sudah ada<br />
+- Home menampilkan produk dalam bentuk grid<br />
+- Klik produk masuk ke Detail (dengan Hero animation gambar)<br />
+- UI terlihat rapi dan tidak overflow</p>
 <hr />
 <h2 id="studi-kasus-setelah-teori">Studi Kasus (Setelah Teori)</h2>
 <p><strong>Kasus: Aplikasi Manajemen Produk untuk Toko</strong>
@@ -2190,40 +2588,33 @@ Toko ingin aplikasi yang:<br />
 <h2 id="tugas">Tugas</h2>
 <h3 id="tugas-level-dasar">Tugas Level Dasar</h3>
 <ol>
-<li>Tambahkan 5 produk lagi (total minimal 10)  </li>
-<li>Tambahkan properti baru pada <code>Product</code>:  </li>
-<li><code>category</code> (misal: “Aksesoris”, “Komputer”)  </li>
-<li>Tampilkan kategori di <code>ProductCard</code>  </li>
+<li>Tambahkan minimal 4 produk lagi (total minimal 10)  </li>
+<li>Pastikan deskripsi tidak terlalu pendek (minimal 1–2 kalimat)  </li>
+<li>Pastikan grid tetap rapi dan tidak overflow  </li>
+<li>Ganti gambarnya produknya menjadi gambar asli</li>
 </ol>
 <hr />
 <h3 id="tugas-level-industri-lebih-sulit">Tugas Level Industri (Lebih Sulit)</h3>
-<blockquote>
-<p>Ini sengaja lebih susah, karena kerjaan di industri memang begitu.</p>
-</blockquote>
 <ol>
-<li>Buat halaman baru <code>lib/pages/profile_page.dart</code> berisi:  </li>
-<li>nama siswa  </li>
-<li>kelas  </li>
-<li>cita-cita / target PKL  </li>
+<li>Buat halaman baru <code>lib/pages/profile_page.dart</code> (isi: nama siswa, kelas, target PKL)  </li>
 <li>Tambahkan tombol di Home (ikon di AppBar) untuk membuka Profile  </li>
-<li>Buat widget reusable:  </li>
-<li><code>lib/widgets/price_text.dart</code> untuk format harga (contoh: “Rp 1.500.000”)  </li>
-<li>Pastikan tidak ada logika format harga yang ditulis ulang di banyak tempat (harus reusable)  </li>
+<li>Buat widget reusable <code>lib/widgets/price_text.dart</code> untuk format harga (contoh: “Rp 1.500.000”)  </li>
+<li>Pastikan tidak ada logic format harga yang ditulis ulang di banyak tempat (harus reusable)  </li>
+<li>Karena gambar masih dummy, ganti gambar produk dengan gambar yang sesuai dengan masing-masing produk (keyboard, mouse, monitor, headset, dan sebagainya)   </li>
 </ol>
+<p>Catatan:<br />
+- Pada bagian tugas, modul tidak menyediakan contoh kode untuk Profile dan <code>price_text.dart</code>.<br />
+- Siswa diminta membaca struktur project dan menerapkan konsep yang sudah dipelajari.  </p>
 <hr />
 <h2 id="refleksi-pembelajaran">Refleksi Pembelajaran</h2>
-<p>Tulis jawaban singkat:<br />
-1. Bagian mana yang paling membuat kamu paham tentang “project kerja”?<br />
-2. Apa 1 hal yang akan kamu lakukan supaya kodenya lebih rapi?<br />
-3. Kalau temanmu membuka projectmu, apakah dia bisa mengerti strukturnya dalam 1 menit?  </p>
+<p>Tulis jawaban singkat:
+1. Bagian mana yang paling menantang saat membuat UI grid?
+2. Apa 1 hal yang membuat project ini terlihat lebih “profesional” dibanding semester 1?
+3. Menurutmu, kenapa komponen reusable penting sejak awal?</p>
 <hr />
 <h2 id="penutup">Penutup</h2>
-<p>Hari ini kalian belum belajar fitur canggih, tapi kalian membangun <strong>pondasi</strong> untuk fitur canggih.</p>
-<p>Seperti membangun gedung:</p>
-<blockquote>
-<p><em>Kalau pondasinya kuat, lantai di atasnya aman.</em></p>
-</blockquote>
-<p>Di pertemuan berikutnya kita upgrade navigasi menjadi <strong>routing modern dengan go_router</strong> (cara yang sering dipakai di aplikasi profesional).</p>
+<p>Hari ini fokus kita adalah pondasi project dan tampilan yang layak dilihat user.</p>
+<p>Pada pertemuan berikutnya, navigasi akan di-upgrade ke routing modern (go_router) agar siap untuk alur login, API, dan Firebase.</p>
 
 
 
