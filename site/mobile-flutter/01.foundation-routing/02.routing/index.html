@@ -83,7 +83,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#routing-modern-dengan-go_router-navigasi-siap-industri" class="md-skip">
+        <a href="#routing-modern-dengan-go_router" class="md-skip">
           Lewati ke isi
         </a>
       
@@ -1281,6 +1281,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#tujuan-pembelajaran" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tujuan Pembelajaran
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#pertanyaan-pemantik" class="md-nav__link">
     <span class="md-ellipsis">
       Pertanyaan Pemantik
@@ -1290,27 +1299,138 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1-apa-itu-routing" class="md-nav__link">
+  <a href="#1-konsep-perpindahan-halaman-di-flutter" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Apa itu Routing?
+      1. Konsep Perpindahan Halaman di Flutter
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-masalah-navigasi-biasa-di-aplikasi-besar" class="md-nav__link">
+  <a href="#2-routing-berbasis-url" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Masalah Navigasi Biasa di Aplikasi Besar
+      2. Routing Berbasis URL
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-kenapa-menggunakan-go_router" class="md-nav__link">
+  <a href="#3-struktur-url-url-inti-dan-sub-url" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Kenapa Menggunakan go_router?
+      3. Struktur URL: URL Inti dan Sub URL
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-pengiriman-data-antar-halaman" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Pengiriman Data Antar Halaman
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Pengiriman Data Antar Halaman">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-mengirim-1-data-id-string-angka" class="md-nav__link">
+    <span class="md-ellipsis">
+      A. Mengirim 1 Data (ID / String / Angka)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-mengirim-banyak-data-object-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      B. Mengirim Banyak Data (Object / List)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-query-parameter" class="md-nav__link">
+    <span class="md-ellipsis">
+      C. Query Parameter
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-cara-pindah-halaman-di-go_router" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Cara Pindah Halaman di go_router
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Cara Pindah Halaman di go_router">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-go" class="md-nav__link">
+    <span class="md-ellipsis">
+      A. go()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-push" class="md-nav__link">
+    <span class="md-ellipsis">
+      B. push()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-replace" class="md-nav__link">
+    <span class="md-ellipsis">
+      C. replace()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-kembali-ke-halaman-sebelumnya" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Kembali ke Halaman Sebelumnya
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-mengirim-data-kembali-ke-halaman-sebelumnya" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Mengirim Data Kembali ke Halaman Sebelumnya
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-best-practice-routing-di-dunia-kerja" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Best Practice Routing di Dunia Kerja
     </span>
   </a>
   
@@ -1345,27 +1465,55 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-membuat-konfigurasi-router" class="md-nav__link">
+  <a href="#3-buat-konstanta-route" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Membuat Konfigurasi Router
+      3. Buat Konstanta Route
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-mengubah-maindart" class="md-nav__link">
+  <a href="#4-membuat-konfigurasi-router" class="md-nav__link">
     <span class="md-ellipsis">
-      4. Mengubah main.dart
+      4. Membuat Konfigurasi Router
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#5-mengubah-navigasi-di-home-page" class="md-nav__link">
+  <a href="#5-mengubah-maindart" class="md-nav__link">
     <span class="md-ellipsis">
-      5. Mengubah Navigasi di Home Page
+      5. Mengubah main.dart
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-sesuaikan-detailpage-agar-menerima-productid" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Sesuaikan DetailPage Agar Menerima productId
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Sesuaikan DetailPage Agar Menerima productId">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-ubah-constructor" class="md-nav__link">
+    <span class="md-ellipsis">
+      A. Ubah constructor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-ambil-data-produk-berdasarkan-id-masih-dummy" class="md-nav__link">
+    <span class="md-ellipsis">
+      B. Ambil data produk berdasarkan id (masih dummy)
     </span>
   </a>
   
@@ -1375,20 +1523,58 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#checklist-keberhasilan" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#7-update-homepage-pindahkan-navigasi-ke-go_router" class="md-nav__link">
     <span class="md-ellipsis">
-      Checklist Keberhasilan
+      7. Update HomePage: Pindahkan Navigasi ke go_router
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Update HomePage: Pindahkan Navigasi ke go_router">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-import" class="md-nav__link">
+    <span class="md-ellipsis">
+      A. Import
     </span>
   </a>
   
 </li>
+        
+          <li class="md-nav__item">
+  <a href="#b-gunakan-dummyproducts-dari-file-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      B. Gunakan dummyProducts dari file data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-navigasi-ke-detail-pushnamed-pathparameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      C. Navigasi ke detail (pushNamed + pathParameters)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#studi-kasus" class="md-nav__link">
+  <a href="#checklist-pengujian" class="md-nav__link">
     <span class="md-ellipsis">
-      Studi Kasus
+      Checklist Pengujian
     </span>
   </a>
   
@@ -1424,15 +1610,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#refleksi" class="md-nav__link">
-    <span class="md-ellipsis">
-      Refleksi
-    </span>
-  </a>
   
 </li>
       
@@ -1631,6 +1808,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#tujuan-pembelajaran" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tujuan Pembelajaran
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#pertanyaan-pemantik" class="md-nav__link">
     <span class="md-ellipsis">
       Pertanyaan Pemantik
@@ -1640,27 +1826,138 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1-apa-itu-routing" class="md-nav__link">
+  <a href="#1-konsep-perpindahan-halaman-di-flutter" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Apa itu Routing?
+      1. Konsep Perpindahan Halaman di Flutter
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-masalah-navigasi-biasa-di-aplikasi-besar" class="md-nav__link">
+  <a href="#2-routing-berbasis-url" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Masalah Navigasi Biasa di Aplikasi Besar
+      2. Routing Berbasis URL
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-kenapa-menggunakan-go_router" class="md-nav__link">
+  <a href="#3-struktur-url-url-inti-dan-sub-url" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Kenapa Menggunakan go_router?
+      3. Struktur URL: URL Inti dan Sub URL
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-pengiriman-data-antar-halaman" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Pengiriman Data Antar Halaman
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Pengiriman Data Antar Halaman">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-mengirim-1-data-id-string-angka" class="md-nav__link">
+    <span class="md-ellipsis">
+      A. Mengirim 1 Data (ID / String / Angka)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-mengirim-banyak-data-object-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      B. Mengirim Banyak Data (Object / List)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-query-parameter" class="md-nav__link">
+    <span class="md-ellipsis">
+      C. Query Parameter
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-cara-pindah-halaman-di-go_router" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Cara Pindah Halaman di go_router
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Cara Pindah Halaman di go_router">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-go" class="md-nav__link">
+    <span class="md-ellipsis">
+      A. go()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-push" class="md-nav__link">
+    <span class="md-ellipsis">
+      B. push()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-replace" class="md-nav__link">
+    <span class="md-ellipsis">
+      C. replace()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-kembali-ke-halaman-sebelumnya" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Kembali ke Halaman Sebelumnya
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-mengirim-data-kembali-ke-halaman-sebelumnya" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Mengirim Data Kembali ke Halaman Sebelumnya
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-best-practice-routing-di-dunia-kerja" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Best Practice Routing di Dunia Kerja
     </span>
   </a>
   
@@ -1695,27 +1992,55 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-membuat-konfigurasi-router" class="md-nav__link">
+  <a href="#3-buat-konstanta-route" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Membuat Konfigurasi Router
+      3. Buat Konstanta Route
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-mengubah-maindart" class="md-nav__link">
+  <a href="#4-membuat-konfigurasi-router" class="md-nav__link">
     <span class="md-ellipsis">
-      4. Mengubah main.dart
+      4. Membuat Konfigurasi Router
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#5-mengubah-navigasi-di-home-page" class="md-nav__link">
+  <a href="#5-mengubah-maindart" class="md-nav__link">
     <span class="md-ellipsis">
-      5. Mengubah Navigasi di Home Page
+      5. Mengubah main.dart
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-sesuaikan-detailpage-agar-menerima-productid" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Sesuaikan DetailPage Agar Menerima productId
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Sesuaikan DetailPage Agar Menerima productId">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-ubah-constructor" class="md-nav__link">
+    <span class="md-ellipsis">
+      A. Ubah constructor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-ambil-data-produk-berdasarkan-id-masih-dummy" class="md-nav__link">
+    <span class="md-ellipsis">
+      B. Ambil data produk berdasarkan id (masih dummy)
     </span>
   </a>
   
@@ -1725,20 +2050,58 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#checklist-keberhasilan" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#7-update-homepage-pindahkan-navigasi-ke-go_router" class="md-nav__link">
     <span class="md-ellipsis">
-      Checklist Keberhasilan
+      7. Update HomePage: Pindahkan Navigasi ke go_router
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Update HomePage: Pindahkan Navigasi ke go_router">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-import" class="md-nav__link">
+    <span class="md-ellipsis">
+      A. Import
     </span>
   </a>
   
 </li>
+        
+          <li class="md-nav__item">
+  <a href="#b-gunakan-dummyproducts-dari-file-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      B. Gunakan dummyProducts dari file data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-navigasi-ke-detail-pushnamed-pathparameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      C. Navigasi ke detail (pushNamed + pathParameters)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#studi-kasus" class="md-nav__link">
+  <a href="#checklist-pengujian" class="md-nav__link">
     <span class="md-ellipsis">
-      Studi Kasus
+      Checklist Pengujian
     </span>
   </a>
   
@@ -1778,15 +2141,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#refleksi" class="md-nav__link">
-    <span class="md-ellipsis">
-      Refleksi
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#penutup" class="md-nav__link">
     <span class="md-ellipsis">
       Penutup
@@ -1810,7 +2164,15 @@
                   
 
 
-<h1 id="routing-modern-dengan-go_router-navigasi-siap-industri">Routing Modern dengan go_router (Navigasi Siap Industri)</h1>
+<h1 id="routing-modern-dengan-go_router">Routing Modern dengan go_router</h1>
+<hr />
+<h2 id="tujuan-pembelajaran">Tujuan Pembelajaran</h2>
+<p>Setelah mengikuti pembelajaran ini, siswa mampu:<br />
+1. Memahami cara kerja perpindahan halaman di Flutter<br />
+2. Menjelaskan konsep URL dan sub-URL dalam routing<br />
+3. Mengirim data antar halaman dengan beberapa cara<br />
+4. Mengelola navigasi halaman dengan go_router<br />
+5. Menerapkan praktik routing yang rapi dan umum digunakan di industri</p>
 <hr />
 <h2 id="pertanyaan-pemantik">Pertanyaan Pemantik</h2>
 <ul>
@@ -1821,33 +2183,105 @@
 </li>
 </ul>
 <hr />
-<h2 id="1-apa-itu-routing">1. Apa itu Routing?</h2>
-<p>Routing adalah cara aplikasi menentukan:<br />
-- halaman apa yang dibuka<br />
-- kapan pindah halaman<br />
-- bagaimana data dikirim antar halaman</p>
+<h2 id="1-konsep-perpindahan-halaman-di-flutter">1. Konsep Perpindahan Halaman di Flutter</h2>
+<p>Pada Flutter, perpindahan halaman <strong>bukan mengganti halaman lama</strong>, tetapi <strong>menumpuk halaman baru di atas halaman lama</strong>.</p>
+<p>Contoh dengan Navigator klasik:
+<div class="highlight"><pre><span></span><code><span class="n">Navigator</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">context</span><span class="p">,</span><span class="w"> </span><span class="n">MaterialPageRoute</span><span class="p">(</span><span class="nl">builder:</span><span class="w"> </span><span class="p">(</span><span class="n">_</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">PageB</span><span class="p">()));</span>
+</code></pre></div></p>
+<p>Yang terjadi:<br />
+- Halaman A masih ada di memori<br />
+- Halaman B ditumpuk di atasnya<br />
+- Tombol back akan menghapus (pop) halaman B</p>
 <p>Perumpamaan:<br />
-Routing itu seperti peta jalan.  <br />
-Jika jalannya jelas, kita cepat sampai. <br />
-Jika jalannya semrawut, kita akan tersesat dan memutar-mutar.</p>
+Tumpukan buku.<br />
+Buku baru diletakkan di atas, bukan mengganti buku lama.</p>
+<p>Masalah:<br />
+- Jika aplikasi besar, push/pop tersebar<br />
+- Sulit mengatur alur login, logout, dan deep link</p>
 <hr />
-<h2 id="2-masalah-navigasi-biasa-di-aplikasi-besar">2. Masalah Navigasi Biasa di Aplikasi Besar</h2>
-<p>Navigator.push cocok untuk:<br />
-- aplikasi kecil<br />
-- latihan dasar</p>
-<p>Namun di aplikasi besar:<br />
-- sulit mengatur alur login<br />
-- sulit mengontrol alur pengguna<br />
-- kode navigasi tersebar di banyak file</p>
-<p>Karena itu, aplikasi profesional menggunakan routing terpusat.</p>
+<h2 id="2-routing-berbasis-url">2. Routing Berbasis URL</h2>
+<p>go_router memperkenalkan cara berpikir <strong>berbasis URL</strong>, mirip aplikasi web.</p>
+<p>Contoh:<br />
+- <code>/products</code> → halaman daftar produk<br />
+- <code>/products/detail</code> → halaman detail produk<br />
+- <code>/products/123</code> → detail produk dengan ID tertentu</p>
+<p>Dengan URL:<br />
+- Setiap halaman punya alamat jelas<br />
+- Mudah untuk deep link dan debugging</p>
 <hr />
-<h2 id="3-kenapa-menggunakan-go_router">3. Kenapa Menggunakan go_router?</h2>
-<p>go_router adalah library routing resmi yang direkomendasikan Flutter.</p>
-<p>Kelebihan:<br />
-- routing terpusat<br />
-- mudah dikontrol<br />
-- siap untuk auth guard<br />
-- cocok untuk aplikasi industri</p>
+<h2 id="3-struktur-url-url-inti-dan-sub-url">3. Struktur URL: URL Inti dan Sub URL</h2>
+<p>Contoh struktur yang sering dipakai:<br />
+- URL inti: <code>/products</code><br />
+- Sub URL: <code>/products/:id</code></p>
+<p>Artinya:<br />
+- <code>/products</code> menampilkan daftar produk<br />
+- <code>/products/:id</code> menampilkan detail satu produk  </p>
+<p>Struktur ini disebut <strong>nested route</strong> dan umum dipakai di perusahaan.</p>
+<hr />
+<h2 id="4-pengiriman-data-antar-halaman">4. Pengiriman Data Antar Halaman</h2>
+<h3 id="a-mengirim-1-data-id-string-angka">A. Mengirim 1 Data (ID / String / Angka)</h3>
+<p>Biasanya menggunakan <strong>path parameter</strong>.</p>
+<p>Contoh:<br />
+- URL: <code>/products/123</code><br />
+- Data yang dikirim: <code>123</code> (ID produk)</p>
+<p>Digunakan untuk:<br />
+- deep link<br />
+- data kecil dan penting</p>
+<hr />
+<h3 id="b-mengirim-banyak-data-object-list">B. Mengirim Banyak Data (Object / List)</h3>
+<p>Menggunakan <code>extra</code>.</p>
+<p>Catatan penting:<br />
+- <code>extra</code> tidak terlihat di URL<br />
+- Cocok untuk data kompleks<br />
+- Untuk web, tetap kombinasikan dengan ID</p>
+<hr />
+<h3 id="c-query-parameter">C. Query Parameter</h3>
+<p>Contoh:<br />
+- <code>/products?category=audio&amp;sort=price</code></p>
+<p>Digunakan untuk:<br />
+- filter<br />
+- sorting<br />
+- pencarian</p>
+<hr />
+<h2 id="5-cara-pindah-halaman-di-go_router">5. Cara Pindah Halaman di go_router</h2>
+<h3 id="a-go">A. <code>go()</code></h3>
+<p>Digunakan untuk:<br />
+- pindah menu utama<br />
+- reset alur halaman<br />
+- setelah login / logout</p>
+<hr />
+<h3 id="b-push">B. <code>push()</code></h3>
+<p>Digunakan untuk:<br />
+- masuk ke halaman detail<br />
+- halaman yang wajar untuk kembali (back)</p>
+<hr />
+<h3 id="c-replace">C. <code>replace()</code></h3>
+<p>Digunakan untuk:<br />
+- mengganti halaman saat ini<br />
+- mencegah user kembali ke halaman sebelumnya</p>
+<hr />
+<h2 id="6-kembali-ke-halaman-sebelumnya">6. Kembali ke Halaman Sebelumnya</h2>
+<div class="highlight"><pre><span></span><code><span class="n">context</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+</code></pre></div>
+<hr />
+<h2 id="7-mengirim-data-kembali-ke-halaman-sebelumnya">7. Mengirim Data Kembali ke Halaman Sebelumnya</h2>
+<p>Digunakan untuk:<br />
+- form input<br />
+- halaman edit data</p>
+<p>Data bisa berupa:<br />
+- boolean<br />
+- string<br />
+- object</p>
+<hr />
+<h2 id="8-best-practice-routing-di-dunia-kerja">8. Best Practice Routing di Dunia Kerja</h2>
+<ol>
+<li>Routing terpusat di satu file  </li>
+<li>Jangan hardcode path</li>
+<li>Gunakan path parameter untuk deep link</li>
+<li>Bedakan penggunaan <code>go</code> dan <code>push</code></li>
+<li>Sediakan halaman error (404)</li>
+<li>Konsisten menggunakan satu sistem routing</li>
+</ol>
 <hr />
 <h2 id="persiapan">Persiapan</h2>
 <p>Gunakan project dari Pertemuan 1:<br />
@@ -1867,36 +2301,70 @@ Jika jalannya semrawut, kita akan tersesat dan memutar-mutar.</p>
 <h3 id="2-menyiapkan-struktur-routing">2. Menyiapkan Struktur Routing</h3>
 <p>Buat folder dan file berikut:</p>
 <div class="highlight"><pre><span></span><code>lib/
- └── routes/
-     └── app_router.dart
+ ├── routes/
+ │   ├── app_routes.dart
+ │   └── app_router.dart
+ ├── pages/
+ ├── widgets/
+ ├── models/
+ └── main.dart
 </code></pre></div>
+<p>Tujuan:<br />
+- <code>app_routes.dart</code> untuk konstanta path dan nama route<br />
+- <code>app_router.dart</code> untuk konfigurasi GoRouter</p>
 <hr />
-<h3 id="3-membuat-konfigurasi-router">3. Membuat Konfigurasi Router</h3>
+<h3 id="3-buat-konstanta-route">3. Buat Konstanta Route</h3>
+<p>File: <code>lib/routes/app_routes.dart</code></p>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nc">AppRoutes</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Nama route (untuk goNamed/pushNamed)</span>
+<span class="w">  </span><span class="kd">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="n">productsName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;products&#39;</span><span class="p">;</span>
+<span class="w">  </span><span class="kd">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="n">productDetailName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;product-detail&#39;</span><span class="p">;</span>
+
+<span class="w">  </span><span class="c1">// Path route (hindari hardcode di banyak tempat)</span>
+<span class="w">  </span><span class="kd">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="n">productsPath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;/products&#39;</span><span class="p">;</span>
+<span class="w">  </span><span class="kd">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="n">productDetailPath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;:id&#39;</span><span class="p">;</span><span class="w"> </span><span class="c1">// nested di bawah /products</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Penjelasan singkat:<br />
+- Kita akan menempatkan detail sebagai nested route:<br />
+- List: <code>/products</code><br />
+- Detail: <code>/products/:id</code></p>
+<hr />
+<h3 id="4-membuat-konfigurasi-router">4. Membuat Konfigurasi Router</h3>
 <p>File: lib/routes/app_router.dart</p>
 <div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:go_router/go_router.dart&#39;</span><span class="p">;</span>
 <span class="k">import</span><span class="w"> </span><span class="s1">&#39;../pages/home_page.dart&#39;</span><span class="p">;</span>
 <span class="k">import</span><span class="w"> </span><span class="s1">&#39;../pages/detail_page.dart&#39;</span><span class="p">;</span>
-<span class="k">import</span><span class="w"> </span><span class="s1">&#39;../models/product.dart&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="s1">&#39;app_routes.dart&#39;</span><span class="p">;</span>
 
 <span class="kd">final</span><span class="w"> </span><span class="n">GoRouter</span><span class="w"> </span><span class="n">appRouter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GoRouter</span><span class="p">(</span>
+<span class="w">  </span><span class="nl">initialLocation:</span><span class="w"> </span><span class="n">AppRoutes</span><span class="p">.</span><span class="n">productsPath</span><span class="p">,</span>
 <span class="w">  </span><span class="nl">routes:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">    </span><span class="n">GoRoute</span><span class="p">(</span>
-<span class="w">      </span><span class="nl">path:</span><span class="w"> </span><span class="s1">&#39;/&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nl">name:</span><span class="w"> </span><span class="n">AppRoutes</span><span class="p">.</span><span class="n">productsName</span><span class="p">,</span>
+<span class="w">      </span><span class="nl">path:</span><span class="w"> </span><span class="n">AppRoutes</span><span class="p">.</span><span class="n">productsPath</span><span class="p">,</span>
 <span class="w">      </span><span class="nl">builder:</span><span class="w"> </span><span class="p">(</span><span class="n">context</span><span class="p">,</span><span class="w"> </span><span class="n">state</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">HomePage</span><span class="p">(),</span>
-<span class="w">    </span><span class="p">),</span>
-<span class="w">    </span><span class="n">GoRoute</span><span class="p">(</span>
-<span class="w">      </span><span class="nl">path:</span><span class="w"> </span><span class="s1">&#39;/detail&#39;</span><span class="p">,</span>
-<span class="w">      </span><span class="nl">builder:</span><span class="w"> </span><span class="p">(</span><span class="n">context</span><span class="p">,</span><span class="w"> </span><span class="n">state</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="kd">final</span><span class="w"> </span><span class="n">product</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">state</span><span class="p">.</span><span class="n">extra</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">Product</span><span class="p">;</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">DetailPage</span><span class="p">(</span><span class="nl">product:</span><span class="w"> </span><span class="n">product</span><span class="p">);</span>
-<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nl">routes:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="n">GoRoute</span><span class="p">(</span>
+<span class="w">          </span><span class="nl">name:</span><span class="w"> </span><span class="n">AppRoutes</span><span class="p">.</span><span class="n">productDetailName</span><span class="p">,</span>
+<span class="w">          </span><span class="nl">path:</span><span class="w"> </span><span class="n">AppRoutes</span><span class="p">.</span><span class="n">productDetailPath</span><span class="p">,</span><span class="w"> </span><span class="c1">// &#39;:id&#39;</span>
+<span class="w">          </span><span class="nl">builder:</span><span class="w"> </span><span class="p">(</span><span class="n">context</span><span class="p">,</span><span class="w"> </span><span class="n">state</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="kd">final</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">state</span><span class="p">.</span><span class="n">pathParameters</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span><span class="o">!</span><span class="p">;</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">DetailPage</span><span class="p">(</span><span class="nl">productId:</span><span class="w"> </span><span class="n">id</span><span class="p">);</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">        </span><span class="p">),</span>
+<span class="w">      </span><span class="p">],</span>
 <span class="w">    </span><span class="p">),</span>
 <span class="w">  </span><span class="p">],</span>
 <span class="p">);</span>
 </code></pre></div>
+<p>Catatan penting:<br />
+- Di sini, halaman detail menerima <code>productId</code>, bukan object produk.<br />
+- Nanti saat masuk API/Provider, detail akan mengambil data berdasarkan id.</p>
 <hr />
-<h3 id="4-mengubah-maindart">4. Mengubah main.dart</h3>
-<p>File: lib/main.dart</p>
+<h3 id="5-mengubah-maindart">5. Mengubah main.dart</h3>
+<p>File: lib/main.dart  </p>
+<p>Ganti <code>MaterialApp(...)</code> menjadi:</p>
 <div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:flutter/material.dart&#39;</span><span class="p">;</span>
 <span class="k">import</span><span class="w"> </span><span class="s1">&#39;routes/app_router.dart&#39;</span><span class="p">;</span>
 
@@ -1909,69 +2377,131 @@ Jika jalannya semrawut, kita akan tersesat dan memutar-mutar.</p>
 
 <span class="w">  </span><span class="nd">@override</span>
 <span class="w">  </span><span class="n">Widget</span><span class="w"> </span><span class="n">build</span><span class="p">(</span><span class="n">BuildContext</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">final</span><span class="w"> </span><span class="n">colorScheme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ColorScheme</span><span class="p">.</span><span class="n">fromSeed</span><span class="p">(</span>
+<span class="w">      </span><span class="nl">seedColor:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Color</span><span class="p">(</span><span class="mh">0xFF6D28D9</span><span class="p">),</span>
+<span class="w">      </span><span class="nl">brightness:</span><span class="w"> </span><span class="n">Brightness</span><span class="p">.</span><span class="n">light</span><span class="p">,</span>
+<span class="w">    </span><span class="p">);</span>
+
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">MaterialApp</span><span class="p">.</span><span class="n">router</span><span class="p">(</span>
 <span class="w">      </span><span class="nl">debugShowCheckedModeBanner:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
 <span class="w">      </span><span class="nl">title:</span><span class="w"> </span><span class="s1">&#39;SMK Product App&#39;</span><span class="p">,</span>
 <span class="w">      </span><span class="nl">routerConfig:</span><span class="w"> </span><span class="n">appRouter</span><span class="p">,</span>
 <span class="w">      </span><span class="nl">theme:</span><span class="w"> </span><span class="n">ThemeData</span><span class="p">(</span>
 <span class="w">        </span><span class="nl">useMaterial3:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nl">colorScheme:</span><span class="w"> </span><span class="n">colorScheme</span><span class="p">,</span>
+<span class="w">        </span><span class="nl">appBarTheme:</span><span class="w"> </span><span class="n">AppBarTheme</span><span class="p">(</span>
+<span class="w">          </span><span class="nl">centerTitle:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">          </span><span class="nl">backgroundColor:</span><span class="w"> </span><span class="n">colorScheme</span><span class="p">.</span><span class="n">primary</span><span class="p">,</span>
+<span class="w">          </span><span class="nl">foregroundColor:</span><span class="w"> </span><span class="n">colorScheme</span><span class="p">.</span><span class="n">onPrimary</span><span class="p">,</span>
+<span class="w">        </span><span class="p">),</span>
+<span class="w">        </span><span class="nl">cardTheme:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">CardTheme</span><span class="p">(</span>
+<span class="w">          </span><span class="nl">elevation:</span><span class="w"> </span><span class="m">0</span><span class="p">,</span>
+<span class="w">          </span><span class="nl">margin:</span><span class="w"> </span><span class="n">EdgeInsets</span><span class="p">.</span><span class="n">zero</span><span class="p">,</span>
+<span class="w">        </span><span class="p">),</span>
 <span class="w">      </span><span class="p">),</span>
 <span class="w">    </span><span class="p">);</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
 <hr />
-<h3 id="5-mengubah-navigasi-di-home-page">5. Mengubah Navigasi di Home Page</h3>
-<p>File: lib/pages/home_page.dart</p>
-<p>Ganti Navigator.push menjadi:</p>
-<div class="highlight"><pre><span></span><code><span class="nl">onTap:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="n">context</span><span class="p">.</span><span class="n">go</span><span class="p">(</span><span class="s1">&#39;/detail&#39;</span><span class="p">,</span><span class="w"> </span><span class="nl">extra:</span><span class="w"> </span><span class="n">item</span><span class="p">);</span>
-<span class="p">},</span>
-</code></pre></div>
-<p>Tambahkan import:
-<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:go_router/go_router.dart&#39;</span><span class="p">;</span>
+<h3 id="6-sesuaikan-detailpage-agar-menerima-productid">6. Sesuaikan DetailPage Agar Menerima productId</h3>
+<p>Karena router sekarang mengirim <code>productId</code>, ubah halaman detail.</p>
+<p>File: <code>lib/pages/detail_page.dart</code></p>
+<h4 id="a-ubah-constructor">A. Ubah constructor</h4>
+<p>Sebelumnya:
+- menerima <code>Product product</code></p>
+<p>Sekarang:
+- menerima <code>String productId</code></p>
+<p>Contoh:
+<div class="highlight"><pre><span></span><code><span class="kd">final</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="n">productId</span><span class="p">;</span>
+
+<span class="k">const</span><span class="w"> </span><span class="n">DetailPage</span><span class="p">({</span>
+<span class="w">  </span><span class="k">super</span><span class="p">.</span><span class="n">key</span><span class="p">,</span>
+<span class="w">  </span><span class="kd">required</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="n">productId</span><span class="p">,</span>
+<span class="p">});</span>
 </code></pre></div></p>
+<h4 id="b-ambil-data-produk-berdasarkan-id-masih-dummy">B. Ambil data produk berdasarkan id (masih dummy)</h4>
+<p>Agar data Home dan Detail konsisten, pindahkan dummy data ke satu tempat.</p>
+<p>Buat:</p>
+<div class="highlight"><pre><span></span><code>lib/
+ └── data/
+     └── dummy_products.dart
+</code></pre></div>
+<p>File: <code>lib/data/dummy_products.dart</code>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="s1">&#39;../models/product.dart&#39;</span><span class="p">;</span>
+
+<span class="k">const</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Product</span><span class="o">&gt;</span><span class="w"> </span><span class="n">dummyProducts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="n">Product</span><span class="p">(</span>
+<span class="w">    </span><span class="nl">id:</span><span class="w"> </span><span class="s2">&quot;p1&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nl">name:</span><span class="w"> </span><span class="s2">&quot;Keyboard Mechanical Aurora&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nl">category:</span><span class="w"> </span><span class="s2">&quot;Aksesoris&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nl">price:</span><span class="w"> </span><span class="m">349000</span><span class="p">,</span>
+<span class="w">    </span><span class="nl">imageUrl:</span><span class="w"> </span><span class="s2">&quot;https://picsum.photos/seed/keyboard/800/600&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nl">rating:</span><span class="w"> </span><span class="m">4.6</span><span class="p">,</span>
+<span class="w">    </span><span class="nl">description:</span>
+<span class="w">        </span><span class="s2">&quot;Keyboard mechanical dengan switch empuk, backlight RGB, dan build quality kokoh. Cocok untuk coding dan gaming, nyaman dipakai lama.&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="p">),</span>
+<span class="w">  </span><span class="c1">// Tambahkan produk lain seperti pertemuan 1</span>
+<span class="p">];</span>
+</code></pre></div></p>
+<p>Di <code>detail_page.dart</code>, import dan cari produk:
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="s1">&#39;../data/dummy_products.dart&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="s1">&#39;../models/product.dart&#39;</span><span class="p">;</span>
+
+<span class="kd">final</span><span class="w"> </span><span class="n">Product</span><span class="w"> </span><span class="n">product</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dummyProducts</span><span class="p">.</span><span class="n">firstWhere</span><span class="p">((</span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">productId</span><span class="p">);</span><span class="w"> </span><span class="c1">// taruh kode ini diatas return scaffold</span>
+</code></pre></div></p>
+<p>Setelah itu, lanjutkan UI detail seperti sebelumnya menggunakan <code>product</code>.</p>
 <hr />
-<h2 id="checklist-keberhasilan">Checklist Keberhasilan</h2>
-<ul>
-<li>Tidak ada Navigator.push  </li>
-<li>Navigasi menggunakan go_router  </li>
-<li>Routing terpusat di app_router.dart  </li>
-<li>Data produk berhasil dikirim ke halaman detail</li>
-</ul>
+<h3 id="7-update-homepage-pindahkan-navigasi-ke-go_router">7. Update HomePage: Pindahkan Navigasi ke go_router</h3>
+<p>File: <code>lib/pages/home_page.dart</code></p>
+<h4 id="a-import">A. Import</h4>
+<p>Tambahkan:
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:go_router/go_router.dart&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="s1">&#39;../routes/app_routes.dart&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="s1">&#39;../data/dummy_products.dart&#39;</span><span class="p">;</span>
+</code></pre></div></p>
+<h4 id="b-gunakan-dummyproducts-dari-file-data">B. Gunakan dummyProducts dari file data</h4>
+<p>Ganti sumber data dari fungsi <code>_dummyProducts()</code> menjadi:
+<div class="highlight"><pre><span></span><code><span class="kd">final</span><span class="w"> </span><span class="n">products</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dummyProducts</span><span class="p">;</span>
+</code></pre></div></p>
+<h4 id="c-navigasi-ke-detail-pushnamed-pathparameters">C. Navigasi ke detail (pushNamed + pathParameters)</h4>
+<p>Ganti <code>Navigator.push(...)</code> menjadi:</p>
+<div class="highlight"><pre><span></span><code><span class="n">context</span><span class="p">.</span><span class="n">pushNamed</span><span class="p">(</span>
+<span class="w">  </span><span class="n">AppRoutes</span><span class="p">.</span><span class="n">productDetailName</span><span class="p">,</span>
+<span class="w">  </span><span class="nl">pathParameters:</span><span class="w"> </span><span class="p">{</span><span class="s1">&#39;id&#39;</span><span class="o">:</span><span class="w"> </span><span class="n">item</span><span class="p">.</span><span class="n">id</span><span class="p">},</span>
+<span class="p">);</span>
+</code></pre></div>
 <hr />
-<h2 id="studi-kasus">Studi Kasus</h2>
-<p>Bayangkan aplikasi nantinya memiliki halaman login.</p>
-<p>Diskusikan:<br />
-1. Kapan pengguna boleh masuk ke Home?<br />
-2. Kapan pengguna harus diarahkan ke Login?<br />
-3. Apa yang terjadi jika routing tidak terpusat?</p>
+<h2 id="checklist-pengujian">Checklist Pengujian</h2>
+<p>Pastikan:<br />
+1. Aplikasi masuk ke <code>/products</code><br />
+2. Klik produk → detail terbuka<br />
+3. Tombol back → kembali ke list<br />
+4. Tidak ada <code>Navigator.push</code> untuk halaman utama</p>
 <hr />
 <h2 id="tugas">Tugas</h2>
 <h3 id="tugas-level-dasar">Tugas Level Dasar</h3>
 <ol>
-<li>Tambahkan route baru: /profile</li>
-<li>Buat halaman ProfilePage</li>
-<li>Navigasikan dari Home ke Profile menggunakan go_router</li>
+<li>Tambahkan route baru: /profile  </li>
+<li>Buat halaman ProfilePage  </li>
+<li>Navigasikan dari Home ke Profile menggunakan go_router  </li>
 </ol>
-<hr />
 <h3 id="tugas-level-industri">Tugas Level Industri</h3>
 <ol>
-<li>Buat halaman Not Found (404)</li>
-<li>Jika route tidak ditemukan, tampilkan halaman tersebut</li>
-<li>Pastikan seluruh routing tetap terpusat di app_router.dart</li>
+<li>Tambahkan halaman error (404) ketika route tidak ditemukan  </li>
+<li>Pastikan tidak ada hardcode path string di halaman (gunakan konstanta route)  </li>
+<li>Uji 3 skenario:  </li>
+<li>buka <code>/products</code>  </li>
+<li>buka <code>/products/p1</code>  </li>
+<li>buka <code>/products/route-salah</code> → harus masuk error page</li>
 </ol>
 <hr />
-<h2 id="refleksi">Refleksi</h2>
-<p>Jawab secara singkat:<br />
-1. Apa perbedaan navigasi lama dan routing modern?<br />
-2. Mengapa routing sebaiknya dipusatkan?<br />
-3. Mengapa routing dipelajari sebelum Provider?</p>
-<hr />
 <h2 id="penutup">Penutup</h2>
-<p>Routing adalah pondasi alur aplikasi.<br />
-Jika routing rapi, pengembangan fitur selanjutnya akan lebih mudah.</p>
-<p>Pertemuan berikutnya akan membahas State Management menggunakan Provider.</p>
+<p>Hari ini kalian memindahkan aplikasi dari navigasi manual menjadi routing terpusat.  </p>
+<p>Ini pondasi penting sebelum masuk:<br />
+- state management (Provider)<br />
+- API<br />
+- Firebase</p>
 
 
 
