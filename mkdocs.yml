@@ -50,6 +50,9 @@ nav:
           - Pertemuan 4 - Auth Provider: mobile-flutter/02.state-management-provider/04.auth-provider.md
           - Pertemuan 5 - Checkout: mobile-flutter/02.state-management-provider/05.checkout.md
           - Pertemuan 6 - Tugas: mobile-flutter/02.state-management-provider/06.tugas.md
+      - API Integration:
+          - Pertemuan 1 - Pengenalan API: mobile-flutter/03.api-integration/01.pengenalan-api.md
+          - Pertemuan 2 - API Get Product: mobile-flutter/03.api-integration/02.API-get-product.md
 
 theme:
   name: material
