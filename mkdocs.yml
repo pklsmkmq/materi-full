@@ -53,6 +53,9 @@ nav:
       - API Integration:
           - Pertemuan 1 - Pengenalan API: mobile-flutter/03.api-integration/01.pengenalan-api.md
           - Pertemuan 2 - API Get Product: mobile-flutter/03.api-integration/02.API-get-product.md
+          - Pertemuan 3 - API Register: mobile-flutter/03.api-integration/03.API-register.md
+          - Pertemuan 4 - API Login: mobile-flutter/03.api-integration/04.API-login.md
+          - Pertemuan 5 - Tugas API: mobile-flutter/03.api-integration/05.Tugas-API.md
 
 theme:
   name: material
