@@ -56,6 +56,10 @@ nav:
           - Pertemuan 3 - API Register: mobile-flutter/03.api-integration/03.API-register.md
           - Pertemuan 4 - API Login: mobile-flutter/03.api-integration/04.API-login.md
           - Pertemuan 5 - Tugas API: mobile-flutter/03.api-integration/05.Tugas-API.md
+      - UTS:
+          - Sprint 1 : mobile-flutter/04.UTS/1.Sprint1.md
+          - Sprint 2 : mobile-flutter/04.UTS/2.Sprint2.md
+          - Sprint 3 : mobile-flutter/04.UTS/3.Sprint3.md
 
 theme:
   name: material
