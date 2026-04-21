@@ -1860,36 +1860,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-logika-autentikasi-di-authprovider" class="md-nav__link">
+  <a href="#3-memodifikasi-authprovider" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Logika Autentikasi di AuthProvider
+      3. Memodifikasi AuthProvider
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-proteksi-halaman-route-guard-dengan-gorouter" class="md-nav__link">
+  <a href="#4-memodifikasi-ui-tampilan-login" class="md-nav__link">
     <span class="md-ellipsis">
-      4. Proteksi Halaman (Route Guard) dengan GoRouter
+      4. Memodifikasi UI (Tampilan Login)
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-menerapkan-di-ui-tampilan-login" class="md-nav__link">
+  <a href="#5-proteksi-halaman-route-guard-dengan-gorouter" class="md-nav__link">
     <span class="md-ellipsis">
-      5. Menerapkan di UI (Tampilan Login)
+      5. Proteksi Halaman (Route Guard) dengan GoRouter
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-persiapan-pertemuan-berikutnya" class="md-nav__link">
+  <a href="#6-tugas-mandiri-implementasi-logout-google-sign-in" class="md-nav__link">
     <span class="md-ellipsis">
-      6. Persiapan Pertemuan Berikutnya
+      6. 📝 TUGAS MANDIRI: Implementasi Logout &amp; Google Sign-In
     </span>
   </a>
   
@@ -2129,36 +2129,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-logika-autentikasi-di-authprovider" class="md-nav__link">
+  <a href="#3-memodifikasi-authprovider" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Logika Autentikasi di AuthProvider
+      3. Memodifikasi AuthProvider
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-proteksi-halaman-route-guard-dengan-gorouter" class="md-nav__link">
+  <a href="#4-memodifikasi-ui-tampilan-login" class="md-nav__link">
     <span class="md-ellipsis">
-      4. Proteksi Halaman (Route Guard) dengan GoRouter
+      4. Memodifikasi UI (Tampilan Login)
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-menerapkan-di-ui-tampilan-login" class="md-nav__link">
+  <a href="#5-proteksi-halaman-route-guard-dengan-gorouter" class="md-nav__link">
     <span class="md-ellipsis">
-      5. Menerapkan di UI (Tampilan Login)
+      5. Proteksi Halaman (Route Guard) dengan GoRouter
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-persiapan-pertemuan-berikutnya" class="md-nav__link">
+  <a href="#6-tugas-mandiri-implementasi-logout-google-sign-in" class="md-nav__link">
     <span class="md-ellipsis">
-      6. Persiapan Pertemuan Berikutnya
+      6. 📝 TUGAS MANDIRI: Implementasi Logout &amp; Google Sign-In
     </span>
   </a>
   
@@ -2186,15 +2186,18 @@
 <p>Siswa mampu mengaktifkan layanan otentikasi (Email &amp; Google) di Firebase Console.</p>
 </li>
 <li>
-<p>Siswa mampu mengimplementasikan fungsi Register, Login, dan Logout menggunakan <code>firebase_auth</code>.</p>
+<p>Siswa mampu mengintegrasikan <code>firebase_auth</code> ke dalam fungsi login yang sudah ada.</p>
 </li>
 <li>
-<p>Siswa memahami cara mengamankan halaman (Route Guard) menggunakan <code>GoRouter</code> dan <code>Provider</code>.</p>
+<p>Siswa memahami cara mengamankan halaman (Route Guard) menggunakan <code>GoRouter</code>.</p>
+</li>
+<li>
+<p>Siswa mampu memecahkan masalah (Problem Solving) secara mandiri melalui pembacaan dokumentasi resmi.</p>
 </li>
 </ol>
 <hr />
 <h2 id="1-aktivasi-authentication-di-firebase-console">1. Aktivasi Authentication di Firebase Console</h2>
-<p>Sebelum menulis kode, kita harus memberi tahu Firebase metode login apa saja yang kita izinkan di aplikasi kita.</p>
+<p>Sebelum mengubah kode, kita harus memberi tahu Firebase metode login apa saja yang kita izinkan.</p>
 <p><strong>Langkah-langkah:</strong></p>
 <ol>
 <li>
@@ -2221,118 +2224,133 @@
 <p>Buka terminal di VS Code, lalu jalankan perintah ini untuk menambahkan <em>library</em> yang bertugas mengurus autentikasi:</p>
 <p><code>flutter pub add firebase_auth google_sign_in</code></p>
 <hr />
-<h2 id="3-logika-autentikasi-di-authprovider">3. Logika Autentikasi di <code>AuthProvider</code></h2>
-<p>Dalam Flutter, sangat disarankan untuk memisahkan antara <em>tampilan</em> (UI) dan <em>logika</em> (Proses). Kita akan menaruh semua logika Firebase Auth di dalam file Provider.</p>
-<p>Buka file <code>lib/providers/auth_provider.dart</code> dan perhatikan logika dasar berikut:</p>
+<h2 id="3-memodifikasi-authprovider">3. Memodifikasi <code>AuthProvider</code></h2>
+<p>Buka file <code>lib/providers/auth_provider.dart</code>. Kalian tidak perlu membuat fungsi baru dari nol. Kita hanya akan <strong>mengubah bagian atas</strong> (menambahkan <em>instance</em> Firebase) dan <strong>mengedit isi dari fungsi <code>login</code> yang sudah ada</strong>.</p>
+<p>Ubah kode di <code>AuthProvider</code> kalian menjadi seperti ini:</p>
 <div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:firebase_auth/firebase_auth.dart&#39;</span><span class="p">;</span>
 <span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:flutter/material.dart&#39;</span><span class="p">;</span>
 
 <span class="kd">class</span><span class="w"> </span><span class="nc">AuthProvider</span><span class="w"> </span><span class="kd">with</span><span class="w"> </span><span class="n">ChangeNotifier</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// 1. Tambahkan instance FirebaseAuth di bagian atas</span>
 <span class="w">  </span><span class="kd">final</span><span class="w"> </span><span class="n">FirebaseAuth</span><span class="w"> </span><span class="n">_auth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FirebaseAuth</span><span class="p">.</span><span class="n">instance</span><span class="p">;</span>
 
-<span class="w">  </span><span class="c1">// Variabel untuk menyimpan status user saat ini</span>
 <span class="w">  </span><span class="n">User</span><span class="o">?</span><span class="w"> </span><span class="n">_user</span><span class="p">;</span>
 <span class="w">  </span><span class="n">User</span><span class="o">?</span><span class="w"> </span><span class="kd">get</span><span class="w"> </span><span class="n">user</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">_user</span><span class="p">;</span>
 
 <span class="w">  </span><span class="n">AuthProvider</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="c1">// Memantau perubahan status login secara realtime (Stream)</span>
+<span class="w">    </span><span class="c1">// 2. Pantau perubahan status login secara realtime</span>
 <span class="w">    </span><span class="n">_auth</span><span class="p">.</span><span class="n">authStateChanges</span><span class="p">().</span><span class="n">listen</span><span class="p">((</span><span class="n">User</span><span class="o">?</span><span class="w"> </span><span class="n">currentUser</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="n">_user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">currentUser</span><span class="p">;</span>
-<span class="w">      </span><span class="n">notifyListeners</span><span class="p">();</span><span class="w"> </span><span class="c1">// Beri tahu UI kalau status berubah</span>
+<span class="w">      </span><span class="n">notifyListeners</span><span class="p">();</span><span class="w"> </span>
 <span class="w">    </span><span class="p">});</span>
 <span class="w">  </span><span class="p">}</span>
 
-<span class="w">  </span><span class="c1">// Fungsi Login dengan Email</span>
-<span class="w">  </span><span class="n">Future</span><span class="o">&lt;</span><span class="kt">void</span><span class="o">&gt;</span><span class="w"> </span><span class="n">loginWithEmail</span><span class="p">(</span><span class="kt">String</span><span class="w"> </span><span class="n">email</span><span class="p">,</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="n">password</span><span class="p">)</span><span class="w"> </span><span class="kd">async</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// 3. EDIT FUNGSI INI: Ganti isi dari fungsi login yang sudah ada</span>
+<span class="w">  </span><span class="n">Future</span><span class="o">&lt;</span><span class="kt">void</span><span class="o">&gt;</span><span class="w"> </span><span class="n">login</span><span class="p">(</span><span class="kt">String</span><span class="w"> </span><span class="n">email</span><span class="p">,</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="n">password</span><span class="p">)</span><span class="w"> </span><span class="kd">async</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="kd">await</span><span class="w"> </span><span class="n">_auth</span><span class="p">.</span><span class="n">signInWithEmailAndPassword</span><span class="p">(</span><span class="nl">email:</span><span class="w"> </span><span class="n">email</span><span class="p">,</span><span class="w"> </span><span class="nl">password:</span><span class="w"> </span><span class="n">password</span><span class="p">);</span>
+<span class="w">      </span><span class="c1">// Tembak data email dan password ke Firebase</span>
+<span class="w">      </span><span class="kd">await</span><span class="w"> </span><span class="n">_auth</span><span class="p">.</span><span class="n">signInWithEmailAndPassword</span><span class="p">(</span>
+<span class="w">        </span><span class="nl">email:</span><span class="w"> </span><span class="n">email</span><span class="p">,</span><span class="w"> </span>
+<span class="w">        </span><span class="nl">password:</span><span class="w"> </span><span class="n">password</span>
+<span class="w">      </span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="k">throw</span><span class="w"> </span><span class="n">Exception</span><span class="p">(</span><span class="s1">&#39;Gagal login: </span><span class="si">${</span><span class="n">e</span><span class="p">.</span><span class="n">toString</span><span class="p">()</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">);</span>
+<span class="w">      </span><span class="c1">// Jika salah password/email, lemparkan error ke UI</span>
+<span class="w">      </span><span class="k">throw</span><span class="w"> </span><span class="n">Exception</span><span class="p">(</span><span class="s1">&#39;Gagal login: Periksa kembali email dan password Anda.&#39;</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">}</span>
 
-<span class="w">  </span><span class="c1">// Fungsi Logout</span>
-<span class="w">  </span><span class="n">Future</span><span class="o">&lt;</span><span class="kt">void</span><span class="o">&gt;</span><span class="w"> </span><span class="n">logout</span><span class="p">()</span><span class="w"> </span><span class="kd">async</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">await</span><span class="w"> </span><span class="n">_auth</span><span class="p">.</span><span class="n">signOut</span><span class="p">();</span>
-<span class="w">  </span><span class="p">}</span>
-
-<span class="w">  </span><span class="c1">// (Fungsi Register dan Login Google ditambahkan di sini)</span>
+<span class="w">  </span><span class="c1">// Fungsi implementasi dummy lainnya (seperti register/logout) biarkan dulu...</span>
 <span class="p">}</span>
 </code></pre></div>
-<p><strong>Penjelasan:</strong> Fungsi <code>authStateChanges().listen(...)</code> adalah bagian terpenting. Fungsi ini akan terus memantau: <em>"Apakah ada user yang sedang login saat ini?"</em></p>
 <hr />
-<h2 id="4-proteksi-halaman-route-guard-dengan-gorouter">4. Proteksi Halaman (Route Guard) dengan GoRouter</h2>
-<p>Apa gunanya sistem login jika siswa yang belum login tetap bisa membuka halaman Dashboard secara diam-diam? </p>
-<p>Kita harus "mengunci" halaman tersebut. Buka file <code>lib/core/routes/app_router.dart</code>. Di sinilah <code>GoRouter</code> bekerja sama dengan Firebase Auth.</p>
+<h2 id="4-memodifikasi-ui-tampilan-login">4. Memodifikasi UI (Tampilan Login)</h2>
+<p>Buka file <code>lib/screens/login_screen.dart</code>. Kita akan menambahkan blok <code>try-catch</code> pada tombol aksi login. </p>
+<p>Kita <strong>tetap mempertahankan</strong> <code>setState(() =&gt; isLoading = true);</code> agar animasi <em>loading</em> tetap berputar saat aplikasi sedang menghubungi server Firebase.</p>
+<p>Ubah bagian <code>onPressed</code> pada tombol Login kalian menjadi seperti ini:</p>
+<div class="highlight"><pre><span></span><code><span class="n">ElevatedButton</span><span class="p">(</span>
+<span class="w">  </span><span class="nl">onPressed:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="kd">async</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// 1. Nyalakan efek loading</span>
+<span class="w">    </span><span class="n">setState</span><span class="p">(()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="n">isLoading</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="w">    </span><span class="p">});</span>
+
+<span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="c1">// 2. Panggil fungsi login dari AuthProvider</span>
+<span class="w">      </span><span class="kd">await</span><span class="w"> </span><span class="n">context</span><span class="p">.</span><span class="n">read</span><span class="o">&lt;</span><span class="n">AuthProvider</span><span class="o">&gt;</span><span class="p">().</span><span class="n">login</span><span class="p">(</span>
+<span class="w">        </span><span class="n">emailController</span><span class="p">.</span><span class="n">text</span><span class="p">,</span><span class="w"> </span>
+<span class="w">        </span><span class="n">passwordController</span><span class="p">.</span><span class="n">text</span>
+<span class="w">      </span><span class="p">);</span>
+<span class="w">      </span><span class="c1">// Jika berhasil, GoRouter otomatis memindahkan halaman (Route Guard)</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="c1">// 3. Tangkap dan tampilkan pesan error jika gagal</span>
+<span class="w">      </span><span class="n">ScaffoldMessenger</span><span class="p">.</span><span class="n">of</span><span class="p">(</span><span class="n">context</span><span class="p">).</span><span class="n">showSnackBar</span><span class="p">(</span>
+<span class="w">        </span><span class="n">SnackBar</span><span class="p">(</span>
+<span class="w">          </span><span class="nl">content:</span><span class="w"> </span><span class="n">Text</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">toString</span><span class="p">()),</span>
+<span class="w">          </span><span class="nl">backgroundColor:</span><span class="w"> </span><span class="n">Colors</span><span class="p">.</span><span class="n">red</span><span class="p">,</span>
+<span class="w">        </span><span class="p">),</span>
+<span class="w">      </span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">finally</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="c1">// 4. Matikan efek loading apapun yang terjadi (berhasil/gagal)</span>
+<span class="w">      </span><span class="n">setState</span><span class="p">(()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">isLoading</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span><span class="w"> </span>
+<span class="w">      </span><span class="p">});</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nl">child:</span><span class="w"> </span><span class="n">isLoading</span><span class="w"> </span>
+<span class="w">      </span><span class="o">?</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">CircularProgressIndicator</span><span class="p">(</span><span class="nl">color:</span><span class="w"> </span><span class="n">Colors</span><span class="p">.</span><span class="n">white</span><span class="p">)</span><span class="w"> </span>
+<span class="w">      </span><span class="o">:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Text</span><span class="p">(</span><span class="s1">&#39;Login&#39;</span><span class="p">),</span>
+<span class="p">)</span>
+</code></pre></div>
+<hr />
+<h2 id="5-proteksi-halaman-route-guard-dengan-gorouter">5. Proteksi Halaman (Route Guard) dengan GoRouter</h2>
+<p>Untuk memastikan orang yang belum login tidak bisa masuk ke <code>/dashboard</code>, kita kunci jalurnya di <code>lib/core/routes/app_router.dart</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:go_router/go_router.dart&#39;</span><span class="p">;</span>
 <span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:firebase_auth/firebase_auth.dart&#39;</span><span class="p">;</span>
-<span class="c1">// import screen kalian di sini...</span>
 
 <span class="kd">final</span><span class="w"> </span><span class="n">GoRouter</span><span class="w"> </span><span class="n">appRouter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GoRouter</span><span class="p">(</span>
-<span class="w">  </span><span class="nl">initialLocation:</span><span class="w"> </span><span class="s1">&#39;/login&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Halaman pertama kali dibuka</span>
+<span class="w">  </span><span class="nl">initialLocation:</span><span class="w"> </span><span class="s1">&#39;/&#39;</span><span class="p">,</span><span class="w"> </span>
 
 <span class="w">  </span><span class="c1">// FUNGSI PENGECEKAN (REDIRECT)</span>
 <span class="w">  </span><span class="nl">redirect:</span><span class="w"> </span><span class="p">(</span><span class="n">context</span><span class="p">,</span><span class="w"> </span><span class="n">state</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="c1">// Cek apakah ada user yang sedang login di Firebase</span>
 <span class="w">    </span><span class="kd">final</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">isLoggedIn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FirebaseAuth</span><span class="p">.</span><span class="n">instance</span><span class="p">.</span><span class="n">currentUser</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
-
-<span class="w">    </span><span class="c1">// Cek apakah user sedang berada di halaman login</span>
 <span class="w">    </span><span class="kd">final</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">isGoingToLogin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">state</span><span class="p">.</span><span class="n">uri</span><span class="p">.</span><span class="n">toString</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">&#39;/login&#39;</span><span class="p">;</span>
 
-<span class="w">    </span><span class="c1">// Jika belum login, dan mencoba masuk ke halaman selain login, lempar kembali ke &#39;/login&#39;</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">isLoggedIn</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="n">isGoingToLogin</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="s1">&#39;/login&#39;</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="c1">// Jika belum login, dan mencoba masuk ke dashboard, lempar ke login</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">isLoggedIn</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="n">isGoingToLogin</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="s1">&#39;/login&#39;</span><span class="p">;</span>
 
-<span class="w">    </span><span class="c1">// Jika sudah login, tapi mencoba buka halaman login, lempar ke &#39;/dashboard&#39;</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">isLoggedIn</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">isGoingToLogin</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="s1">&#39;/dashboard&#39;</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="c1">// Jika sudah login, tapi mencoba buka halaman login, lempar ke dashboard</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">isLoggedIn</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">isGoingToLogin</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="s1">&#39;/dashboard&#39;</span><span class="p">;</span>
 
-<span class="w">    </span><span class="c1">// Biarkan jalan normal</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
 <span class="w">  </span><span class="p">},</span>
 
-<span class="w">  </span><span class="nl">routes:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">    </span><span class="n">GoRoute</span><span class="p">(</span>
-<span class="w">      </span><span class="nl">path:</span><span class="w"> </span><span class="s1">&#39;/login&#39;</span><span class="p">,</span>
-<span class="w">      </span><span class="nl">builder:</span><span class="w"> </span><span class="p">(</span><span class="n">context</span><span class="p">,</span><span class="w"> </span><span class="n">state</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">LoginScreen</span><span class="p">(),</span>
-<span class="w">    </span><span class="p">),</span>
-<span class="w">    </span><span class="n">GoRoute</span><span class="p">(</span>
-<span class="w">      </span><span class="nl">path:</span><span class="w"> </span><span class="s1">&#39;/dashboard&#39;</span><span class="p">,</span>
-<span class="w">      </span><span class="nl">builder:</span><span class="w"> </span><span class="p">(</span><span class="n">context</span><span class="p">,</span><span class="w"> </span><span class="n">state</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">DashboardScreen</span><span class="p">(),</span>
-<span class="w">    </span><span class="p">),</span>
-<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="c1">// ... (Daftar rute GoRoute kalian di bawah sini)</span>
 <span class="p">);</span>
 </code></pre></div>
-<p>Dengan kode di atas, jika <code>FirebaseAuth.instance.currentUser</code> kosong (null), aplikasi tidak akan pernah mengizinkan user masuk ke <code>/dashboard</code>.</p>
 <hr />
-<h2 id="5-menerapkan-di-ui-tampilan-login">5. Menerapkan di UI (Tampilan Login)</h2>
-<p>Sekarang, di file <code>login_screen.dart</code>, kalian tinggal memanggil fungsi dari provider saat tombol diklik.</p>
-<p>Contoh pemanggilan fungsi pada tombol Login:</p>
-<div class="highlight"><pre><span></span><code><span class="n">ElevatedButton</span><span class="p">(</span>
-<span class="w">  </span><span class="nl">onPressed:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="kd">async</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="c1">// Memanggil fungsi login dari AuthProvider</span>
-<span class="w">      </span><span class="kd">await</span><span class="w"> </span><span class="n">context</span><span class="p">.</span><span class="n">read</span><span class="o">&lt;</span><span class="n">AuthProvider</span><span class="o">&gt;</span><span class="p">().</span><span class="n">loginWithEmail</span><span class="p">(</span>
-<span class="w">        </span><span class="n">emailController</span><span class="p">.</span><span class="n">text</span><span class="p">,</span><span class="w"> </span>
-<span class="w">        </span><span class="n">passwordController</span><span class="p">.</span><span class="n">text</span>
-<span class="w">      </span><span class="p">);</span>
-<span class="w">      </span><span class="c1">// Jika berhasil, GoRouter akan otomatis melempar ke Dashboard berkat fungsi redirect di atas!</span>
-<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="c1">// Tampilkan error menggunakan SnackBar</span>
-<span class="w">      </span><span class="n">ScaffoldMessenger</span><span class="p">.</span><span class="n">of</span><span class="p">(</span><span class="n">context</span><span class="p">).</span><span class="n">showSnackBar</span><span class="p">(</span>
-<span class="w">        </span><span class="n">SnackBar</span><span class="p">(</span><span class="nl">content:</span><span class="w"> </span><span class="n">Text</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">toString</span><span class="p">())),</span>
-<span class="w">      </span><span class="p">);</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">  </span><span class="p">},</span>
-<span class="w">  </span><span class="nl">child:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Text</span><span class="p">(</span><span class="s1">&#39;Login&#39;</span><span class="p">),</span>
-<span class="p">)</span>
-</code></pre></div>
-<hr />
-<h2 id="6-persiapan-pertemuan-berikutnya">6. Persiapan Pertemuan Berikutnya</h2>
-<p>Coba jalankan aplikasi kalian, buat akun baru (Register), dan cobalah melakukan <em>Logout</em>. Perhatikan bagaimana aplikasi otomatis berpindah halaman tanpa kalian perintahkan secara manual (itu adalah kehebatan Stream dan GoRouter!).</p>
-<p>Pada pertemuan selanjutnya (Pertemuan 4), kita akan mulai mendesain database sungguhan di <strong>Cloud Firestore</strong> untuk menyimpan data siswa dan catatan logbook PKL mereka.</p>
+<h2 id="6-tugas-mandiri-implementasi-logout-google-sign-in">6. 📝 TUGAS MANDIRI: Implementasi Logout &amp; Google Sign-In</h2>
+<p>Sebagai calon <em>Software Engineer</em>, kalian harus terbiasa membaca dokumentasi resmi (bukan hanya menyalin kode dari tutorial).</p>
+<p>Pada modul ini, fungsi <strong>Logout</strong> dan <strong>Login with Google</strong> belum diimplementasikan. </p>
+<p><strong>Tugas Kalian:</strong></p>
+<ol>
+<li>
+<p>Buat fitur agar tombol <strong>Logout</strong> di Dashboard berfungsi.</p>
+</li>
+<li>
+<p>Buat fitur agar tombol <strong>Google</strong> di halaman Login berfungsi.</p>
+</li>
+</ol>
+<p><strong>Petunjuk Dokumentasi (Wajib Dibaca):</strong></p>
+<ul>
+<li>
+<p><strong>Untuk fitur Logout:</strong> Baca bagian <em>Sign out a user</em> di sini: <a href="https://firebase.google.com/docs/auth/flutter/password-auth">https://firebase.google.com/docs/auth/flutter/password-auth</a></p>
+</li>
+<li>
+<p><strong>Untuk fitur Login Google:</strong> Baca <em>step-by-step</em> penggunaannya di sini: <a href="https://firebase.google.com/docs/auth/flutter/google-signin">https://firebase.google.com/docs/auth/flutter/google-signin</a></p>
+</li>
+</ul>
+<p><em>(Catatan Guru: Silakan bereksperimen, jika </em>error<em> silakan baca pesan </em>error<em>-nya di Terminal. Aplikasi yang bagus lahir dari ratusan </em>error<em> yang berhasil dipecahkan!)</em></p>
 
 
 
