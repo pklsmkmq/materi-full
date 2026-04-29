@@ -35,12 +35,13 @@ nav:
           - Pertemuan 8 - Tugas: back-end/01.TypeScript/08-mini-project.md
 
       - Golang:
-          - Pertemuan 1 - Pengenalan Golang: back-end/02.Golang/01-pengenalan-golang.md
-          - Pertemuan 2 - Variable, Tipe Data, Operator: back-end/02.Golang/02-variabel-tipeData-operator.md
-          - Pertemuan 3 - Percabangan & Perulangan: back-end/02.Golang/03-percabangan-perulangan.md
-          - Pertemuan 4 - Array, Slice, Map: back-end/02.Golang/04-array-slice-map.md
-          - Pertemuan 5 - Function & Error Handling: back-end/02.Golang/05-function-errorHandling.md
-          - Pertemuan 6 - Pointer: back-end/02.Golang/06-pointer.md
+          - Pertemuan 1 - Pengenalan Golang: back-end/02.Golang/1.Golang-Fundamental/01-pengenalan-golang.md
+          - Pertemuan 2 - Variable, Tipe Data, Operator: back-end/02.Golang/1.Golang-Fundamental/02-variabel-tipeData-operator.md
+          - Pertemuan 3 - Percabangan & Perulangan: back-end/02.Golang/1.Golang-Fundamental/03-percabangan-perulangan.md
+          - Pertemuan 4 - Array, Slice, Map: back-end/02.Golang/1.Golang-Fundamental/04-array-slice-map.md
+          - Pertemuan 5 - Function & Error Handling: back-end/02.Golang/1.Golang-Fundamental/05-function-errorHandling.md
+          - Pertemuan 6 - Pointer: back-end/02.Golang/1.Golang-Fundamental/06-pointer.md
+          - Pertemuan 7 - API: back-end/02.Golang/2.API/01.pengenalan-api.md
 
   - Mobile Flutter:
       - mobile-flutter/index.md
@@ -65,7 +66,7 @@ nav:
           - Pertemuan 1 - Pengenalan Firebase: mobile-flutter/04.firebase/01.pengenalan-firebase.md
           - Pertemuan 2 - Menghubungkan Firebase: mobile-flutter/04.firebase/02.menghubungkan-firebase.md
           - Pertemuan 3 - Firebase Auth: mobile-flutter/04.firebase/03.firebase-auth.md
-          - Pertemuan 4 - Cloud Firestore: mobile-flutter/04.firebase/04.cloud-firestore.md
+          - Pertemuan 4 - Cloud Firestore: mobile-flutter/04.firebase/04.firebase-cloud.md
           - Pertemuan 5 - Firebase Storage: mobile-flutter/04.firebase/05.firebase-storage.md
       - UTS:
           - Sprint 1 : mobile-flutter/04.UTS/1.Sprint1.md

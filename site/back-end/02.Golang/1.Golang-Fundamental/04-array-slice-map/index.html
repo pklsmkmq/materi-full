@@ -9,25 +9,25 @@
       
       
       
-        <link rel="prev" href="../01-pengenalan-golang/">
+        <link rel="prev" href="../03-percabangan-perulangan/">
       
       
-        <link rel="next" href="../03-percabangan-perulangan/">
+        <link rel="next" href="../05-function-errorHandling/">
       
       
-      <link rel="icon" href="../../../assets/logo.png">
+      <link rel="icon" href="../../../../assets/logo.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.11">
     
     
       
-        <title>Pertemuan 2 - Variable, Tipe Data, Operator - Modul Pak Nur</title>
+        <title>Pertemuan 4 - Array, Slice, Map - Modul Pak Nur</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.7e359304.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.7e359304.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -46,16 +46,16 @@
       
     
     
-      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
     
-   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+   <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
     html.glightbox-open { overflow: initial; height: 100%; }
     .gslide-title { margin-top: 0px; user-select: text; }
     .gslide-desc { color: #666; user-select: text; }
@@ -64,7 +64,7 @@
     .gdesc-inner { font-size: 0.75rem; }
     body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
     body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -83,7 +83,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#pertemuan-2-variabel-tipe-data-dan-operator" class="md-skip">
+        <a href="#pertemuan-4-struktur-data-lanjutan-array-slice-dan-map" class="md-skip">
           Lewati ke isi
         </a>
       
@@ -97,9 +97,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="Modul Pak Nur" class="md-header__button md-logo" aria-label="Modul Pak Nur" data-md-component="logo">
+    <a href="../../../.." title="Modul Pak Nur" class="md-header__button md-logo" aria-label="Modul Pak Nur" data-md-component="logo">
       
-  <img src="../../../assets/logo.png" alt="logo">
+  <img src="../../../../assets/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Pertemuan 2 - Variable, Tipe Data, Operator
+              Pertemuan 4 - Array, Slice, Map
             
           </span>
         </div>
@@ -211,7 +211,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
+      <a href="../../../.." class="md-tabs__link">
         
   
     
@@ -230,7 +230,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../html-css/" class="md-tabs__link">
+        <a href="../../../../html-css/" class="md-tabs__link">
           
   
   HTML CSS
@@ -248,7 +248,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../front-end/" class="md-tabs__link">
+        <a href="../../../../front-end/" class="md-tabs__link">
           
   
   Front End
@@ -268,7 +268,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../" class="md-tabs__link">
+        <a href="../../../" class="md-tabs__link">
           
   
   Back End
@@ -286,7 +286,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../mobile-flutter/" class="md-tabs__link">
+        <a href="../../../../mobile-flutter/" class="md-tabs__link">
           
   
   Mobile Flutter
@@ -319,9 +319,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigasi" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Modul Pak Nur" class="md-nav__button md-logo" aria-label="Modul Pak Nur" data-md-component="logo">
+    <a href="../../../.." title="Modul Pak Nur" class="md-nav__button md-logo" aria-label="Modul Pak Nur" data-md-component="logo">
       
-  <img src="../../../assets/logo.png" alt="logo">
+  <img src="../../../../assets/logo.png" alt="logo">
 
     </a>
     Modul Pak Nur
@@ -336,7 +336,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -396,7 +396,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../html-css/" class="md-nav__link">
+      <a href="../../../../html-css/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -417,7 +417,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../html-css/html/" class="md-nav__link">
+      <a href="../../../../html-css/html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -438,7 +438,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../html-css/css/" class="md-nav__link">
+      <a href="../../../../html-css/css/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -499,7 +499,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../html-css/tailwind/01-instalasi-dasar/" class="md-nav__link">
+      <a href="../../../../html-css/tailwind/01-instalasi-dasar/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -520,7 +520,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../html-css/tailwind/02-jarak-custom/" class="md-nav__link">
+      <a href="../../../../html-css/tailwind/02-jarak-custom/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -541,7 +541,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../html-css/tailwind/03-flexbox/" class="md-nav__link">
+      <a href="../../../../html-css/tailwind/03-flexbox/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -562,7 +562,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../html-css/tailwind/04-responsive/" class="md-nav__link">
+      <a href="../../../../html-css/tailwind/04-responsive/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -583,7 +583,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../html-css/tailwind/05-studi-kasus-part-1/" class="md-nav__link">
+      <a href="../../../../html-css/tailwind/05-studi-kasus-part-1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -604,7 +604,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../html-css/tailwind/06-studi-kasus-part-2/" class="md-nav__link">
+      <a href="../../../../html-css/tailwind/06-studi-kasus-part-2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -625,7 +625,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../html-css/tailwind/07-studi-kasus-part-3/" class="md-nav__link">
+      <a href="../../../../html-css/tailwind/07-studi-kasus-part-3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -646,7 +646,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../html-css/tailwind/08-tugas-refactor/" class="md-nav__link">
+      <a href="../../../../html-css/tailwind/08-tugas-refactor/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -722,7 +722,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../front-end/" class="md-nav__link">
+      <a href="../../../../front-end/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -795,7 +795,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../" class="md-nav__link">
+      <a href="../../../" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -859,7 +859,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../01.TypeScript/01-pengenalan-typescript/" class="md-nav__link">
+      <a href="../../../01.TypeScript/01-pengenalan-typescript/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -880,7 +880,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../01.TypeScript/02-variable-dan-type/" class="md-nav__link">
+      <a href="../../../01.TypeScript/02-variable-dan-type/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -901,7 +901,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../01.TypeScript/03-function/" class="md-nav__link">
+      <a href="../../../01.TypeScript/03-function/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -922,7 +922,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../01.TypeScript/04-array-object/" class="md-nav__link">
+      <a href="../../../01.TypeScript/04-array-object/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -943,7 +943,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../01.TypeScript/05-interface-type/" class="md-nav__link">
+      <a href="../../../01.TypeScript/05-interface-type/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -964,7 +964,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../01.TypeScript/06-conditional-loop/" class="md-nav__link">
+      <a href="../../../01.TypeScript/06-conditional-loop/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -985,7 +985,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../01.TypeScript/07-class-oop/" class="md-nav__link">
+      <a href="../../../01.TypeScript/07-class-oop/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1006,7 +1006,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../01.TypeScript/08-mini-project/" class="md-nav__link">
+      <a href="../../../01.TypeScript/08-mini-project/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1098,30 +1098,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Pertemuan 2 - Variable, Tipe Data, Operator
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../02-variabel-tipeData-operator/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1130,77 +1110,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Daftar isi">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Daftar isi
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-apa-itu-variabel" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Apa itu Variabel?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-tipe-data-primitif" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Tipe Data Primitif
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-konstanta-const" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Konstanta (const)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-operator-aritmatika-interaksi-pengguna" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Operator Aritmatika &amp; Interaksi Pengguna
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4. Operator Aritmatika & Interaksi Pengguna">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#tugas-mandiri-studi-kasus-sistem-kasir-kantin" class="md-nav__link">
-    <span class="md-ellipsis">
-      Tugas Mandiri (Studi Kasus: Sistem Kasir Kantin)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1231,10 +1140,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../04-array-slice-map/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Pertemuan 4 - Array, Slice, Map
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1243,6 +1172,68 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Daftar isi">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Daftar isi
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-array-si-kaku" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Array (Si Kaku)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-slice-si-fleksibel" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Slice (Si Fleksibel)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-map-kamus-key-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Map (Kamus / Key-Value)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Map (Kamus / Key-Value)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tugas-mandiri-studi-kasus-sistem-manajemen-warung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tugas Mandiri (Studi Kasus: Sistem Manajemen Warung)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1281,6 +1272,27 @@
   
   <span class="md-ellipsis">
     Pertemuan 6 - Pointer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2.API/01.pengenalan-api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pertemuan 7 - API
   </span>
   
 
@@ -1352,7 +1364,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mobile-flutter/" class="md-nav__link">
+      <a href="../../../../mobile-flutter/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1413,7 +1425,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mobile-flutter/01.foundation-routing/01.Foundation/" class="md-nav__link">
+      <a href="../../../../mobile-flutter/01.foundation-routing/01.Foundation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1434,7 +1446,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mobile-flutter/01.foundation-routing/02.routing/" class="md-nav__link">
+      <a href="../../../../mobile-flutter/01.foundation-routing/02.routing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1455,7 +1467,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mobile-flutter/01.foundation-routing/03.build-apk/" class="md-nav__link">
+      <a href="../../../../mobile-flutter/01.foundation-routing/03.build-apk/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1524,7 +1536,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mobile-flutter/02.state-management-provider/01.pengenalan-provider/" class="md-nav__link">
+      <a href="../../../../mobile-flutter/02.state-management-provider/01.pengenalan-provider/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1545,7 +1557,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mobile-flutter/02.state-management-provider/02.provider-crud/" class="md-nav__link">
+      <a href="../../../../mobile-flutter/02.state-management-provider/02.provider-crud/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1566,7 +1578,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mobile-flutter/02.state-management-provider/03.cart-provider/" class="md-nav__link">
+      <a href="../../../../mobile-flutter/02.state-management-provider/03.cart-provider/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1587,7 +1599,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mobile-flutter/02.state-management-provider/04.auth-provider/" class="md-nav__link">
+      <a href="../../../../mobile-flutter/02.state-management-provider/04.auth-provider/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1608,7 +1620,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mobile-flutter/02.state-management-provider/05.checkout/" class="md-nav__link">
+      <a href="../../../../mobile-flutter/02.state-management-provider/05.checkout/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1629,7 +1641,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mobile-flutter/02.state-management-provider/06.tugas/" class="md-nav__link">
+      <a href="../../../../mobile-flutter/02.state-management-provider/06.tugas/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1698,7 +1710,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mobile-flutter/03.api-integration/01.pengenalan-api/" class="md-nav__link">
+      <a href="../../../../mobile-flutter/03.api-integration/01.pengenalan-api/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1719,7 +1731,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mobile-flutter/03.api-integration/02.API-get-product/" class="md-nav__link">
+      <a href="../../../../mobile-flutter/03.api-integration/02.API-get-product/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1740,7 +1752,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mobile-flutter/03.api-integration/03.API-register/" class="md-nav__link">
+      <a href="../../../../mobile-flutter/03.api-integration/03.API-register/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1761,7 +1773,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mobile-flutter/03.api-integration/04.API-login/" class="md-nav__link">
+      <a href="../../../../mobile-flutter/03.api-integration/04.API-login/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1782,7 +1794,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mobile-flutter/03.api-integration/05.Tugas-API/" class="md-nav__link">
+      <a href="../../../../mobile-flutter/03.api-integration/05.Tugas-API/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1851,7 +1863,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mobile-flutter/04.firebase/01.pengenalan-firebase/" class="md-nav__link">
+      <a href="../../../../mobile-flutter/04.firebase/01.pengenalan-firebase/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1872,7 +1884,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mobile-flutter/04.firebase/02.menghubungkan-firebase/" class="md-nav__link">
+      <a href="../../../../mobile-flutter/04.firebase/02.menghubungkan-firebase/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1893,7 +1905,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mobile-flutter/04.firebase/03.firebase-auth/" class="md-nav__link">
+      <a href="../../../../mobile-flutter/04.firebase/03.firebase-auth/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1914,7 +1926,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mobile-flutter/04.firebase/04.cloud-firestore.md" class="md-nav__link">
+      <a href="../../../../mobile-flutter/04.firebase/04.firebase-cloud/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1935,7 +1947,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mobile-flutter/04.firebase/05.firebase-storage/" class="md-nav__link">
+      <a href="../../../../mobile-flutter/04.firebase/05.firebase-storage/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2004,7 +2016,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mobile-flutter/04.UTS/1.Sprint1/" class="md-nav__link">
+      <a href="../../../../mobile-flutter/04.UTS/1.Sprint1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2025,7 +2037,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mobile-flutter/04.UTS/2.Sprint2/" class="md-nav__link">
+      <a href="../../../../mobile-flutter/04.UTS/2.Sprint2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2046,7 +2058,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mobile-flutter/04.UTS/3.Sprint3/" class="md-nav__link">
+      <a href="../../../../mobile-flutter/04.UTS/3.Sprint3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2102,46 +2114,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-apa-itu-variabel" class="md-nav__link">
+  <a href="#1-array-si-kaku" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Apa itu Variabel?
+      1. Array (Si Kaku)
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-tipe-data-primitif" class="md-nav__link">
+  <a href="#2-slice-si-fleksibel" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Tipe Data Primitif
+      2. Slice (Si Fleksibel)
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-konstanta-const" class="md-nav__link">
+  <a href="#3-map-kamus-key-value" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Konstanta (const)
+      3. Map (Kamus / Key-Value)
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-operator-aritmatika-interaksi-pengguna" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Operator Aritmatika &amp; Interaksi Pengguna
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4. Operator Aritmatika & Interaksi Pengguna">
+    <nav class="md-nav" aria-label="3. Map (Kamus / Key-Value)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#tugas-mandiri-studi-kasus-sistem-kasir-kantin" class="md-nav__link">
+  <a href="#tugas-mandiri-studi-kasus-sistem-manajemen-warung" class="md-nav__link">
     <span class="md-ellipsis">
-      Tugas Mandiri (Studi Kasus: Sistem Kasir Kantin)
+      Tugas Mandiri (Studi Kasus: Sistem Manajemen Warung)
     </span>
   </a>
   
@@ -2167,82 +2170,82 @@
                   
 
 
-<h1 id="pertemuan-2-variabel-tipe-data-dan-operator">Pertemuan 2: Variabel, Tipe Data, dan Operator</h1>
-<h2 id="1-apa-itu-variabel">1. Apa itu Variabel?</h2>
-<p>Variabel adalah wadah atau tempat untuk menyimpan data sementara di dalam memori komputer. Di Golang, ada dua cara mendeklarasikan variabel:</p>
-<p><strong>Cara Eksplisit (Menggunakan <code>var</code>):</strong>
-Digunakan jika kita ingin menyiapkan wadahnya dulu, tapi datanya diisi nanti.
-<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">namaSiswa</span><span class="w"> </span><span class="kt">string</span>
-<span class="nx">namaSiswa</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Haidar&quot;</span>
-</code></pre></div></p>
-<p><strong>Cara Singkat (Type Inference <code>:=</code>):</strong>
-Sangat populer di Go. Kita tidak perlu menuliskan tipe datanya, Go otomatis menebak dari isinya.
-<div class="highlight"><pre><span></span><code><span class="nx">nilaiUjian</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">85</span><span class="w"> </span><span class="c1">// Go otomatis tahu ini Integer (Angka bulat)</span>
-</code></pre></div></p>
-<h2 id="2-tipe-data-primitif">2. Tipe Data Primitif</h2>
-<p>Setiap variabel harus punya tipe data yang jelas.<br />
-- <strong>String:</strong> Untuk teks. Selalu diapit tanda kutip ganda. Contoh: <code>"Pemrograman Backend"</code>.<br />
-- <strong>Integer (<code>int</code>):</strong> Untuk angka bilangan bulat. Contoh: <code>10</code>, <code>-50</code>, <code>2026</code>.<br />
-- <strong>Float (<code>float64</code>):</strong> Untuk angka desimal. Gunakan titik. Contoh: <code>3.14</code>, <code>85.5</code>.<br />
-- <strong>Boolean (<code>bool</code>):</strong> Hanya memiliki dua nilai, yaitu <code>true</code> (benar) atau <code>false</code> (salah).</p>
-<h2 id="3-konstanta-const">3. Konstanta (<code>const</code>)</h2>
-<p>Konstanta mirip seperti variabel, tetapi <strong>nilainya mutlak dan tidak bisa diubah</strong> setelah dibuat. Sangat aman untuk menyimpan data yang sifatnya tetap.
-<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">tarifPajak</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">11</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">namaAplikasi</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;My POS App&quot;</span>
-</code></pre></div></p>
-<h2 id="4-operator-aritmatika-interaksi-pengguna">4. Operator Aritmatika &amp; Interaksi Pengguna</h2>
-<p>Untuk membuat kalkulator, kita butuh operator matematika dasar:<br />
-- <code>+</code> (Penjumlahan)<br />
-- <code>-</code> (Pengurangan)<br />
-- <code>*</code> (Perkalian)<br />
-- <code>/</code> (Pembagian)<br />
-- <code>%</code> (Modulus / Sisa Hasil Bagi)  </p>
-<p>Sedangkan untuk meminta input dari pengguna di terminal, kita menggunakan <code>fmt.Scan</code> atau <code>fmt.Scanln</code>.</p>
-<p><strong>Contoh: Program Penghitung Umur Sederhana</strong>
+<h1 id="pertemuan-4-struktur-data-lanjutan-array-slice-dan-map">Pertemuan 4: Struktur Data Lanjutan (Array, Slice, dan Map)</h1>
+<p>Dalam aplikasi nyata, kita jarang menyimpan data satu per satu di dalam variabel terpisah. Kita butuh wadah yang bisa menampung banyak data sekaligus. Golang memiliki tiga struktur data utama untuk ini: Array, Slice, dan Map.</p>
+<h2 id="1-array-si-kaku">1. Array (Si Kaku)</h2>
+<p>Array adalah kumpulan data yang tipe datanya sama, tetapi <strong>ukurannya tetap (tidak bisa ditambah atau dikurangi)</strong> setelah dibuat. Di industri, Array jarang digunakan secara langsung, tetapi menjadi pondasi bagi Slice.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
-
 <span class="kn">import</span><span class="w"> </span><span class="s">&quot;fmt&quot;</span>
 
 <span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">nama</span><span class="w"> </span><span class="kt">string</span>
-<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">tahunLahir</span><span class="w"> </span><span class="kt">int</span>
+<span class="w">    </span><span class="c1">// Array dengan kapasitas pas 3 slot</span>
+<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">loker</span><span class="w"> </span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="kt">string</span>
+<span class="w">    </span><span class="nx">loker</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Buku&quot;</span>
+<span class="w">    </span><span class="nx">loker</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Tas&quot;</span>
+<span class="w">    </span><span class="nx">loker</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Laptop&quot;</span>
 
-<span class="w">    </span><span class="c1">// Meminta input Nama</span>
-<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Print</span><span class="p">(</span><span class="s">&quot;Masukkan nama Anda: &quot;</span><span class="p">)</span>
-<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Scanln</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">nama</span><span class="p">)</span><span class="w"> </span><span class="c1">// Simbol &amp; (Pointer) wajib digunakan saat Scan untuk menyimpan data ke alamat memori</span>
-
-<span class="w">    </span><span class="c1">// Meminta input Tahun Lahir</span>
-<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Print</span><span class="p">(</span><span class="s">&quot;Masukkan tahun lahir: &quot;</span><span class="p">)</span>
-<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Scanln</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">tahunLahir</span><span class="p">)</span>
-
-<span class="w">    </span><span class="c1">// Proses Kalkulasi</span>
-<span class="w">    </span><span class="nx">umur</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">2026</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">tahunLahir</span>
-
-<span class="w">    </span><span class="c1">// Output dengan format terstruktur (Printf)</span>
-<span class="w">    </span><span class="c1">// %s untuk String, %d untuk Angka (Digit)</span>
-<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;\nHalo %s! Umur kamu tahun ini diperkirakan %d tahun.\n&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">nama</span><span class="p">,</span><span class="w"> </span><span class="nx">umur</span><span class="p">)</span>
+<span class="w">    </span><span class="c1">// loker[3] = &quot;Sepatu&quot; // INI AKAN ERROR karena slot maksimal hanya 3</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">loker</span><span class="p">)</span>
 <span class="p">}</span>
-</code></pre></div></p>
-<hr />
-<h3 id="tugas-mandiri-studi-kasus-sistem-kasir-kantin"><strong>Tugas Mandiri (Studi Kasus: Sistem Kasir Kantin)</strong></h3>
-<p><strong>Tantangan: "Kalkulator Diskon Kantin"</strong>
-Buatlah sebuah program Go dengan ketentuan sebagai berikut:<br />
-1.  Buat folder dan inisialisasi module baru bernama <code>tugas-kasir</code>.<br />
-2.  Program akan meminta pengguna memasukkan <strong>Harga Makanan</strong> (angka) dan <strong>Jumlah Porsi</strong> (angka) yang dibeli.<br />
-3.  Hitung <strong>Total Harga</strong> (Harga Makanan * Jumlah Porsi).<br />
-4.  Kantin sedang berbaik hati, berikan <strong>Diskon tetap sebesar 10%</strong> dari Total Harga (Gunakan operator pembagian atau perkalian desimal).<br />
-5.  Hitung <strong>Total Bayar</strong> (Total Harga - Diskon).<br />
-6.  Tampilkan struk belanja yang rapi di terminal.</p>
-<p><strong>Contoh Output yang Diharapkan:</strong>
-<div class="highlight"><pre><span></span><code>=== KASIR KANTIN SEKOLAH ===
-Harga per porsi : 15000
-Jumlah porsi    : 2
-----------------------------
-Total Harga     : 30000
-Diskon 10%      : 3000
-Total Bayar     : 27000
-============================
-</code></pre></div></p>
+</code></pre></div>
+<h2 id="2-slice-si-fleksibel">2. Slice (Si Fleksibel)</h2>
+<p>Slice adalah "Array yang dinamis". Ini adalah struktur data yang <strong>paling sering digunakan</strong> di Golang. Ukurannya bisa bertambah secara otomatis jika kita menambahkan data baru menggunakan fungsi <code>append</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="c1">// Deklarasi Slice (Tanpa angka di dalam kurung siku)</span>
+<span class="w">    </span><span class="nx">keranjang</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">&quot;Apel&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Mangga&quot;</span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Menambahkan data baru di akhir</span>
+<span class="w">    </span><span class="nx">keranjang</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">append</span><span class="p">(</span><span class="nx">keranjang</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Jeruk&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="nx">keranjang</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">append</span><span class="p">(</span><span class="nx">keranjang</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Pisang&quot;</span><span class="p">)</span>
+
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Isi Keranjang:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">keranjang</span><span class="p">)</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Jumlah buah:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">len</span><span class="p">(</span><span class="nx">keranjang</span><span class="p">))</span><span class="w"> </span><span class="c1">// len() untuk menghitung jumlah data</span>
+</code></pre></div>
+<h2 id="3-map-kamus-key-value">3. Map (Kamus / Key-Value)</h2>
+<p>Jika Slice menggunakan angka/indeks (0, 1, 2) untuk mencari data, <strong>Map menggunakan kata kunci (Key)</strong>. Ini sangat mirip dengan struktur data JSON pada API.</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="c1">// map[TipeKey]TipeData</span>
+<span class="w">    </span><span class="nx">hargaMenu</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">int</span><span class="p">{</span>
+<span class="w">        </span><span class="s">&quot;Kopi&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">15000</span><span class="p">,</span>
+<span class="w">        </span><span class="s">&quot;Teh&quot;</span><span class="p">:</span><span class="w">  </span><span class="mi">10000</span><span class="p">,</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Menambah data baru ke Map</span>
+<span class="w">    </span><span class="nx">hargaMenu</span><span class="p">[</span><span class="s">&quot;Roti&quot;</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">12000</span>
+
+<span class="w">    </span><span class="c1">// Mengambil data spesifik</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Harga Kopi:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">hargaMenu</span><span class="p">[</span><span class="s">&quot;Kopi&quot;</span><span class="p">])</span>
+
+<span class="w">    </span><span class="c1">// Menghapus data dari Map</span>
+<span class="w">    </span><span class="nb">delete</span><span class="p">(</span><span class="nx">hargaMenu</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Teh&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="tugas-mandiri-studi-kasus-sistem-manajemen-warung"><strong>Tugas Mandiri (Studi Kasus: Sistem Manajemen Warung)</strong></h3>
+<p><strong>Tantangan: "Aplikasi Kasir dan Keranjang Warung"</strong><br />
+Buatlah sebuah program Go dengan ketentuan:<br />
+1.  Buat folder dan inisialisasi module baru bernama <code>tugas-warung</code>.<br />
+2.  Buat sebuah <strong>Map</strong> bernama <code>daftarHarga</code> yang berisi minimal 3 barang dan harganya (misal: "Beras": 12000, "Telur": 3000, "Minyak": 15000).<br />
+3.  Buat sebuah <strong>Slice</strong> bernama <code>keranjang</code> dengan tipe <code>string</code> (awalnya kosong) untuk menampung nama barang yang dibeli.<br />
+4.  Gunakan <code>for {}</code> (<em>Infinite Loop</em>) untuk menampilkan input terminal yang meminta pengguna mengetik nama barang yang ingin dibeli.<br />
+5.  Setiap kali pengguna mengetik nama barang:<br />
+    - Masukkan nama barang tersebut ke dalam <code>keranjang</code> menggunakan <code>append</code>.<br />
+    - Tampilkan pesan: "[Nama Barang] berhasil dimasukkan ke keranjang."<br />
+6.  Jika pengguna mengetik <strong>"selesai"</strong>, hentikan perulangan menggunakan <code>break</code>.<br />
+7.  <strong>Tantangan Ekstra:</strong> Setelah perulangan selesai, gunakan perulangan <code>for</code> untuk membaca isi <code>keranjang</code>, cocokkan namanya dengan <code>daftarHarga</code>, dan hitung <strong>Total Belanjaan</strong>.  </p>
+<p><strong>Output yang Diharapkan:</strong>
+<div class="highlight"><pre><span></span><code>=== WARUNG GOLANG ===
+Ketik nama barang (ketik &#39;selesai&#39; untuk bayar):
+&gt; Beras
+Beras masuk ke keranjang.
+&gt; Telur
+Telur masuk ke keranjang.
+&gt; Telur
+Telur masuk ke keranjang.
+&gt; selesai
+
+=== STRUK BELANJA ===
+Isi Keranjang : [Beras Telur Telur]
+Total Belanja : Rp. 18000
+Terima kasih!
+</code></pre></div>
+<em>(Catatan Guru: Untuk mencari total, siswa harus meloop slice <code>keranjang</code> di akhir program, lalu menjumlahkan nilainya dari map <code>daftarHarga</code> ke dalam sebuah variabel <code>total</code>)</em>.</p>
 
 
 
@@ -2278,7 +2281,7 @@ Total Bayar     : 27000
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../01-pengenalan-golang/" class="md-footer__link md-footer__link--prev" aria-label="Sebelumnya: Pertemuan 1 - Pengenalan Golang">
+          <a href="../03-percabangan-perulangan/" class="md-footer__link md-footer__link--prev" aria-label="Sebelumnya: Pertemuan 3 - Percabangan &amp; Perulangan">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -2288,20 +2291,20 @@ Total Bayar     : 27000
                 Sebelumnya
               </span>
               <div class="md-ellipsis">
-                Pertemuan 1 - Pengenalan Golang
+                Pertemuan 3 - Percabangan & Perulangan
               </div>
             </div>
           </a>
         
         
           
-          <a href="../03-percabangan-perulangan/" class="md-footer__link md-footer__link--next" aria-label="Selanjutnya: Pertemuan 3 - Percabangan &amp; Perulangan">
+          <a href="../05-function-errorHandling/" class="md-footer__link md-footer__link--next" aria-label="Selanjutnya: Pertemuan 5 - Function &amp; Error Handling">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Selanjutnya
               </span>
               <div class="md-ellipsis">
-                Pertemuan 3 - Percabangan & Perulangan
+                Pertemuan 5 - Function & Error Handling
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -2361,10 +2364,10 @@ Total Bayar     : 27000
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.collapse", "navigation.top", "search.highlight", "content.code.copy", "navigation.footer", "footer.social", "footer.copyright"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Tersalin ke clipboard", "clipboard.copy": "Salin ke clipboard", "search.result.more.one": "1 lagi di halaman ini", "search.result.more.other": "# lagi di halaman ini", "search.result.none": "Tidak ada dokumen yang sesuai", "search.result.one": "1 dokumen ditemukan", "search.result.other": "# dokumen ditemukan", "search.result.placeholder": "Ketik untuk mulai pencarian", "search.result.term.missing": "Tidak ada", "select.version": "Pilih versi"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.collapse", "navigation.top", "search.highlight", "content.code.copy", "navigation.footer", "footer.social", "footer.copyright"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Tersalin ke clipboard", "clipboard.copy": "Salin ke clipboard", "search.result.more.one": "1 lagi di halaman ini", "search.result.more.other": "# lagi di halaman ini", "search.result.none": "Tidak ada dokumen yang sesuai", "search.result.one": "1 dokumen ditemukan", "search.result.other": "# dokumen ditemukan", "search.result.placeholder": "Ketik untuk mulai pencarian", "search.result.term.missing": "Tidak ada", "select.version": "Pilih versi"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.8fd75fb4.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.8fd75fb4.min.js"></script>
       
     
   <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});

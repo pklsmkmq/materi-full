@@ -9,25 +9,25 @@
       
       
       
-        <link rel="prev" href="../05-function-errorHandling/">
+        <link rel="prev" href="../02-variabel-tipeData-operator/">
       
       
-        <link rel="next" href="../../../mobile-flutter/">
+        <link rel="next" href="../04-array-slice-map/">
       
       
-      <link rel="icon" href="../../../assets/logo.png">
+      <link rel="icon" href="../../../../assets/logo.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.11">
     
     
       
-        <title>Pertemuan 6 - Pointer - Modul Pak Nur</title>
+        <title>Pertemuan 3 - Percabangan & Perulangan - Modul Pak Nur</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.7e359304.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.7e359304.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -46,16 +46,16 @@
       
     
     
-      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
     
-   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+   <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
     html.glightbox-open { overflow: initial; height: 100%; }
     .gslide-title { margin-top: 0px; user-select: text; }
     .gslide-desc { color: #666; user-select: text; }
@@ -64,7 +64,7 @@
     .gdesc-inner { font-size: 0.75rem; }
     body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
     body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -83,7 +83,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#pertemuan-6-pointer" class="md-skip">
+        <a href="#pertemuan-3-logika-percabangan-perulangan-real-world-patterns" class="md-skip">
           Lewati ke isi
         </a>
       
@@ -97,9 +97,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="Modul Pak Nur" class="md-header__button md-logo" aria-label="Modul Pak Nur" data-md-component="logo">
+    <a href="../../../.." title="Modul Pak Nur" class="md-header__button md-logo" aria-label="Modul Pak Nur" data-md-component="logo">
       
-  <img src="../../../assets/logo.png" alt="logo">
+  <img src="../../../../assets/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Pertemuan 6 - Pointer
+              Pertemuan 3 - Percabangan & Perulangan
             
           </span>
         </div>
@@ -211,7 +211,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
+      <a href="../../../.." class="md-tabs__link">
         
   
     
@@ -230,7 +230,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../html-css/" class="md-tabs__link">
+        <a href="../../../../html-css/" class="md-tabs__link">
           
   
   HTML CSS
@@ -248,7 +248,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../front-end/" class="md-tabs__link">
+        <a href="../../../../front-end/" class="md-tabs__link">
           
   
   Front End
@@ -268,7 +268,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../" class="md-tabs__link">
+        <a href="../../../" class="md-tabs__link">
           
   
   Back End
@@ -286,7 +286,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../mobile-flutter/" class="md-tabs__link">
+        <a href="../../../../mobile-flutter/" class="md-tabs__link">
           
   
   Mobile Flutter
@@ -319,9 +319,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigasi" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Modul Pak Nur" class="md-nav__button md-logo" aria-label="Modul Pak Nur" data-md-component="logo">
+    <a href="../../../.." title="Modul Pak Nur" class="md-nav__button md-logo" aria-label="Modul Pak Nur" data-md-component="logo">
       
-  <img src="../../../assets/logo.png" alt="logo">
+  <img src="../../../../assets/logo.png" alt="logo">
 
     </a>
     Modul Pak Nur
@@ -336,7 +336,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -396,7 +396,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../html-css/" class="md-nav__link">
+      <a href="../../../../html-css/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -417,7 +417,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../html-css/html/" class="md-nav__link">
+      <a href="../../../../html-css/html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -438,7 +438,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../html-css/css/" class="md-nav__link">
+      <a href="../../../../html-css/css/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -499,7 +499,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../html-css/tailwind/01-instalasi-dasar/" class="md-nav__link">
+      <a href="../../../../html-css/tailwind/01-instalasi-dasar/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -520,7 +520,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../html-css/tailwind/02-jarak-custom/" class="md-nav__link">
+      <a href="../../../../html-css/tailwind/02-jarak-custom/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -541,7 +541,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../html-css/tailwind/03-flexbox/" class="md-nav__link">
+      <a href="../../../../html-css/tailwind/03-flexbox/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -562,7 +562,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../html-css/tailwind/04-responsive/" class="md-nav__link">
+      <a href="../../../../html-css/tailwind/04-responsive/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -583,7 +583,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../html-css/tailwind/05-studi-kasus-part-1/" class="md-nav__link">
+      <a href="../../../../html-css/tailwind/05-studi-kasus-part-1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -604,7 +604,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../html-css/tailwind/06-studi-kasus-part-2/" class="md-nav__link">
+      <a href="../../../../html-css/tailwind/06-studi-kasus-part-2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -625,7 +625,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../html-css/tailwind/07-studi-kasus-part-3/" class="md-nav__link">
+      <a href="../../../../html-css/tailwind/07-studi-kasus-part-3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -646,7 +646,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../html-css/tailwind/08-tugas-refactor/" class="md-nav__link">
+      <a href="../../../../html-css/tailwind/08-tugas-refactor/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -722,7 +722,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../front-end/" class="md-nav__link">
+      <a href="../../../../front-end/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -795,7 +795,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../" class="md-nav__link">
+      <a href="../../../" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -859,7 +859,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../01.TypeScript/01-pengenalan-typescript/" class="md-nav__link">
+      <a href="../../../01.TypeScript/01-pengenalan-typescript/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -880,7 +880,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../01.TypeScript/02-variable-dan-type/" class="md-nav__link">
+      <a href="../../../01.TypeScript/02-variable-dan-type/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -901,7 +901,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../01.TypeScript/03-function/" class="md-nav__link">
+      <a href="../../../01.TypeScript/03-function/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -922,7 +922,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../01.TypeScript/04-array-object/" class="md-nav__link">
+      <a href="../../../01.TypeScript/04-array-object/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -943,7 +943,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../01.TypeScript/05-interface-type/" class="md-nav__link">
+      <a href="../../../01.TypeScript/05-interface-type/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -964,7 +964,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../01.TypeScript/06-conditional-loop/" class="md-nav__link">
+      <a href="../../../01.TypeScript/06-conditional-loop/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -985,7 +985,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../01.TypeScript/07-class-oop/" class="md-nav__link">
+      <a href="../../../01.TypeScript/07-class-oop/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1006,7 +1006,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../01.TypeScript/08-mini-project/" class="md-nav__link">
+      <a href="../../../01.TypeScript/08-mini-project/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1119,10 +1119,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../03-percabangan-perulangan/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Pertemuan 3 - Percabangan & Perulangan
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1131,6 +1151,68 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Daftar isi">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Daftar isi
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-percabangan-dasar-if-else" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Percabangan Dasar (If - Else)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-percabangan-satu-baris-if-with-short-statement" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Percabangan "Satu Baris" (If with Short Statement)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-perulangan-the-go-way" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Perulangan (The "Go" Way)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Perulangan (The "Go" Way)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tugas-mandiri-studi-kasus-terminal-atm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tugas Mandiri (Studi Kasus: Terminal ATM)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1182,30 +1264,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Pertemuan 6 - Pointer
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../06-pointer/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1214,131 +1276,27 @@
   
 
       </a>
-      
-        
+    </li>
+  
 
-<nav class="md-nav md-nav--secondary" aria-label="Daftar isi">
+              
+            
+              
+                
   
   
   
-    
   
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Daftar isi
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-pendahuluan-apa-itu-pointer" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Pendahuluan: Apa itu Pointer?
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1. Pendahuluan: Apa itu Pointer?">
-      <ul class="md-nav__list">
+    <li class="md-nav__item">
+      <a href="../../2.API/01.pengenalan-api/" class="md-nav__link">
         
-          <li class="md-nav__item">
-  <a href="#analogi-dunia-nyata" class="md-nav__link">
-    <span class="md-ellipsis">
-      Analogi Dunia Nyata
-    </span>
-  </a>
   
-</li>
-        
-      </ul>
-    </nav>
+  <span class="md-ellipsis">
+    Pertemuan 7 - API
+  </span>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-operator-dasar-pointer" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Operator Dasar Pointer
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. Operator Dasar Pointer">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#contoh-dasar-tanpa-function" class="md-nav__link">
-    <span class="md-ellipsis">
-      Contoh Dasar (Tanpa Function)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-pointer-dalam-function" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Pointer dalam Function
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. Pointer dalam Function">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#contoh-kasus-update-saldo-tabungan" class="md-nav__link">
-    <span class="md-ellipsis">
-      Contoh Kasus: Update Saldo Tabungan
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-level-pro-pointer-receiver-method" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Level Pro: Pointer Receiver Method
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4. Level Pro: Pointer Receiver Method">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#contoh-kasus-sistem-update-profil-user" class="md-nav__link">
-    <span class="md-ellipsis">
-      Contoh Kasus: Sistem Update Profil User
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-tugas-mandiri-studi-kasus" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. Tugas Mandiri (Studi Kasus)
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
+
+      </a>
     </li>
   
 
@@ -1406,7 +1364,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mobile-flutter/" class="md-nav__link">
+      <a href="../../../../mobile-flutter/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1467,7 +1425,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mobile-flutter/01.foundation-routing/01.Foundation/" class="md-nav__link">
+      <a href="../../../../mobile-flutter/01.foundation-routing/01.Foundation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1488,7 +1446,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mobile-flutter/01.foundation-routing/02.routing/" class="md-nav__link">
+      <a href="../../../../mobile-flutter/01.foundation-routing/02.routing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1509,7 +1467,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mobile-flutter/01.foundation-routing/03.build-apk/" class="md-nav__link">
+      <a href="../../../../mobile-flutter/01.foundation-routing/03.build-apk/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1578,7 +1536,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mobile-flutter/02.state-management-provider/01.pengenalan-provider/" class="md-nav__link">
+      <a href="../../../../mobile-flutter/02.state-management-provider/01.pengenalan-provider/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1599,7 +1557,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mobile-flutter/02.state-management-provider/02.provider-crud/" class="md-nav__link">
+      <a href="../../../../mobile-flutter/02.state-management-provider/02.provider-crud/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1620,7 +1578,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mobile-flutter/02.state-management-provider/03.cart-provider/" class="md-nav__link">
+      <a href="../../../../mobile-flutter/02.state-management-provider/03.cart-provider/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1641,7 +1599,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mobile-flutter/02.state-management-provider/04.auth-provider/" class="md-nav__link">
+      <a href="../../../../mobile-flutter/02.state-management-provider/04.auth-provider/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1662,7 +1620,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mobile-flutter/02.state-management-provider/05.checkout/" class="md-nav__link">
+      <a href="../../../../mobile-flutter/02.state-management-provider/05.checkout/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1683,7 +1641,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mobile-flutter/02.state-management-provider/06.tugas/" class="md-nav__link">
+      <a href="../../../../mobile-flutter/02.state-management-provider/06.tugas/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1752,7 +1710,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mobile-flutter/03.api-integration/01.pengenalan-api/" class="md-nav__link">
+      <a href="../../../../mobile-flutter/03.api-integration/01.pengenalan-api/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1773,7 +1731,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mobile-flutter/03.api-integration/02.API-get-product/" class="md-nav__link">
+      <a href="../../../../mobile-flutter/03.api-integration/02.API-get-product/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1794,7 +1752,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mobile-flutter/03.api-integration/03.API-register/" class="md-nav__link">
+      <a href="../../../../mobile-flutter/03.api-integration/03.API-register/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1815,7 +1773,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mobile-flutter/03.api-integration/04.API-login/" class="md-nav__link">
+      <a href="../../../../mobile-flutter/03.api-integration/04.API-login/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1836,7 +1794,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mobile-flutter/03.api-integration/05.Tugas-API/" class="md-nav__link">
+      <a href="../../../../mobile-flutter/03.api-integration/05.Tugas-API/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1905,7 +1863,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mobile-flutter/04.firebase/01.pengenalan-firebase/" class="md-nav__link">
+      <a href="../../../../mobile-flutter/04.firebase/01.pengenalan-firebase/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1926,7 +1884,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mobile-flutter/04.firebase/02.menghubungkan-firebase/" class="md-nav__link">
+      <a href="../../../../mobile-flutter/04.firebase/02.menghubungkan-firebase/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1947,7 +1905,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mobile-flutter/04.firebase/03.firebase-auth/" class="md-nav__link">
+      <a href="../../../../mobile-flutter/04.firebase/03.firebase-auth/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1968,7 +1926,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mobile-flutter/04.firebase/04.cloud-firestore.md" class="md-nav__link">
+      <a href="../../../../mobile-flutter/04.firebase/04.firebase-cloud/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1989,7 +1947,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mobile-flutter/04.firebase/05.firebase-storage/" class="md-nav__link">
+      <a href="../../../../mobile-flutter/04.firebase/05.firebase-storage/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2058,7 +2016,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mobile-flutter/04.UTS/1.Sprint1/" class="md-nav__link">
+      <a href="../../../../mobile-flutter/04.UTS/1.Sprint1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2079,7 +2037,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mobile-flutter/04.UTS/2.Sprint2/" class="md-nav__link">
+      <a href="../../../../mobile-flutter/04.UTS/2.Sprint2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2100,7 +2058,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mobile-flutter/04.UTS/3.Sprint3/" class="md-nav__link">
+      <a href="../../../../mobile-flutter/04.UTS/3.Sprint3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2156,19 +2114,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-pendahuluan-apa-itu-pointer" class="md-nav__link">
+  <a href="#1-percabangan-dasar-if-else" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Pendahuluan: Apa itu Pointer?
+      1. Percabangan Dasar (If - Else)
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="1. Pendahuluan: Apa itu Pointer?">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-percabangan-satu-baris-if-with-short-statement" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Percabangan "Satu Baris" (If with Short Statement)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-perulangan-the-go-way" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Perulangan (The "Go" Way)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Perulangan (The "Go" Way)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#analogi-dunia-nyata" class="md-nav__link">
+  <a href="#tugas-mandiri-studi-kasus-terminal-atm" class="md-nav__link">
     <span class="md-ellipsis">
-      Analogi Dunia Nyata
+      Tugas Mandiri (Studi Kasus: Terminal ATM)
     </span>
   </a>
   
@@ -2176,87 +2152,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-operator-dasar-pointer" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Operator Dasar Pointer
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. Operator Dasar Pointer">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#contoh-dasar-tanpa-function" class="md-nav__link">
-    <span class="md-ellipsis">
-      Contoh Dasar (Tanpa Function)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-pointer-dalam-function" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Pointer dalam Function
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. Pointer dalam Function">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#contoh-kasus-update-saldo-tabungan" class="md-nav__link">
-    <span class="md-ellipsis">
-      Contoh Kasus: Update Saldo Tabungan
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-level-pro-pointer-receiver-method" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Level Pro: Pointer Receiver Method
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4. Level Pro: Pointer Receiver Method">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#contoh-kasus-sistem-update-profil-user" class="md-nav__link">
-    <span class="md-ellipsis">
-      Contoh Kasus: Sistem Update Profil User
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-tugas-mandiri-studi-kasus" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. Tugas Mandiri (Studi Kasus)
-    </span>
-  </a>
   
 </li>
       
@@ -2275,132 +2170,89 @@
                   
 
 
-<h1 id="pertemuan-6-pointer">Pertemuan 6: Pointer</h1>
-<h2 id="1-pendahuluan-apa-itu-pointer">1. Pendahuluan: Apa itu Pointer?</h2>
-<p>Dalam pemrograman, variabel adalah tempat menyimpan data. Namun, data tersebut sebenarnya duduk di sebuah alamat fisik di dalam memori (RAM). <strong>Pointer</strong> adalah sebuah variabel yang isinya bukan data (seperti angka atau teks), melainkan <strong>alamat memori</strong> dari variabel lain.</p>
-<h3 id="analogi-dunia-nyata">Analogi Dunia Nyata</h3>
-<p>Jika variabel biasa adalah <strong>Rumah</strong>, maka Pointer adalah <strong>Secarik kertas berisi alamat rumah tersebut</strong>.</p>
-<ul>
-<li>
-<p><strong>Mengubah isi rumah:</strong> Datang langsung dan ganti catnya.</p>
-</li>
-<li>
-<p><strong>Mengubah via pointer:</strong> Lihat alamat di kertas, datangi rumah di alamat tersebut, lalu ganti catnya.</p>
-</li>
-</ul>
-<hr />
-<h2 id="2-operator-dasar-pointer">2. Operator Dasar Pointer</h2>
-<p>Ada dua simbol keramat yang harus kalian hafal di luar kepala:</p>
-<ol>
-<li>
-<p><code>&amp;</code> (<strong>Ampersand</strong> / <em>Address-of</em>): Digunakan untuk mengambil alamat memori dari sebuah variabel.</p>
-</li>
-<li>
-<p><code>*</code> (<strong>Asterisk</strong> / <em>Dereferencing</em>): Digunakan untuk mengakses atau mengubah nilai yang ada di alamat tersebut.</p>
-</li>
-</ol>
-<h3 id="contoh-dasar-tanpa-function">Contoh Dasar (Tanpa Function)</h3>
+<h1 id="pertemuan-3-logika-percabangan-perulangan-real-world-patterns">Pertemuan 3: Logika Percabangan &amp; Perulangan (Real-World Patterns)</h1>
+<p>Aplikasi <em>backend</em> harus efisien dan aman. Di Golang, kita sangat mengutamakan penulisan kode yang ringkas dan <em>to-the-point</em>. Hari ini kita akan mempelajari pola logika yang paling sering digunakan oleh <em>Go Engineer</em> di proyek nyata.</p>
+<h2 id="1-percabangan-dasar-if-else">1. Percabangan Dasar (If - Else)</h2>
+<p>Digunakan untuk mengecek kondisi Benar atau Salah. Di Go, kondisi tidak perlu diapit tanda kurung <code>()</code>, membuat kode lebih bersih.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
 
 <span class="kn">import</span><span class="w"> </span><span class="s">&quot;fmt&quot;</span>
 
 <span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">nama</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="s">&quot;Abqory&quot;</span><span class="w"> </span><span class="c1">// Variabel biasa</span>
+<span class="w">    </span><span class="nx">statusServer</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="s">&quot;Aktif&quot;</span>
 
-<span class="w">    </span><span class="c1">// Kita buat pointer yang menunjuk ke alamat &#39;nama&#39;</span>
-<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">pointerNama</span><span class="w"> </span><span class="o">*</span><span class="kt">string</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">nama</span><span class="w"> </span>
-
-<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Isi variabel nama:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">nama</span><span class="p">)</span><span class="w">          </span>
-<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Alamat variabel nama:&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">nama</span><span class="p">)</span><span class="w">      </span>
-<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Isi dari pointerNama:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">pointerNama</span><span class="p">)</span><span class="w"> </span>
-
-<span class="w">    </span><span class="c1">// MENGUBAH DATA VIA ALAMAT (Dereferencing)</span>
-<span class="w">    </span><span class="c1">// Kita gunakan tanda bintang untuk &quot;masuk&quot; ke alamat tersebut</span>
-<span class="w">    </span><span class="o">*</span><span class="nx">pointerNama</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Fawwaz&quot;</span>
-
-<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Nama setelah diubah via pointer:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">nama</span><span class="p">)</span><span class="w"> </span><span class="c1">// Output: Fawwaz</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">statusServer</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;Aktif&quot;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Server berjalan normal.&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Peringatan: Server mati!&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<hr />
-<h2 id="3-pointer-dalam-function">3. Pointer dalam Function</h2>
-<p>Secara default, Golang menggunakan sistem <em>Pass by Value</em>. Jika kalian mengirim variabel ke function tanpa pointer, Golang akan membuat "copy" atau duplikatnya. Perubahan di dalam function <strong>tidak akan</strong> merubah variabel asli di luar.</p>
-<p><strong>Solusinya?</strong> Kirim alamatnya menggunakan Pointer.</p>
-<h3 id="contoh-kasus-update-saldo-tabungan">Contoh Kasus: Update Saldo Tabungan</h3>
-<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+<h2 id="2-percabangan-satu-baris-if-with-short-statement">2. Percabangan "Satu Baris" (If with Short Statement)</h2>
+<p>Ini adalah "Gaya Golang" sesungguhnya. Kita bisa membuat variabel, melakukan proses, sekaligus mengecek kondisinya dalam satu baris <code>if</code>. Sangat sering dipakai untuk mengecek <em>error</em> atau hasil kalkulasi agar variabelnya tidak mengotori memori utama.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Rumus: if [inisialisasi]; [kondisi] { ... }</span>
 
-<span class="kn">import</span><span class="w"> </span><span class="s">&quot;fmt&quot;</span>
-
-<span class="kd">func</span><span class="w"> </span><span class="nx">tambahSaldo</span><span class="p">(</span><span class="nx">saldo</span><span class="w"> </span><span class="o">*</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="nx">nominal</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="c1">// Kita gunakan *saldo untuk mengubah nilai di alamat aslinya</span>
-<span class="w">    </span><span class="o">*</span><span class="nx">saldo</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="o">*</span><span class="nx">saldo</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">nominal</span>
+<span class="k">if</span><span class="w"> </span><span class="nx">sisaStok</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">8</span><span class="p">;</span><span class="w"> </span><span class="nx">sisaStok</span><span class="w"> </span><span class="p">&lt;</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Variabel sisaStok HANYA BISA dipakai di dalam kurung kurawal ini</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;Peringatan! Stok hampir habis. Sisa: %d\n&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">sisaStok</span><span class="p">)</span>
 <span class="p">}</span>
-
-<span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">tabungan</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">100000</span>
-
-<span class="w">    </span><span class="c1">// Kita kirim alamatnya menggunakan simbol &amp;</span>
-<span class="w">    </span><span class="nx">tambahSaldo</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">tabungan</span><span class="p">,</span><span class="w"> </span><span class="mi">50000</span><span class="p">)</span>
-
-<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Total Tabungan Sekarang:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">tabungan</span><span class="p">)</span><span class="w"> </span><span class="c1">// Output: 150000</span>
-<span class="p">}</span>
+<span class="c1">// fmt.Println(sisaStok) // JIKA DITULIS DISINI AKAN ERROR, memori langsung dibersihkan.</span>
 </code></pre></div>
-<hr />
-<h2 id="4-level-pro-pointer-receiver-method">4. Level Pro: Pointer Receiver Method</h2>
-<p>Dalam standar industri, kita sering menempelkan fungsi langsung ke sebuah <code>struct</code> (objek). Ini disebut <strong>Method</strong>. Agar method tersebut bisa mengubah isi data objek yang asli, kita wajib gunakan <strong>Pointer Receiver</strong>.</p>
-<h3 id="contoh-kasus-sistem-update-profil-user">Contoh Kasus: Sistem Update Profil User</h3>
-<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+<h2 id="3-perulangan-the-go-way">3. Perulangan (The "Go" Way)</h2>
+<p>Golang hanya punya satu kata kunci untuk perulangan: <code>for</code>. Tidak ada <code>while</code> atau <code>do-while</code>. Di proyek nyata, kita sering memakai 2 pola yang paling mudah ditulis ini:</p>
+<p><strong>A. For sebagai "While" (Condition Only)</strong><br />
+Hanya menggunakan satu kondisi. Selama kondisi terpenuhi, perulangan jalan terus. Sering dipakai untuk memonitor status.
+<div class="highlight"><pre><span></span><code><span class="nx">baterai</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">3</span>
 
-<span class="kn">import</span><span class="w"> </span><span class="s">&quot;fmt&quot;</span>
-
-<span class="kd">type</span><span class="w"> </span><span class="nx">User</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">Username</span><span class="w"> </span><span class="kt">string</span>
-<span class="w">    </span><span class="nx">Email</span><span class="w">    </span><span class="kt">string</span>
+<span class="k">for</span><span class="w"> </span><span class="nx">baterai</span><span class="w"> </span><span class="p">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Drone terbang. Sisa baterai:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">baterai</span><span class="p">)</span>
+<span class="w">    </span><span class="nx">baterai</span><span class="o">--</span><span class="w"> </span><span class="c1">// Kurangi 1</span>
 <span class="p">}</span>
+<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Drone mendarat.&quot;</span><span class="p">)</span>
+</code></pre></div></p>
+<p><strong>B. For Tanpa Batas (Infinite Loop) + Break</strong><br />
+Tidak ada kondisi yang ditulis di awal. Program akan berulang selamanya (<code>for {}</code>) sampai dipaksa berhenti dengan <code>break</code>. Ini pola wajib untuk membuat <em>server</em> atau aplikasi yang menunggu ketikan <em>user</em>.
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Sistem memantau pergerakan...&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="c1">// Bayangkan jika ada pergerakan terdeteksi:</span>
+<span class="w">    </span><span class="nx">adaPergerakan</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span>
 
-<span class="c1">// Method ini &#39;menempel&#39; pada User menggunakan pointer receiver (*User)</span>
-<span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">u</span><span class="w"> </span><span class="o">*</span><span class="nx">User</span><span class="p">)</span><span class="w"> </span><span class="nx">GantiEmail</span><span class="p">(</span><span class="nx">emailBaru</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">u</span><span class="p">.</span><span class="nx">Email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">emailBaru</span>
-<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Log: Email berhasil diubah!&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">adaPergerakan</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Penyusup terdeteksi! Menghentikan pemantauan.&quot;</span><span class="p">)</span>
+<span class="w">        </span><span class="k">break</span><span class="w"> </span><span class="c1">// Hentikan perulangan paksa</span>
+<span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
+</code></pre></div></p>
+<h3 id="tugas-mandiri-studi-kasus-terminal-atm"><strong>Tugas Mandiri (Studi Kasus: Terminal ATM)</strong></h3>
+<p><strong>Tantangan: "Simulasi Mesin ATM Sederhana"</strong><br />
+Buatlah sebuah program Go dengan ketentuan:<br />
+1.  Buat folder dan inisialisasi module baru bernama <code>tugas-atm</code>.<br />
+2.  Gunakan pola <strong>Infinite Loop (<code>for {}</code>)</strong> untuk membuat layar utama ATM yang terus menyala.<br />
+3.  Di dalam perulangan, tampilkan menu:<br />
+<code>1. Cek Saldo</code><br />
+<code>2. Tarik Tunai</code><br />
+<code>3. Keluar (Ambil Kartu)</code><br />
+4.  Gunakan <code>fmt.Scanln</code> untuk meminta pilihan pengguna.<br />
+5.  Gunakan <strong>If-Else</strong> dasar:<br />
+    - Jika pilih 1: Tampilkan "Saldo Anda: Rp. 5.000.000".<br />
+    - Jika pilih 2: Minta pengguna memasukkan nominal. (Tidak perlu dihitung pengurangannya dulu, cukup tampilkan "Anda menarik uang sebesar: [nominal]").<br />
+    - Jika pilih 3: Tampilkan "Terima kasih telah bertransaksi", lalu gunakan <strong><code>break</code></strong> agar mesin ATM (perulangan) berhenti beroperasi.  </p>
+<p><strong>Output yang Diharapkan:</strong>
+<div class="highlight"><pre><span></span><code>=== ATM GOLANG ===
+1. Cek Saldo
+2. Tarik Tunai
+3. Keluar
+Pilih menu: 1
+Saldo Anda: Rp. 5.000.000
 
-<span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">user1</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">User</span><span class="p">{</span><span class="nx">Username</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;rangga_dev&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">Email</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;lama@gmail.com&quot;</span><span class="p">}</span>
-
-<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Email Lama:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">user1</span><span class="p">.</span><span class="nx">Email</span><span class="p">)</span>
-
-<span class="w">    </span><span class="c1">// Memanggil method (Pointer diatur otomatis oleh Golang)</span>
-<span class="w">    </span><span class="nx">user1</span><span class="p">.</span><span class="nx">GantiEmail</span><span class="p">(</span><span class="s">&quot;baru@gmail.com&quot;</span><span class="p">)</span>
-
-<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Email Baru:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">user1</span><span class="p">.</span><span class="nx">Email</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div>
-<p><em>Catatan: Menggunakan pointer pada method jauh lebih efisien memori karena komputer tidak perlu menyalin ulang seluruh data objek (struct) ke dalam fungsi.</em></p>
-<hr />
-<h2 id="5-tugas-mandiri-studi-kasus">5. Tugas Mandiri (Studi Kasus)</h2>
-<p><strong>Judul Tugas: Sistem Manajemen Stok Toko Sederhana</strong></p>
-<p><strong>Instruksi:</strong></p>
-<ol>
-<li>
-<p>Buatlah sebuah <code>struct</code> bernama <code>Produk</code> yang memiliki field: <code>Nama</code> (string), <code>Harga</code> (int), dan <code>Stok</code> (int).</p>
-</li>
-<li>
-<p>Buatlah sebuah <strong>Method</strong> dengan <strong>Pointer Receiver</strong> bernama <code>KurangiStok</code> yang menerima parameter <code>jumlah</code> (int). Method ini harus mengurangi field <code>Stok</code> berdasarkan jumlah yang dimasukkan.</p>
-</li>
-<li>
-<p>Buatlah sebuah <strong>Function Biasa</strong> (bukan method) bernama <code>DiskonProduk</code> yang menerima parameter <code>p *Produk</code> dan <code>persen</code> (int). Function ini harus mengubah <code>Harga</code> produk tersebut setelah dipotong diskon.</p>
-</li>
-<li>
-<p>Di dalam <code>func main()</code>:</p>
-</li>
-<li>Buat satu objek produk (Contoh: "Keyboard Mechanical", Harga: 500000, Stok: 10).</li>
-<li>Panggil method <code>KurangiStok</code> sebanyak 2 unit.</li>
-<li>Panggil function <code>DiskonProduk</code> sebesar 10%.</li>
-<li>Tampilkan data produk terakhir (Nama, Stok, dan Harga).</li>
-</ol>
-<p><strong>Output yang diharapkan:</strong>
-Stok harus menjadi 8 dan Harga harus menjadi 450000.</p>
-<hr />
-<p><em>Tips: Jika kalian bingung kapan pakai <code>*</code> dan <code>&amp;</code>, ingat ini: <code>&amp;</code> untuk mendapatkan alamatnya, <code>*</code> untuk mengolah isinya.</em></p>
+=== ATM GOLANG ===
+1. Cek Saldo
+2. Tarik Tunai
+3. Keluar
+Pilih menu: 3
+Terima kasih telah bertransaksi.
+(Program Selesai)
+</code></pre></div></p>
 
 
 
@@ -2436,7 +2288,7 @@ Stok harus menjadi 8 dan Harga harus menjadi 450000.</p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../05-function-errorHandling/" class="md-footer__link md-footer__link--prev" aria-label="Sebelumnya: Pertemuan 5 - Function &amp; Error Handling">
+          <a href="../02-variabel-tipeData-operator/" class="md-footer__link md-footer__link--prev" aria-label="Sebelumnya: Pertemuan 2 - Variable, Tipe Data, Operator">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -2446,20 +2298,20 @@ Stok harus menjadi 8 dan Harga harus menjadi 450000.</p>
                 Sebelumnya
               </span>
               <div class="md-ellipsis">
-                Pertemuan 5 - Function & Error Handling
+                Pertemuan 2 - Variable, Tipe Data, Operator
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../../mobile-flutter/" class="md-footer__link md-footer__link--next" aria-label="Selanjutnya: Modul Flutter SMK – Semester 2">
+          <a href="../04-array-slice-map/" class="md-footer__link md-footer__link--next" aria-label="Selanjutnya: Pertemuan 4 - Array, Slice, Map">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Selanjutnya
               </span>
               <div class="md-ellipsis">
-                Modul Flutter SMK – Semester 2
+                Pertemuan 4 - Array, Slice, Map
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -2519,10 +2371,10 @@ Stok harus menjadi 8 dan Harga harus menjadi 450000.</p>
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.collapse", "navigation.top", "search.highlight", "content.code.copy", "navigation.footer", "footer.social", "footer.copyright"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Tersalin ke clipboard", "clipboard.copy": "Salin ke clipboard", "search.result.more.one": "1 lagi di halaman ini", "search.result.more.other": "# lagi di halaman ini", "search.result.none": "Tidak ada dokumen yang sesuai", "search.result.one": "1 dokumen ditemukan", "search.result.other": "# dokumen ditemukan", "search.result.placeholder": "Ketik untuk mulai pencarian", "search.result.term.missing": "Tidak ada", "select.version": "Pilih versi"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.collapse", "navigation.top", "search.highlight", "content.code.copy", "navigation.footer", "footer.social", "footer.copyright"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Tersalin ke clipboard", "clipboard.copy": "Salin ke clipboard", "search.result.more.one": "1 lagi di halaman ini", "search.result.more.other": "# lagi di halaman ini", "search.result.none": "Tidak ada dokumen yang sesuai", "search.result.one": "1 dokumen ditemukan", "search.result.other": "# dokumen ditemukan", "search.result.placeholder": "Ketik untuk mulai pencarian", "search.result.term.missing": "Tidak ada", "select.version": "Pilih versi"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.8fd75fb4.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.8fd75fb4.min.js"></script>
       
     
   <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
